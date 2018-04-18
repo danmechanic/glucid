@@ -1,0 +1,5 @@
+glucid.egg-info
+*.egg
+*.so
+*.swp
+*~

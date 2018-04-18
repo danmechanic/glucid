@@ -1,0 +1,5 @@
+include MANIFEST.in
+include *.txt
+include glucid *.py
+include doc *.py *.rst Makefile
+recursive-include glucid *.py *.txt *.rst
