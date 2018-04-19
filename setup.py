@@ -3,13 +3,11 @@ from setuptools import setup
 from codecs import open
 from os import path
 
-from glucid import glucid8824
-
 with open('README.rst') as f:
     long_desc = f.read()
 
 setup(name='glucid',
-      version='0.1.1',
+      version='0.1.3',
       description='Configure the Lucid 8824 AD/DA Audio Interface via \
              a Serial Connection',
       url='http://github.com/danmechanic/glucid',
@@ -24,9 +22,9 @@ setup(name='glucid',
       },
       long_description=long_desc,
       keywords='lucid 8824 audio converter',
-      packages=[''],
+      packages=['glucid'],
       python_requires=">=3",
-      package_dir={ 'glucid8824' : 'glucid'},
+      package_dir={ 'glucidi8824' : 'glucid'},
       long_description_content_type='text/x-rst',
       classifiers=[
           'Development Status :: 3 - Alpha',
