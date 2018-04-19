@@ -1,0 +1,511 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>glucid Command Line Usage &#8212; glucid 0.1.0a documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1.0a',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="glucid Python Documentation" href="glucid_module.html" />
+    <link rel="prev" title="Installation" href="installation.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="glucid-command-line-usage">
+<h1><strong>glucid</strong> Command Line Usage<a class="headerlink" href="#glucid-command-line-usage" title="Permalink to this headline">¶</a></h1>
+<p>Confirm you have a working installing of <strong>glucid</strong> by typing</p>
+<p><code class="docutils literal"><span class="pre">glucid</span></code></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">To configure the Lucid 8824, you must have the unit in remote mode by setting DIP switch 1 to down.  See your owners manual for more information.</p>
+</div>
+<div class="section" id="know-what-serial-port-you-are-using">
+<h2>Know what Serial Port you are Using<a class="headerlink" href="#know-what-serial-port-you-are-using" title="Permalink to this headline">¶</a></h2>
+<p>By default, <strong>glucid</strong> assumes you are using <strong>/dev/ttyUSB0</strong>   Use the <strong>-d</strong> option if you are using a different Serial port.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The user who is running glucid must be able to read
+and write to whichever serial device you are using; consult your
+operating system documentation.</p>
+</div>
+</div>
+<div class="section" id="confirm-connection-to-your-audio-converter">
+<h2>Confirm Connection to Your Audio Converter<a class="headerlink" href="#confirm-connection-to-your-audio-converter" title="Permalink to this headline">¶</a></h2>
+<p>First:</p>
+<ul class="simple">
+<li>Power Off your Lucid 8824</li>
+<li>Flip DIP Switch 1 on your Lucid 8824 to <strong>down</strong>  (remote)</li>
+<li>Connect a 9 pin Serial connector from the Lucid 8824 to your computer</li>
+<li>Power On your Lucid 8824</li>
+</ul>
+<p>If all is well, you can confirm connection to your Audio Converter by
+simply running <strong>glucid</strong>, for example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ glucid
+----------------------------------------
+
+glucid and glucid8824.py
+Copyright (C) 2017,2018 Daniel R Mechanic
+GPL version 3 ONLY &lt;http://gnu.org/licenses/gpl.html&gt;.
+This program comes with ABSOLUTELY NO WARRANTY;
+This is free software, and you are welcome to
+change and redistribute it under certain circumstances;
+For details see LICENSE
+----------------------------------------
+Using /dev/ttyUSB0 to connect to lucid ID 00
+</pre></div>
+</div>
+<p>A failed connection would give the error:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Failed</span> <span class="n">to</span> <span class="nb">open</span> <span class="n">connection</span> <span class="n">using</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">ttyUSB0</span>
+</pre></div>
+</div>
+<div class="section" id="using-a-serial-device-other-than-dev-ttyusb0-d">
+<h3>Using a Serial device other than /dev/ttyUSB0 <strong>-d</strong><a class="headerlink" href="#using-a-serial-device-other-than-dev-ttyusb0-d" title="Permalink to this headline">¶</a></h3>
+<p>To use a device other than /dev/ttyUSB0 use the <strong>-d</strong> switch to <strong>glucid</strong>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ glucid -d /dev/ttyS0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="get-all-current-values">
+<h2>Get All Current Values<a class="headerlink" href="#get-all-current-values" title="Permalink to this headline">¶</a></h2>
+<p>To get all current values, use <strong>-g</strong> or <strong>–get_all</strong>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ glucid -g
+----------------------------------------
+
+glucid and glucid8824.py
+Copyright (C) 2017,2018 Daniel R Mechanic
+GPL version 3 ONLY &lt;http://gnu.org/licenses/gpl.html&gt;.
+This program comes with ABSOLUTELY NO WARRANTY;
+This is free software, and you are welcome to
+change and redistribute it under certain circumstances;
+For details see LICENSE
+----------------------------------------
+Using /dev/ttyUSB0 to connect to lucid ID 00
+
+Sync:                 WordClock
+Meter:                Analog In
+Analog Source:        ADAT In
+AES Source:           ADAT In
+Optical Source:       Analog In
+Dig Input 1,2:        S/PDIF
+Analog Gain:
+
+***************************************
+Recommended: +4dBu: IN -8 dB OUT  +1 dB
+            -10dBV: IN +4 dB OUT -11 dB
+***************************************
+
+Channel 1: IN -8 dB OUT  +1 dB
+Channel 2: IN -8 dB OUT  +1 dB
+Channel 3: IN -8 dB OUT  +1 dB
+Channel 4: IN -8 dB OUT  +1 dB
+Channel 5: IN -8 dB OUT  +1 dB
+Channel 6: IN -8 dB OUT  +1 dB
+Channel 7: IN -8 dB OUT  +1 dB
+Channel 8: IN -8 dB OUT  +1 dB
+</pre></div>
+</div>
+<div class="section" id="get-individual-values">
+<h3>Get Individual Values<a class="headerlink" href="#get-individual-values" title="Permalink to this headline">¶</a></h3>
+<p>The following options may be used to get other values:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">get_sync</span>    <span class="n">get</span> <span class="n">source</span> <span class="n">of</span> <span class="n">clock</span> <span class="n">sync</span>
+<span class="o">--</span><span class="n">get_analog</span>  <span class="n">get</span> <span class="n">source</span> <span class="n">of</span> <span class="n">analog</span> <span class="n">output</span>
+<span class="o">--</span><span class="n">get_aes</span>     <span class="n">get</span> <span class="n">source</span> <span class="n">of</span> <span class="n">aes</span> <span class="n">output</span>
+<span class="o">--</span><span class="n">get_opt</span>     <span class="n">get</span> <span class="n">source</span> <span class="n">of</span> <span class="n">optical</span> <span class="n">output</span>
+<span class="o">--</span><span class="n">get_meter</span>   <span class="n">get</span> <span class="n">source</span> <span class="n">of</span> <span class="n">meters</span>
+<span class="o">--</span><span class="n">get_dig1</span>    <span class="n">get</span> <span class="n">output</span> <span class="n">of</span> <span class="n">digital</span> <span class="n">channels</span> <span class="mi">1</span><span class="o">&amp;</span><span class="mi">2</span>
+<span class="o">--</span><span class="n">get_gain</span>    <span class="n">get</span> <span class="n">analog</span> <span class="n">gain</span> <span class="n">settings</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="setting-audio-levels">
+<h2>Setting Audio Levels<a class="headerlink" href="#setting-audio-levels" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="getting-current-audio-level-values">
+<h3>Getting Current Audio Level Values<a class="headerlink" href="#getting-current-audio-level-values" title="Permalink to this headline">¶</a></h3>
+<p>Use the <strong>–get_gain</strong> option to glucid to get all Audio Levels:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ glucid --get_gain
+
+Channel 1: IN -8 dB OUT  +1 dB
+Channel 2: IN -8 dB OUT  +1 dB
+Channel 3: IN -8 dB OUT  +1 dB
+Channel 4: IN -8 dB OUT  +1 dB
+Channel 5: IN -8 dB OUT  +1 dB
+Channel 6: IN -8 dB OUT  +1 dB
+Channel 7: IN -8 dB OUT  +1 dB
+Channel 8: IN -8 dB OUT  +1 dB
+</pre></div>
+</div>
+</div>
+<div class="section" id="defaults-for-pro-audio-4dbu-and-consumer-audio-10dbv">
+<h3>Defaults For Pro Audio: +4dBu and Consumer Audio: -10dBV<a class="headerlink" href="#defaults-for-pro-audio-4dbu-and-consumer-audio-10dbv" title="Permalink to this headline">¶</a></h3>
+<p>When running <strong>glucid</strong> you may have noticed the message:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Analog</span> <span class="n">Gain</span><span class="p">:</span>
+
+<span class="o">***************************************</span>
+<span class="n">Recommended</span><span class="p">:</span> <span class="o">+</span><span class="mi">4</span><span class="n">dBu</span><span class="p">:</span> <span class="n">IN</span> <span class="o">-</span><span class="mi">8</span> <span class="n">dB</span> <span class="n">OUT</span>  <span class="o">+</span><span class="mi">1</span> <span class="n">dB</span>
+            <span class="o">-</span><span class="mi">10</span><span class="n">dBV</span><span class="p">:</span> <span class="n">IN</span> <span class="o">+</span><span class="mi">4</span> <span class="n">dB</span> <span class="n">OUT</span> <span class="o">-</span><span class="mi">11</span> <span class="n">dB</span>
+<span class="o">***************************************</span>
+</pre></div>
+</div>
+<p><strong>glucid</strong> also provides options to easy use these recommended settings.</p>
+<p>From the output of <strong>glucid –help</strong>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">set_gain</span><span class="o">=</span><span class="n">PRESET</span>
+     <span class="nb">set</span> <span class="n">analog</span> <span class="n">INPUTS</span> <span class="ow">and</span> <span class="n">OUTPUT</span> <span class="n">to</span> <span class="n">recommended</span> <span class="n">PRESET</span>
+            <span class="n">PRESET</span> <span class="ow">is</span> <span class="n">an</span> <span class="n">integer</span> <span class="n">value</span> <span class="o">+</span><span class="mi">4</span> <span class="ow">or</span> <span class="o">-</span><span class="mi">10</span><span class="p">:</span>
+            <span class="s1">&#39;+4&#39;</span> <span class="o">-</span><span class="n">Sets</span> <span class="nb">all</span> <span class="n">INPUTS</span> <span class="n">to</span> <span class="o">-</span><span class="mi">8</span><span class="n">dB</span> <span class="ow">and</span> <span class="nb">all</span> <span class="n">OUTPUTS</span> <span class="n">to</span> <span class="o">+</span><span class="mi">1</span><span class="n">dB</span>
+            <span class="s1">&#39;-10&#39;</span> <span class="o">-</span><span class="n">Sets</span> <span class="nb">all</span> <span class="n">INPUTS</span> <span class="n">to</span> <span class="o">+</span><span class="mi">4</span><span class="n">dB</span> <span class="ow">and</span> <span class="nb">all</span> <span class="n">OUTPUTS</span> <span class="n">to</span> <span class="o">-</span><span class="mi">11</span><span class="n">dB</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="why-are-these-values-chosen">
+<h3>Why Are These Values Chosen?<a class="headerlink" href="#why-are-these-values-chosen" title="Permalink to this headline">¶</a></h3>
+<p>From the original Lucid ADA8824 Manual, these settings provide approximately 20dB of dynamic range.</p>
+</div>
+<div class="section" id="setting-audio-level-defaults">
+<h3>Setting Audio Level Defaults<a class="headerlink" href="#setting-audio-level-defaults" title="Permalink to this headline">¶</a></h3>
+<p>Use <strong>–set_gain=+4</strong> for commercial gear and <strong>–set_gain=-10</strong> for consumer gear.</p>
+<p>For example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ glucid --set_gain=-10
+</pre></div>
+</div>
+<p>Will result in:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Channel</span> <span class="mi">1</span><span class="p">:</span> <span class="n">IN</span> <span class="o">+</span><span class="mi">4</span> <span class="n">dB</span> <span class="n">OUT</span>  <span class="o">-</span><span class="mi">11</span><span class="n">dB</span>
+<span class="n">Channel</span> <span class="mi">2</span><span class="p">:</span> <span class="n">IN</span> <span class="o">+</span><span class="mi">4</span> <span class="n">dB</span> <span class="n">OUT</span>  <span class="o">-</span><span class="mi">11</span><span class="n">dB</span>
+<span class="n">Channel</span> <span class="mi">3</span><span class="p">:</span> <span class="n">IN</span> <span class="o">+</span><span class="mi">4</span> <span class="n">dB</span> <span class="n">OUT</span>  <span class="o">-</span><span class="mi">11</span><span class="n">dB</span>
+<span class="n">Channel</span> <span class="mi">4</span><span class="p">:</span> <span class="n">IN</span> <span class="o">+</span><span class="mi">4</span> <span class="n">dB</span> <span class="n">OUT</span>  <span class="o">-</span><span class="mi">11</span><span class="n">dB</span>
+<span class="n">Channel</span> <span class="mi">5</span><span class="p">:</span> <span class="n">IN</span> <span class="o">+</span><span class="mi">4</span> <span class="n">dB</span> <span class="n">OUT</span>  <span class="o">-</span><span class="mi">11</span><span class="n">dB</span>
+<span class="n">Channel</span> <span class="mi">6</span><span class="p">:</span> <span class="n">IN</span> <span class="o">+</span><span class="mi">4</span> <span class="n">dB</span> <span class="n">OUT</span>  <span class="o">-</span><span class="mi">11</span><span class="n">dB</span>
+<span class="n">Channel</span> <span class="mi">7</span><span class="p">:</span> <span class="n">IN</span> <span class="o">+</span><span class="mi">4</span> <span class="n">dB</span> <span class="n">OUT</span>  <span class="o">-</span><span class="mi">11</span><span class="n">dB</span>
+<span class="n">Channel</span> <span class="mi">8</span><span class="p">:</span> <span class="n">IN</span> <span class="o">+</span><span class="mi">4</span> <span class="n">dB</span> <span class="n">OUT</span>  <span class="o">-</span><span class="mi">11</span><span class="n">dB</span>
+</pre></div>
+</div>
+<p>And:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ glucid --set_gain=+4
+</pre></div>
+</div>
+<p>Will result in:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Channel</span> <span class="mi">1</span><span class="p">:</span> <span class="n">IN</span> <span class="o">-</span><span class="mi">8</span> <span class="n">dB</span> <span class="n">OUT</span>  <span class="o">+</span><span class="mi">1</span> <span class="n">dB</span>
+<span class="n">Channel</span> <span class="mi">2</span><span class="p">:</span> <span class="n">IN</span> <span class="o">-</span><span class="mi">8</span> <span class="n">dB</span> <span class="n">OUT</span>  <span class="o">+</span><span class="mi">1</span> <span class="n">dB</span>
+<span class="n">Channel</span> <span class="mi">3</span><span class="p">:</span> <span class="n">IN</span> <span class="o">-</span><span class="mi">8</span> <span class="n">dB</span> <span class="n">OUT</span>  <span class="o">+</span><span class="mi">1</span> <span class="n">dB</span>
+<span class="n">Channel</span> <span class="mi">4</span><span class="p">:</span> <span class="n">IN</span> <span class="o">-</span><span class="mi">8</span> <span class="n">dB</span> <span class="n">OUT</span>  <span class="o">+</span><span class="mi">1</span> <span class="n">dB</span>
+<span class="n">Channel</span> <span class="mi">5</span><span class="p">:</span> <span class="n">IN</span> <span class="o">-</span><span class="mi">8</span> <span class="n">dB</span> <span class="n">OUT</span>  <span class="o">+</span><span class="mi">1</span> <span class="n">dB</span>
+<span class="n">Channel</span> <span class="mi">6</span><span class="p">:</span> <span class="n">IN</span> <span class="o">-</span><span class="mi">8</span> <span class="n">dB</span> <span class="n">OUT</span>  <span class="o">+</span><span class="mi">1</span> <span class="n">dB</span>
+<span class="n">Channel</span> <span class="mi">7</span><span class="p">:</span> <span class="n">IN</span> <span class="o">-</span><span class="mi">8</span> <span class="n">dB</span> <span class="n">OUT</span>  <span class="o">+</span><span class="mi">1</span> <span class="n">dB</span>
+<span class="n">Channel</span> <span class="mi">8</span><span class="p">:</span> <span class="n">IN</span> <span class="o">-</span><span class="mi">8</span> <span class="n">dB</span> <span class="n">OUT</span>  <span class="o">+</span><span class="mi">1</span> <span class="n">dB</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="setting-levels-on-individual-channels">
+<h3>Setting Levels on Individual Channels<a class="headerlink" href="#setting-levels-on-individual-channels" title="Permalink to this headline">¶</a></h3>
+<p>Channel Levels can also be set individually.</p>
+<p>From <strong>glucid –help</strong>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">sci</span><span class="p">,</span><span class="o">--</span><span class="n">set_channel_input_gain</span><span class="o">=</span><span class="n">GAIN</span> <span class="n">CHANNEL</span> <span class="p">[</span><span class="n">CHANNEL</span><span class="o">...</span><span class="p">]</span>
+               <span class="nb">set</span> <span class="n">analog</span> <span class="n">INPUT</span> <span class="n">gain</span> <span class="n">of</span> <span class="n">CHANNELs</span> <span class="n">to</span> <span class="n">GAIN</span>
+              <span class="n">GAIN</span> <span class="ow">is</span> <span class="n">an</span> <span class="n">integer</span> <span class="n">value</span> <span class="n">between</span> <span class="o">-</span><span class="mi">95</span> <span class="ow">and</span> <span class="o">+</span><span class="mi">32</span>
+              <span class="n">CHANNELs</span> <span class="n">are</span> <span class="n">integer</span> <span class="n">values</span> <span class="n">between</span> <span class="mi">1</span><span class="o">-</span><span class="mi">8</span><span class="p">:</span>
+                      <span class="mi">1</span><span class="o">-</span><span class="mi">8</span> <span class="o">-</span><span class="s1">&#39;INPUT Channels 1-8&#39;</span>
+
+<span class="o">--</span><span class="n">sco</span><span class="p">,</span><span class="o">--</span><span class="n">set_channel_output_gain</span><span class="o">=</span><span class="n">GAIN</span> <span class="n">CHANNEL</span> <span class="p">[</span><span class="n">CHANNEL</span><span class="o">...</span><span class="p">]</span>
+               <span class="nb">set</span> <span class="n">analog</span> <span class="n">OUTPUT</span> <span class="n">gain</span> <span class="n">of</span> <span class="n">CHANNELs</span> <span class="n">to</span> <span class="n">GAIN</span>
+              <span class="n">GAIN</span> <span class="o">-</span> <span class="n">an</span> <span class="n">integer</span> <span class="n">value</span> <span class="n">between</span> <span class="o">-</span><span class="mi">95</span> <span class="ow">and</span> <span class="o">+</span><span class="mi">32</span>
+              <span class="n">CHANNELs</span> <span class="o">-</span> <span class="n">integer</span> <span class="n">values</span> <span class="n">between</span> <span class="mi">1</span><span class="o">-</span><span class="mi">8</span><span class="p">:</span>
+                      <span class="mi">1</span><span class="o">-</span><span class="mi">8</span> <span class="o">-</span><span class="s1">&#39;OUTPUT Channels 1-8&#39;</span>
+</pre></div>
+</div>
+<p>So, for example, if settings were currently:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ glucid --get_gain
+
+Channel 1: IN -8 dB OUT  +1 dB
+Channel 2: IN -8 dB OUT  +1 dB
+Channel 3: IN -8 dB OUT  +1 dB
+Channel 4: IN -8 dB OUT  +1 dB
+Channel 5: IN -8 dB OUT  +1 dB
+Channel 6: IN -8 dB OUT  +1 dB
+Channel 7: IN -8 dB OUT  +1 dB
+Channel 8: IN -8 dB OUT  +1 dB
+</pre></div>
+</div>
+<p>Example: To set the channel input level on channels 1,2 and 4 to +5dB:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ glucid --sci=+5 1 2 4
+
+Channel 1: IN +5 dB OUT  +1 dB
+Channel 2: IN +5 dB OUT  +1 dB
+Channel 3: IN -8 dB OUT  +1 dB
+Channel 4: IN +5 dB OUT  +1 dB
+Channel 5: IN -8 dB OUT  +1 dB
+Channel 6: IN -8 dB OUT  +1 dB
+Channel 7: IN -8 dB OUT  +1 dB
+Channel 8: IN -8 dB OUT  +1 dB
+</pre></div>
+</div>
+<p>Example: To set the channel output levels on channels 1,3,5 and 7 to -15dB:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ glucid --sco=-15 1 3 5 7
+
+Channel 1: IN -8 dB OUT  -15dB
+Channel 2: IN -8 dB OUT  +1 dB
+Channel 3: IN -8 dB OUT  -15dB
+Channel 4: IN -8 dB OUT  +1 dB
+Channel 5: IN -8 dB OUT  -15dB
+Channel 6: IN -8 dB OUT  +1 dB
+Channel 7: IN -8 dB OUT  -15dB
+Channel 8: IN -8 dB OUT  +1 dB
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="front-led-meters">
+<h2>Front LED Meters<a class="headerlink" href="#front-led-meters" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="get-current-meter-source">
+<h3>Get Current Meter Source<a class="headerlink" href="#get-current-meter-source" title="Permalink to this headline">¶</a></h3>
+<p>Use the <strong>–get_meter</strong> option:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ glucid --get_meter
+
+Meter:                Analog In
+</pre></div>
+</div>
+</div>
+<div class="section" id="set-meter-source">
+<h3>Set Meter Source<a class="headerlink" href="#set-meter-source" title="Permalink to this headline">¶</a></h3>
+<p>From <strong>glucid –help</strong>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">set_meter</span><span class="o">=</span><span class="n">METER</span>     <span class="nb">set</span> <span class="n">meters</span> <span class="n">to</span> <span class="n">METER</span>
+              <span class="n">METER</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">number</span> <span class="mi">0</span><span class="o">-</span><span class="mi">3</span><span class="p">:</span>
+              <span class="mi">0</span> <span class="o">-</span><span class="s1">&#39;Analog In&#39;</span>
+              <span class="mi">1</span> <span class="o">-</span><span class="s1">&#39;Digital In&#39;</span>
+              <span class="mi">2</span> <span class="o">-</span><span class="s1">&#39;Analog Out&#39;</span>
+              <span class="mi">3</span> <span class="o">-</span><span class="s1">&#39;Digital Out&#39;</span>
+</pre></div>
+</div>
+<p>For example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$  glucid --set_meter=3
+Meter:                Digital Out
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="clock-sync">
+<h2>Clock Sync<a class="headerlink" href="#clock-sync" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="get-current-sync-source">
+<h3>Get Current Sync Source<a class="headerlink" href="#get-current-sync-source" title="Permalink to this headline">¶</a></h3>
+<p>Use the <strong>–get_sync</strong> option:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ glucid --get_sync
+
+Sync:         WordClock
+</pre></div>
+</div>
+</div>
+<div class="section" id="set-sync-source">
+<h3>Set Sync Source<a class="headerlink" href="#set-sync-source" title="Permalink to this headline">¶</a></h3>
+<p>From <strong>glucid –help</strong>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">set_sync</span><span class="o">=</span><span class="n">SYNC</span>       <span class="nb">set</span> <span class="n">source</span> <span class="n">to</span> <span class="n">sync</span> <span class="n">to</span> <span class="n">SYNC</span>
+              <span class="n">SYNC</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">number</span> <span class="mi">0</span><span class="o">-</span><span class="mi">7</span><span class="p">:</span>
+              <span class="mi">0</span> <span class="o">-</span><span class="s1">&#39;ADAT&#39;</span>
+              <span class="mi">1</span> <span class="o">-</span><span class="s1">&#39;WordClock&#39;</span>
+              <span class="mi">2</span> <span class="o">-</span><span class="s1">&#39;44.1 internal&#39;</span>
+              <span class="mi">3</span> <span class="o">-</span><span class="s1">&#39;48 Internal&#39;</span>
+              <span class="mi">4</span> <span class="o">-</span><span class="s1">&#39;AES In1&#39;</span>
+              <span class="mi">5</span> <span class="o">-</span><span class="s1">&#39;AES In2&#39;</span>
+              <span class="mi">6</span> <span class="o">-</span><span class="s1">&#39;AES In3&#39;</span>
+              <span class="mi">7</span> <span class="o">-</span><span class="s1">&#39;S/PDIF In&#39;</span>
+</pre></div>
+</div>
+<p>For example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$  glucid --set_sync=0
+
+Sync:         ADAT
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="analog-out-source">
+<h2>Analog Out Source<a class="headerlink" href="#analog-out-source" title="Permalink to this headline">¶</a></h2>
+<p>The Lucid 8824 can convert digital audio to analog audio sourced from the ADAT or AES interconnects.</p>
+<div class="section" id="get-current-analog-out-source">
+<h3>Get Current Analog Out Source<a class="headerlink" href="#get-current-analog-out-source" title="Permalink to this headline">¶</a></h3>
+<p>Use the <strong>–get_analog</strong> option:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$  glucid --get_analog
+
+Analog Source:        ADAT In
+</pre></div>
+</div>
+</div>
+<div class="section" id="set-analog-out-source">
+<h3>Set Analog Out Source<a class="headerlink" href="#set-analog-out-source" title="Permalink to this headline">¶</a></h3>
+<p>From <strong>glucid –help</strong>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">set_analog</span><span class="o">=</span><span class="n">SRC</span>    <span class="nb">set</span> <span class="n">analog</span> <span class="n">output</span> <span class="n">source</span> <span class="n">to</span> <span class="n">SRC</span>
+            <span class="n">SRC</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">number</span> <span class="mi">0</span> <span class="ow">or</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="mi">0</span> <span class="o">-</span><span class="s1">&#39;ADAT In&#39;</span>
+            <span class="mi">1</span> <span class="o">-</span><span class="s1">&#39;AES In&#39;</span>
+</pre></div>
+</div>
+<p>For example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$  glucid --set_analog=1
+
+Analog Source:        AES In
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="adat-out-optical-source">
+<h2>ADAT Out (Optical) Source<a class="headerlink" href="#adat-out-optical-source" title="Permalink to this headline">¶</a></h2>
+<p>The Lucid 8824 can send digital audio via it’s ADAT (optical) connector sourced from either Analog or AES inputs</p>
+<div class="section" id="get-current-adat-out-optical-source">
+<h3>Get Current ADAT Out (Optical) Source<a class="headerlink" href="#get-current-adat-out-optical-source" title="Permalink to this headline">¶</a></h3>
+<p>Use the <strong>–get_opt</strong> option:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$  glucid --get_opt
+
+Optical Source:       Analog In
+</pre></div>
+</div>
+</div>
+<div class="section" id="set-adat-out-source">
+<h3>Set ADAT Out Source<a class="headerlink" href="#set-adat-out-source" title="Permalink to this headline">¶</a></h3>
+<p>From <strong>glucid –help</strong>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">set_opt</span><span class="o">=</span><span class="n">SRC</span> <span class="nb">set</span> <span class="n">optical</span> <span class="n">output</span> <span class="n">source</span> <span class="n">to</span> <span class="n">SRC</span>
+              <span class="n">SRC</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">number</span> <span class="mi">0</span> <span class="ow">or</span> <span class="mi">1</span><span class="p">:</span>
+              <span class="mi">0</span> <span class="o">-</span><span class="s1">&#39;Analog In&#39;</span>
+              <span class="mi">1</span> <span class="o">-</span><span class="s1">&#39;AES In&#39;</span>
+</pre></div>
+</div>
+<p>For example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$  glucid --set_opt=1
+
+Optical Source:       AES In
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="digital-input-channels-1-and-2-s-pdif">
+<h2>Digital Input Channels 1 and 2 (S/PDIF)<a class="headerlink" href="#digital-input-channels-1-and-2-s-pdif" title="Permalink to this headline">¶</a></h2>
+<p>If you wish to use the S/PDIF Input connection on the Lucid 8824, you must set Digital Channels 1,2 to ‘S/PDIF’, otherwise audio will be sourced from AES Channels 1 and 2.</p>
+<div class="section" id="get-current-input-for-digital-channels-1-and-2">
+<h3>Get Current Input for Digital Channels 1 and 2<a class="headerlink" href="#get-current-input-for-digital-channels-1-and-2" title="Permalink to this headline">¶</a></h3>
+<p>Use the <strong>–get_dig1</strong> option:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$  glucid --get_dig1
+
+Dig Input 1,2:        AES
+</pre></div>
+</div>
+</div>
+<div class="section" id="set-input-for-digital-channels-1-and-2">
+<h3>Set Input for Digital Channels 1 and 2<a class="headerlink" href="#set-input-for-digital-channels-1-and-2" title="Permalink to this headline">¶</a></h3>
+<p>From <strong>glucid –help</strong>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">set_dig1</span><span class="o">=</span><span class="n">DIGIN</span>      <span class="nb">set</span> <span class="n">digital</span> <span class="n">inputs</span> <span class="mi">1</span><span class="p">,</span><span class="mi">2</span> <span class="n">to</span> <span class="n">DIGIN</span>
+              <span class="n">DIGIN</span> <span class="ow">is</span> <span class="mi">0</span> <span class="ow">or</span> <span class="mi">1</span><span class="p">:</span>
+              <span class="mi">0</span> <span class="o">-</span><span class="s1">&#39;AES 1,2&#39;</span>
+              <span class="mi">1</span> <span class="o">-</span><span class="s1">&#39;S/PDIF&#39;</span>
+</pre></div>
+</div>
+<p>For example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$  glucid --set_dig1=1
+
+Dig Input 1,2:        S/PDIF
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="contents.html">glucid</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">          Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">          Command Line Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#know-what-serial-port-you-are-using">Know what Serial Port you are Using</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#confirm-connection-to-your-audio-converter">Confirm Connection to Your Audio Converter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-all-current-values">Get All Current Values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setting-audio-levels">Setting Audio Levels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#front-led-meters">Front LED Meters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#clock-sync">Clock Sync</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#analog-out-source">Analog Out Source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#adat-out-optical-source">ADAT Out (Optical) Source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#digital-input-channels-1-and-2-s-pdif">Digital Input Channels 1 and 2 (S/PDIF)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="glucid_module.html">          Python API</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="contents.html">Documentation overview</a><ul>
+      <li>Previous: <a href="installation.html" title="previous chapter">Installation</a></li>
+      <li>Next: <a href="glucid_module.html" title="next chapter"><strong>glucid</strong> Python Documentation</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Daniel R Mechanic.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/command_line_usage.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
