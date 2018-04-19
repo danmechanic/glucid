@@ -35,11 +35,10 @@ from _ast import Or
 
 
 class Glucid8824:
-    """The Glucid8824 class provides a useful api
-    to communicate with a Lucid 8824 Analog/Digital
-    Converter via its RS232 Serial port over the Serial
-    Port of a Computer.  Methods provide access to
-    setting and getting different values on the Lucid 8824.
+    """The Glucid8824 class represents a single Lucid
+    ADA8824 unit and provides methods to communicate with
+    a Lucid ADA8824 via its RS232 Serial port over the Serial
+    Port of a Computer.
     """
     # hex constants:
     # sysex start & end byte
@@ -137,7 +136,8 @@ class Glucid8824:
     MINUS10IN = '64'
     MINUS10OUT = '55'
 
-    def __init__(self, LucidID='00', siface="/dev/ttyUSB0", tout=1):
+    def __init__(self,
+                 LucidID='00', siface="/dev/ttyUSB0", tout=1):
         """Define required data structures and serial interface
 
            siface  - serial interface, defaults to /dev/ttyUSB0
@@ -418,6 +418,7 @@ class Glucid8824:
         logging.info("update_channel_in_gainlist: %s to %s" %
                      (channel, gain))
 
+        channel = int(channel)
         # makes sure gain and channel is set
         if (channel < 0 or channel > 15):
             logging.error("update_channel_in_gainlist: bad channel value")
@@ -678,15 +679,17 @@ class Glucid8824:
 def banner():
     progname = str(sys.argv[0].split('/')[-1])
     print('-'*40)
-    print("Glucid: The Lucid8824 Tool")
+    # print("glucid: The Lucid 8824 Tool")
     # print("%s version %s" %
     #      (progname, str(__version__))
     #      )
-    print("\nglucid8824.py Copyright (C) 2017,2018 Daniel R Mechanic")
+    print("\nglucid and glucid8824.py:")
+    print("Copyright (C) 2017,2018 Daniel R Mechanic")
     print("GPL version 3 ONLY <http://gnu.org/licenses/gpl.html>.")
     print("This program comes with ABSOLUTELY NO WARRANTY;")
     print("This is free software, and you are welcome to")
-    print("change and redistribute it; For details see LICENSE")
+    print("change and redistribute it under certain circumstances;")
+    print("For details see LICENSE")
     print('-'*40)
 
 
@@ -828,6 +831,7 @@ def set_gain_channels(lucid, gain=-99, channel_list=[]):
     Write these values to the 8824
     """
     gain = int(gain)
+    logging.info("set_gain_channels: value of gain is %s" % gain)
     if (type(channel_list) != list):
             logging.critical("list received: %s" %
                              type(channel_list))
@@ -838,7 +842,7 @@ def set_gain_channels(lucid, gain=-99, channel_list=[]):
                              gain)
             sys.exit(1)
     for i in channel_list:
-        if i < 0 or i > 15:
+        if int(i) < 0 or int(i) > 15:
             logging.critical("channel index out of range")
             sys.exit(1)
 
@@ -1070,7 +1074,7 @@ def main():
             if (
                 int(a) < -95
                 or int(a) > 32
-                or length(args) == 0
+                or len(args) == 0
                ):
                     logging.critical("Bad Argument: %s, %" % (o, a))
                     sys.exit(1)
@@ -1085,9 +1089,13 @@ def main():
                     sys.exit(1)
 
             if o in ('--sci', '--set_channel_input_gain'):
-                set_gain_channels(lucid, int(a)-1, args)
+                # Input Channels Index at Zero: 0-15
+                set_gain_channels(lucid, int(a),
+                                  [int(i) - 1 for i in args])
             elif o in ('--sco', '--set_channel_output_gain'):
-                set_gain_channels(lucid, int(a)+7, args)
+                # Output Channels are 7-15
+                set_gain_channels(lucid, int(a),
+                                  [int(i) + 7 for i in args])
 
             get_gain(lucid)
         else:
