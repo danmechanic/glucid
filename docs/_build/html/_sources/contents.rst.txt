@@ -11,6 +11,11 @@ well as a useful command-line interface to configure a RS232
 version Lucid ADA8824 Analog/Digital Audio Converter over a serial
 interface.
 
+**glucid** on github_
+
+.. _github: http://github.com/danmechanic/glucid
+
+
 .. figure:: lucid8824.png
 	    :scale: 60 %
 	    :alt: Image of A Lucid 8824

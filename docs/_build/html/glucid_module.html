@@ -5,13 +5,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>glucid Python Documentation &#8212; glucid 0.1.0a documentation</title>
+    <title>glucid Python Documentation &#8212; glucid 0.1.3a documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.1.0a',
+        VERSION:     '0.1.3a',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -42,11 +42,38 @@
   <div class="section" id="glucid-python-documentation">
 <h1><strong>glucid</strong> Python Documentation<a class="headerlink" href="#glucid-python-documentation" title="Permalink to this headline">¶</a></h1>
 <p><strong>glucid</strong> is a software package that provides a <strong>glucid8824</strong> module which provides a Command Line Interface and api as well as a <strong>Glucid8824</strong> class that represents an instance of a Lucid ADA8824</p>
-<div class="section" id="importing-the-glucid8824-module">
-<h2>Importing the <strong>glucid8824</strong> Module<a class="headerlink" href="#importing-the-glucid8824-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="confirm-the-glucid8824-module-can-be-imported">
+<h2>Confirm the <strong>glucid8824</strong> module can be imported<a class="headerlink" href="#confirm-the-glucid8824-module-can-be-imported" title="Permalink to this headline">¶</a></h2>
 <p>Within a Python3 interpreter, you may import he <strong>glucid8824</strong> module:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">glucid</span> <span class="k">import</span> <span class="n">glucid8824</span>
 </pre></div>
+</div>
+<div class="section" id="simple-example-setting-clock-sync-using-python">
+<h3>Simple Example Setting Clock Sync Using Python<a class="headerlink" href="#simple-example-setting-clock-sync-using-python" title="Permalink to this headline">¶</a></h3>
+<p>First, import glucid</p>
+<div class="highlight-Python"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">glucid.glucid8824</span> <span class="kn">as</span> <span class="nn">glucid</span>
+</pre></div>
+</div>
+<p>Create a new Glucid8824 object, by default this uses /dev/ttyUSB0</p>
+<div class="highlight-Python"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">mylucid</span> <span class="o">=</span> <span class="n">glucid</span><span class="o">.</span><span class="n">Glucid8824</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>We connect to our ADA8824</p>
+<div class="highlight-Python"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">mylucid</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+<span class="bp">True</span>
+</pre></div>
+</div>
+<p>Check the current clock sync source</p>
+<div class="highlight-Python"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">mylucid</span><span class="o">.</span><span class="n">get_sync_source</span><span class="p">()</span>
+<span class="s1">&#39;ADAT&#39;</span>
+</pre></div>
+</div>
+<p>Set the clock sync to WordClock</p>
+<div class="highlight-Python"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">mylucid</span><span class="o">.</span><span class="n">set_sync_source</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">mylucid</span><span class="o">.</span><span class="n">get_sync_source</span><span class="p">()</span>
+<span class="s1">&#39;WordClock&#39;</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="module-glucid.glucid8824">
 <span id="glucid8824-module-documentation"></span><h3><strong>glucid8824</strong> Module Documentation<a class="headerlink" href="#module-glucid.glucid8824" title="Permalink to this headline">¶</a></h3>
@@ -158,8 +185,9 @@ Write these values to the 8824</p>
 </dd></dl>
 
 </div>
+</div>
 <div class="section" id="glucid8824-class-documentation">
-<h3><strong>Glucid8824</strong> Class Documentation<a class="headerlink" href="#glucid8824-class-documentation" title="Permalink to this headline">¶</a></h3>
+<h2><strong>Glucid8824</strong> Class Documentation<a class="headerlink" href="#glucid8824-class-documentation" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="glucid.glucid8824.Glucid8824">
 <em class="property">class </em><code class="descclassname">glucid.glucid8824.</code><code class="descname">Glucid8824</code><span class="sig-paren">(</span><em>LucidID='00'</em>, <em>siface='/dev/ttyUSB0'</em>, <em>tout=1</em><span class="sig-paren">)</span><a class="headerlink" href="#glucid.glucid8824.Glucid8824" title="Permalink to this definition">¶</a></dt>
@@ -397,7 +425,6 @@ to write the values to the 8824</p>
 
 </div>
 </div>
-</div>
 
 
           </div>
@@ -420,7 +447,8 @@ to write the values to the 8824</p>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">          Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="command_line_usage.html">          Command Line Usage</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">          Python API</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#importing-the-glucid8824-module">Importing the <strong>glucid8824</strong> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#confirm-the-glucid8824-module-can-be-imported">Confirm the <strong>glucid8824</strong> module can be imported</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#glucid8824-class-documentation"><strong>Glucid8824</strong> Class Documentation</a></li>
 </ul>
 </li>
 </ul>

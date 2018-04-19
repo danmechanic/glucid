@@ -15,8 +15,19 @@ Requirements
 
    By default, **glucid** assumes you are using a USB to 9-pin serial adapter on linux and defaults to **/dev/ttyUSB0** , to overide this default, use the **-d** option.
 
-Easy installation of glucid
-===========================
+
+Installing glucid via pip
+=========================
+
+glucid can installed via pip
+
+.. code-block:: bash
+		
+   pip install glucid
+
+   
+Installing the latest version of glucid via git
+===============================================
 
 You can just clone the latest stable version of glucid via:
 
