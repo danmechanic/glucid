@@ -26,7 +26,7 @@ setup(name='glucid',
       keywords='lucid 8824 audio converter',
       packages=[''],
       python_requires=">=3",
-      package_dir={ '' : 'glucid'},
+      package_dir={ 'glucid8824' : 'glucid'},
       long_description_content_type='text/x-rst',
       classifiers=[
           'Development Status :: 3 - Alpha',
