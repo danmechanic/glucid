@@ -3,3 +3,5 @@ glucid.egg-info
 *.so
 *.swp
 *~
+**/build
+**/dist
