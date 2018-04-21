@@ -16,7 +16,8 @@ over a Serial Connection
     :scale: 60 %
 
 **glucid** Command Line
-=======================::
+=======================
+::
 
   $ glucid -g
   ----------------------------------------
@@ -54,8 +55,10 @@ over a Serial Connection
       Channel 8: IN -8 dB OUT  +1 dB
   
 
+
 glucid Python Package
-=====================::
+===================== 
+
   >>> import glucid.glucid8824 as glucid
   >>> my8824 = glucid.Glucid8824()
   >>> my8824.connect()
