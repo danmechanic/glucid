@@ -1,0 +1,2515 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>901</width>
+    <height>473</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>901</width>
+    <height>470</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>901</width>
+    <height>516</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>xglucid</string>
+  </property>
+  <widget class="xglucidWidget" name="centralwidget">
+   <widget class="QLabel" name="label">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>-1</x>
+      <y>0</y>
+      <width>901</width>
+      <height>471</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>901</width>
+      <height>471</height>
+     </size>
+    </property>
+    <property name="contextMenuPolicy">
+     <enum>Qt::NoContextMenu</enum>
+    </property>
+    <property name="midLineWidth">
+     <number>1</number>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/newPrefix/glucidLayout2-smallsig.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QSlider" name="SliderIN_1">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>286</x>
+      <y>73</y>
+      <width>21</width>
+      <height>138</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>-95</number>
+    </property>
+    <property name="maximum">
+     <number>31</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+    <property name="sliderPosition">
+     <number>0</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="QSlider" name="SliderIN_2">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>342</x>
+      <y>73</y>
+      <width>21</width>
+      <height>138</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>-95</number>
+    </property>
+    <property name="maximum">
+     <number>31</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+    <property name="sliderPosition">
+     <number>0</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="QSlider" name="SliderIN_3">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>397</x>
+      <y>73</y>
+      <width>21</width>
+      <height>138</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>-95</number>
+    </property>
+    <property name="maximum">
+     <number>31</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+    <property name="sliderPosition">
+     <number>0</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="QSlider" name="SliderIN_6">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>560</x>
+      <y>73</y>
+      <width>21</width>
+      <height>138</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>-95</number>
+    </property>
+    <property name="maximum">
+     <number>31</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+    <property name="sliderPosition">
+     <number>0</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="QSlider" name="SliderIN_4">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>452</x>
+      <y>73</y>
+      <width>21</width>
+      <height>138</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>-95</number>
+    </property>
+    <property name="maximum">
+     <number>31</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+    <property name="sliderPosition">
+     <number>0</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="QSlider" name="SliderIN_5">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>506</x>
+      <y>73</y>
+      <width>21</width>
+      <height>138</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>-95</number>
+    </property>
+    <property name="maximum">
+     <number>31</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+    <property name="sliderPosition">
+     <number>0</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="QSlider" name="SliderIN_7">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>616</x>
+      <y>73</y>
+      <width>21</width>
+      <height>138</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>-95</number>
+    </property>
+    <property name="maximum">
+     <number>31</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+    <property name="sliderPosition">
+     <number>0</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="QSlider" name="SliderIN_8">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>671</x>
+      <y>73</y>
+      <width>21</width>
+      <height>138</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>-95</number>
+    </property>
+    <property name="maximum">
+     <number>31</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+    <property name="sliderPosition">
+     <number>0</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="QSlider" name="SliderOUT_3">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>398</x>
+      <y>275</y>
+      <width>21</width>
+      <height>138</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>-95</number>
+    </property>
+    <property name="maximum">
+     <number>31</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="QSlider" name="SliderOUT_1">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>287</x>
+      <y>275</y>
+      <width>21</width>
+      <height>138</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>-95</number>
+    </property>
+    <property name="maximum">
+     <number>31</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="QSlider" name="SliderOUT_8">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>672</x>
+      <y>275</y>
+      <width>21</width>
+      <height>138</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>-95</number>
+    </property>
+    <property name="maximum">
+     <number>31</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="QSlider" name="SliderOUT_5">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>507</x>
+      <y>275</y>
+      <width>21</width>
+      <height>138</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>-95</number>
+    </property>
+    <property name="maximum">
+     <number>31</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="QSlider" name="SliderOUT_7">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>617</x>
+      <y>275</y>
+      <width>21</width>
+      <height>138</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>-95</number>
+    </property>
+    <property name="maximum">
+     <number>31</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="QSlider" name="SliderOUT_6">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>563</x>
+      <y>275</y>
+      <width>21</width>
+      <height>138</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>-95</number>
+    </property>
+    <property name="maximum">
+     <number>31</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="QSlider" name="SliderOUT_2">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>342</x>
+      <y>275</y>
+      <width>21</width>
+      <height>138</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>-95</number>
+    </property>
+    <property name="maximum">
+     <number>31</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="QSlider" name="SliderOUT_4">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>453</x>
+      <y>275</y>
+      <width>21</width>
+      <height>138</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>-95</number>
+    </property>
+    <property name="maximum">
+     <number>31</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="LucidMeterCombo">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>64</x>
+      <y>93</y>
+      <width>72</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+      <horstretch>4</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <family>Source Sans Pro Light</family>
+      <pointsize>7</pointsize>
+      <kerning>true</kerning>
+     </font>
+    </property>
+    <property name="editable">
+     <bool>false</bool>
+    </property>
+    <property name="currentText">
+     <string notr="true">Analog IN</string>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>0</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="frame">
+     <bool>false</bool>
+    </property>
+    <item>
+     <property name="text">
+      <string>Analog IN</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Digital IN</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Analog OUT</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Digital OUT</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QComboBox" name="LucidSyncCombo">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>64</x>
+      <y>165</y>
+      <width>72</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+      <horstretch>4</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <family>Source Sans Pro Light</family>
+      <pointsize>7</pointsize>
+      <kerning>true</kerning>
+     </font>
+    </property>
+    <property name="editable">
+     <bool>false</bool>
+    </property>
+    <property name="currentText">
+     <string notr="true">ADAT</string>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>0</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="frame">
+     <bool>false</bool>
+    </property>
+    <item>
+     <property name="text">
+      <string>ADAT</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>WordClock</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>44.1 Int</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>48 Int</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>AES In1</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>AES In2</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>AES In3</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>S/PDIF </string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QComboBox" name="LucidIdCombo">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>113</x>
+      <y>298</y>
+      <width>31</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+      <horstretch>4</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <family>Source Sans Pro Light</family>
+      <pointsize>7</pointsize>
+      <kerning>true</kerning>
+     </font>
+    </property>
+    <property name="editable">
+     <bool>false</bool>
+    </property>
+    <property name="currentText">
+     <string notr="true">0</string>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>0</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="frame">
+     <bool>false</bool>
+    </property>
+    <item>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>1</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>2</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>3</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>4</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>5</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>6</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>7</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QComboBox" name="LucidSpdifCombo">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>730</x>
+      <y>369</y>
+      <width>75</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+      <horstretch>4</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <family>Source Sans Pro Light</family>
+      <pointsize>8</pointsize>
+      <kerning>true</kerning>
+     </font>
+    </property>
+    <property name="editable">
+     <bool>false</bool>
+    </property>
+    <property name="currentText">
+     <string notr="true">1,2 AES</string>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>0</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="frame">
+     <bool>false</bool>
+    </property>
+    <item>
+     <property name="text">
+      <string>1,2 AES</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>1,2 S/PDIF</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QComboBox" name="LucidAnalogSrcCombo">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>730</x>
+      <y>295</y>
+      <width>75</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+      <horstretch>4</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <family>Source Sans Pro Light</family>
+      <pointsize>9</pointsize>
+      <kerning>true</kerning>
+     </font>
+    </property>
+    <property name="editable">
+     <bool>false</bool>
+    </property>
+    <property name="currentText">
+     <string notr="true">ADAT IN</string>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>0</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="frame">
+     <bool>false</bool>
+    </property>
+    <item>
+     <property name="text">
+      <string>ADAT IN</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>AES IN</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QComboBox" name="LucidOpticalCombo">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>730</x>
+      <y>166</y>
+      <width>75</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+      <horstretch>4</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <family>Source Sans Pro Light</family>
+      <pointsize>9</pointsize>
+      <kerning>true</kerning>
+     </font>
+    </property>
+    <property name="editable">
+     <bool>false</bool>
+    </property>
+    <property name="currentText">
+     <string notr="true">Analog IN</string>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>0</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="frame">
+     <bool>false</bool>
+    </property>
+    <item>
+     <property name="text">
+      <string>Analog IN</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>AES IN</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QComboBox" name="LucidAesCombo">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>730</x>
+      <y>115</y>
+      <width>75</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+      <horstretch>4</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <family>Source Sans Pro Light</family>
+      <pointsize>9</pointsize>
+      <kerning>true</kerning>
+     </font>
+    </property>
+    <property name="editable">
+     <bool>false</bool>
+    </property>
+    <property name="currentText">
+     <string notr="true">ADAT IN</string>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>0</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="frame">
+     <bool>false</bool>
+    </property>
+    <item>
+     <property name="text">
+      <string>ADAT IN</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Analog IN</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QPushButton" name="ProINButton">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>96</y>
+      <width>70</width>
+      <height>37</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>+4 dBu</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="ConINButton">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>136</y>
+      <width>70</width>
+      <height>37</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>-10 dBV</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="LinkInCh">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>208</x>
+      <y>175</y>
+      <width>35</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="LinkOutCh">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>376</y>
+      <width>35</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="ProOUTButton">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>297</y>
+      <width>70</width>
+      <height>37</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>+4 dBu</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="ConOUTButton">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>337</y>
+      <width>70</width>
+      <height>37</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>-10 dBV</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="LucidReadButton">
+    <property name="geometry">
+     <rect>
+      <x>69</x>
+      <y>324</y>
+      <width>70</width>
+      <height>38</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>READ</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="LucidWriteButton">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>69</x>
+      <y>364</y>
+      <width>70</width>
+      <height>38</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>WRITE</string>
+    </property>
+   </widget>
+   <widget class="xglucidLabel" name="labelIN_1">
+    <property name="geometry">
+     <rect>
+      <x>285</x>
+      <y>219</y>
+      <width>41</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="xglucidLabel" name="labelIN_2">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>219</y>
+      <width>41</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="xglucidLabel" name="labelIN_4">
+    <property name="geometry">
+     <rect>
+      <x>449</x>
+      <y>219</y>
+      <width>41</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="xglucidLabel" name="labelIN_3">
+    <property name="geometry">
+     <rect>
+      <x>395</x>
+      <y>219</y>
+      <width>41</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="xglucidLabel" name="labelIN_6">
+    <property name="geometry">
+     <rect>
+      <x>560</x>
+      <y>219</y>
+      <width>41</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="xglucidLabel" name="labelIN_8">
+    <property name="geometry">
+     <rect>
+      <x>667</x>
+      <y>219</y>
+      <width>41</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="xglucidLabel" name="labelIN_5">
+    <property name="geometry">
+     <rect>
+      <x>505</x>
+      <y>219</y>
+      <width>41</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="xglucidLabel" name="labelIN_7">
+    <property name="geometry">
+     <rect>
+      <x>612</x>
+      <y>219</y>
+      <width>41</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="xglucidLabel" name="labelOUT_2">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>415</y>
+      <width>41</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="xglucidLabel" name="labelOUT_8">
+    <property name="geometry">
+     <rect>
+      <x>671</x>
+      <y>415</y>
+      <width>41</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="xglucidLabel" name="labelOUT_4">
+    <property name="geometry">
+     <rect>
+      <x>451</x>
+      <y>415</y>
+      <width>41</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="xglucidLabel" name="labelOUT_1">
+    <property name="geometry">
+     <rect>
+      <x>286</x>
+      <y>415</y>
+      <width>41</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="xglucidLabel" name="labelOUT_7">
+    <property name="geometry">
+     <rect>
+      <x>618</x>
+      <y>415</y>
+      <width>41</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="xglucidLabel" name="labelOUT_5">
+    <property name="geometry">
+     <rect>
+      <x>506</x>
+      <y>415</y>
+      <width>41</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="xglucidLabel" name="labelOUT_6">
+    <property name="geometry">
+     <rect>
+      <x>561</x>
+      <y>415</y>
+      <width>41</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="xglucidLabel" name="labelOUT_3">
+    <property name="geometry">
+     <rect>
+      <x>395</x>
+      <y>415</y>
+      <width>41</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_18">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>-209</y>
+      <width>900</width>
+      <height>516</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>904</width>
+      <height>895</height>
+     </size>
+    </property>
+    <property name="text">
+     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Cantarell'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; dir='rtl' style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;img src=&quot;:/newPrefix/glucidLayout2-smallsig.png&quot; /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="SerialPortCombo">
+    <property name="geometry">
+     <rect>
+      <x>65</x>
+      <y>227</y>
+      <width>81</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>6</pointsize>
+     </font>
+    </property>
+    <item>
+     <property name="text">
+      <string>/dev/ttyUSB0</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>/dev/ttyUSB1</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>/dev/ttyUSB2</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>/dev/ttyUSB3</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>/dev/ttyUSB4</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>/dev/ttyUSB5</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>/dev/ttyS0</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>/dev/ttyS1</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>/dev/ttyS2</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>/dev/ttyS3</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>/dev/ttyS4</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>/dev/ttyS5</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>/dev/ttyAMA0</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>/dev/ttyAMA1</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>/dev/ttyACM0</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>/dev/ttyACM1</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>/dev/rfcomm0</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>/dev/rfcomm1</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>/dev/ircomm0</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>/dev/ircomm1</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>/dev/cuau0</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>/dev/cuau1</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>/dev/cuau2</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>/dev/cuaU0</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>/dev/cuaU1</string>
+     </property>
+    </item>
+   </widget>
+   <zorder>label_18</zorder>
+   <zorder>label</zorder>
+   <zorder>labelIN_1</zorder>
+   <zorder>labelIN_2</zorder>
+   <zorder>labelIN_4</zorder>
+   <zorder>labelIN_3</zorder>
+   <zorder>labelIN_6</zorder>
+   <zorder>labelIN_8</zorder>
+   <zorder>labelIN_5</zorder>
+   <zorder>labelIN_7</zorder>
+   <zorder>labelOUT_2</zorder>
+   <zorder>labelOUT_8</zorder>
+   <zorder>labelOUT_4</zorder>
+   <zorder>labelOUT_1</zorder>
+   <zorder>labelOUT_7</zorder>
+   <zorder>labelOUT_5</zorder>
+   <zorder>labelOUT_6</zorder>
+   <zorder>labelOUT_3</zorder>
+   <zorder>SliderIN_7</zorder>
+   <zorder>SliderIN_3</zorder>
+   <zorder>SliderOUT_8</zorder>
+   <zorder>SliderOUT_2</zorder>
+   <zorder>ConOUTButton</zorder>
+   <zorder>SliderOUT_7</zorder>
+   <zorder>SliderOUT_5</zorder>
+   <zorder>SliderOUT_3</zorder>
+   <zorder>SliderOUT_1</zorder>
+   <zorder>SliderIN_1</zorder>
+   <zorder>ProINButton</zorder>
+   <zorder>LucidReadButton</zorder>
+   <zorder>ProOUTButton</zorder>
+   <zorder>SliderIN_4</zorder>
+   <zorder>LucidWriteButton</zorder>
+   <zorder>SliderIN_6</zorder>
+   <zorder>ConINButton</zorder>
+   <zorder>SliderOUT_6</zorder>
+   <zorder>SliderIN_5</zorder>
+   <zorder>SliderIN_2</zorder>
+   <zorder>SliderIN_8</zorder>
+   <zorder>SliderOUT_4</zorder>
+   <zorder>LucidOpticalCombo</zorder>
+   <zorder>LucidSpdifCombo</zorder>
+   <zorder>LinkOutCh</zorder>
+   <zorder>LucidIdCombo</zorder>
+   <zorder>LucidMeterCombo</zorder>
+   <zorder>LucidAesCombo</zorder>
+   <zorder>LinkInCh</zorder>
+   <zorder>LucidSyncCombo</zorder>
+   <zorder>LucidAnalogSrcCombo</zorder>
+   <zorder>SerialPortCombo</zorder>
+  </widget>
+  <widget class="QStatusBar" name="statusbar">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="sizeGripEnabled">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <action name="action_dev_ttyUSB0">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>/dev/ttyUSB0</string>
+   </property>
+  </action>
+  <action name="action_dev_ttyUSB1">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>/dev/ttyUSB1</string>
+   </property>
+  </action>
+  <action name="action_dev_ttyUSB2">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>/dev/ttyUSB2</string>
+   </property>
+  </action>
+  <action name="action_dev_ttyUSB3">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>/dev/ttyUSB3</string>
+   </property>
+  </action>
+  <action name="action_dev_ttyUSB4">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>/dev/ttyUSB4</string>
+   </property>
+  </action>
+  <action name="action_dev_ttyUSB4_2">
+   <property name="text">
+    <string>/dev/ttyUSB4</string>
+   </property>
+  </action>
+  <action name="action_dev_ttyUSB5">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>/dev/ttyUSB5</string>
+   </property>
+  </action>
+  <action name="action_dev_ttyS0">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>/dev/ttyS0</string>
+   </property>
+  </action>
+  <action name="action_dev_ttyS1">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>/dev/ttyS1</string>
+   </property>
+  </action>
+  <action name="action_dev_ttyS2">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>/dev/ttyS2</string>
+   </property>
+  </action>
+  <action name="action_dev_ttyS3">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>/dev/ttyS3</string>
+   </property>
+  </action>
+  <action name="action_dev_ttyS4">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>/dev/ttyS4</string>
+   </property>
+  </action>
+  <action name="action_dev_ttyS5">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>/dev/ttyS5</string>
+   </property>
+  </action>
+  <action name="action_dev_ttyAMA0">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>/dev/ttyAMA0</string>
+   </property>
+  </action>
+  <action name="action_dev_ttyAMA1">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>/dev/ttyAMA1</string>
+   </property>
+  </action>
+  <action name="action_dev_ttyACM0">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>/dev/ttyACM0</string>
+   </property>
+  </action>
+  <action name="action_dev_ttyACM1">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>/dev/ttyACM1</string>
+   </property>
+  </action>
+  <action name="action_dev_rfcomm0">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>/dev/rfcomm0</string>
+   </property>
+  </action>
+  <action name="action_dev_ircomm0">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>/dev/ircomm0</string>
+   </property>
+  </action>
+  <action name="action_dev_cuau0">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>/dev/cuau0</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>xglucidWidget</class>
+   <extends>QWidget</extends>
+   <header>xglucidUIWidgets.h</header>
+   <container>1</container>
+   <slots>
+    <slot>need_write_status()</slot>
+    <slot>on_glucid_slider_changed()</slot>
+    <slot>read_button_clicked()</slot>
+    <slot>write_button_clicked()</slot>
+    <slot>on_serial_port_changed()</slot>
+    <slot>pro_or_consumer_clicked()</slot>
+   </slots>
+  </customwidget>
+  <customwidget>
+   <class>xglucidLabel</class>
+   <extends>QLabel</extends>
+   <header>xglucidUIWidgets.h</header>
+   <slots>
+    <slot>on_slider_value_changed()</slot>
+   </slots>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="Glucid8824.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>SliderIN_1</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>labelIN_1</receiver>
+   <slot>on_slider_value_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>303</x>
+     <y>186</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>296</x>
+     <y>232</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SliderIN_2</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>labelIN_2</receiver>
+   <slot>on_slider_value_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>357</x>
+     <y>193</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>362</x>
+     <y>226</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>LucidWriteButton</sender>
+   <signal>clicked()</signal>
+   <receiver>statusbar</receiver>
+   <slot>clearMessage()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>114</x>
+     <y>399</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>462</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SliderOUT_1</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>labelOUT_1</receiver>
+   <slot>on_slider_value_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>297</x>
+     <y>339</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>304</x>
+     <y>420</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SliderIN_3</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>labelIN_3</receiver>
+   <slot>on_slider_value_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>410</x>
+     <y>139</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>409</x>
+     <y>226</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SliderIN_4</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>labelIN_4</receiver>
+   <slot>on_slider_value_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>465</x>
+     <y>199</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>476</x>
+     <y>229</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SliderIN_5</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>labelIN_5</receiver>
+   <slot>on_slider_value_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>515</x>
+     <y>154</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>519</x>
+     <y>227</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SliderIN_6</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>labelIN_6</receiver>
+   <slot>on_slider_value_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>573</x>
+     <y>178</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>561</x>
+     <y>228</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SliderIN_7</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>labelIN_7</receiver>
+   <slot>on_slider_value_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>622</x>
+     <y>208</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>624</x>
+     <y>230</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SliderIN_8</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>labelIN_8</receiver>
+   <slot>on_slider_value_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>678</x>
+     <y>192</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>683</x>
+     <y>226</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>LucidReadButton</sender>
+   <signal>clicked()</signal>
+   <receiver>statusbar</receiver>
+   <slot>clearMessage()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>108</x>
+     <y>338</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>224</x>
+     <y>467</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SliderOUT_2</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>labelOUT_2</receiver>
+   <slot>on_slider_value_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>348</x>
+     <y>353</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>366</x>
+     <y>427</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SliderOUT_3</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>labelOUT_3</receiver>
+   <slot>on_slider_value_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>418</x>
+     <y>377</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>420</x>
+     <y>431</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SliderOUT_4</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>labelOUT_4</receiver>
+   <slot>on_slider_value_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>467</x>
+     <y>405</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>470</x>
+     <y>428</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SliderOUT_5</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>labelOUT_5</receiver>
+   <slot>on_slider_value_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>515</x>
+     <y>406</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>526</x>
+     <y>420</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SliderOUT_6</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>labelOUT_6</receiver>
+   <slot>on_slider_value_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>582</x>
+     <y>386</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>588</x>
+     <y>419</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SliderOUT_7</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>labelOUT_7</receiver>
+   <slot>on_slider_value_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>633</x>
+     <y>379</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>641</x>
+     <y>417</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SliderOUT_8</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>labelOUT_8</receiver>
+   <slot>on_slider_value_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>682</x>
+     <y>400</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>691</x>
+     <y>416</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SliderIN_1</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>centralwidget</receiver>
+   <slot>on_glucid_slider_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>296</x>
+     <y>141</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>450</x>
+     <y>223</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SliderIN_2</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>centralwidget</receiver>
+   <slot>on_glucid_slider_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>352</x>
+     <y>141</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>450</x>
+     <y>223</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SliderIN_3</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>centralwidget</receiver>
+   <slot>on_glucid_slider_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>407</x>
+     <y>141</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>450</x>
+     <y>223</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SliderIN_4</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>centralwidget</receiver>
+   <slot>on_glucid_slider_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>462</x>
+     <y>141</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>450</x>
+     <y>223</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SliderIN_8</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>centralwidget</receiver>
+   <slot>on_glucid_slider_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>681</x>
+     <y>141</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>450</x>
+     <y>223</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SliderIN_7</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>centralwidget</receiver>
+   <slot>on_glucid_slider_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>626</x>
+     <y>141</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>450</x>
+     <y>223</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SliderIN_6</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>centralwidget</receiver>
+   <slot>on_glucid_slider_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>570</x>
+     <y>141</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>450</x>
+     <y>223</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SliderIN_5</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>centralwidget</receiver>
+   <slot>on_glucid_slider_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>516</x>
+     <y>141</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>450</x>
+     <y>223</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SliderOUT_1</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>centralwidget</receiver>
+   <slot>on_glucid_slider_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>297</x>
+     <y>343</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>450</x>
+     <y>223</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SliderOUT_8</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>centralwidget</receiver>
+   <slot>on_glucid_slider_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>682</x>
+     <y>343</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>450</x>
+     <y>223</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SliderOUT_7</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>centralwidget</receiver>
+   <slot>on_glucid_slider_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>627</x>
+     <y>343</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>450</x>
+     <y>223</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SliderOUT_6</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>centralwidget</receiver>
+   <slot>on_glucid_slider_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>573</x>
+     <y>343</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>450</x>
+     <y>223</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SliderOUT_5</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>centralwidget</receiver>
+   <slot>on_glucid_slider_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>517</x>
+     <y>343</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>450</x>
+     <y>223</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SliderOUT_4</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>centralwidget</receiver>
+   <slot>on_glucid_slider_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>463</x>
+     <y>343</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>450</x>
+     <y>223</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SliderOUT_3</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>centralwidget</receiver>
+   <slot>on_glucid_slider_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>408</x>
+     <y>343</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>450</x>
+     <y>223</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SliderOUT_2</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>centralwidget</receiver>
+   <slot>on_glucid_slider_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>352</x>
+     <y>343</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>450</x>
+     <y>223</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>LucidReadButton</sender>
+   <signal>clicked()</signal>
+   <receiver>centralwidget</receiver>
+   <slot>read_button_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>103</x>
+     <y>342</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>450</x>
+     <y>223</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>LucidWriteButton</sender>
+   <signal>clicked()</signal>
+   <receiver>centralwidget</receiver>
+   <slot>write_button_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>103</x>
+     <y>382</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>450</x>
+     <y>223</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SerialPortCombo</sender>
+   <signal>currentTextChanged(QString)</signal>
+   <receiver>centralwidget</receiver>
+   <slot>on_serial_port_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>105</x>
+     <y>240</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>450</x>
+     <y>223</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ProOUTButton</sender>
+   <signal>clicked()</signal>
+   <receiver>centralwidget</receiver>
+   <slot>pro_or_consumer_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>214</x>
+     <y>315</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>450</x>
+     <y>223</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ConINButton</sender>
+   <signal>clicked()</signal>
+   <receiver>centralwidget</receiver>
+   <slot>pro_or_consumer_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>214</x>
+     <y>154</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>450</x>
+     <y>223</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ConOUTButton</sender>
+   <signal>clicked()</signal>
+   <receiver>centralwidget</receiver>
+   <slot>pro_or_consumer_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>214</x>
+     <y>355</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>450</x>
+     <y>223</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ProINButton</sender>
+   <signal>clicked()</signal>
+   <receiver>centralwidget</receiver>
+   <slot>pro_or_consumer_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>214</x>
+     <y>114</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>450</x>
+     <y>223</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
