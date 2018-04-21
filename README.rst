@@ -2,12 +2,14 @@
  glucid
 =======
 
+.. image::  ./docs/xglucid.png
+	    
 .. image::  ./docs/lucid8824.png
 	    
-**glucid**  is a python project to provide an api and
-convenient command-line interface to configure RS232-model
-Lucid 8824 Analog/Digital Audio Converters over a Serial
-Connection.::
+**glucid**  is a python project to provide an api, a convenient
+command-line interface and **xglucid**, a PyQt5 interface  to
+configure RS232-model Lucid 8824 Analog/Digital Audio Converters
+over a Serial Connection.::
 
   $ glucid -g
   ----------------------------------------
