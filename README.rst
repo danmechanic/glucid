@@ -3,6 +3,7 @@
 =======
 
 .. image::  ./docs/xglucid.png
+    :scale: 60 %
 	    
 .. image::  ./docs/lucid8824.png
 	    
