@@ -1,6 +1,6 @@
 """
 xglucid is a part of the glucid package and provides 
-a qt Grpahical interface to configure a Lucid 8824 
+a qt Graphical interface to configure a Lucid 8824 
 Analog/Digital Audio Converter RS232 interface over 
 a serial port.
 
@@ -29,15 +29,14 @@ import glucid.Glucid8824_UI
 
 
 class xglucid(QtWidgets.QMainWindow, glucid.Glucid8824_UI.Ui_MainWindow):
-"""xglucid is just a class to call the Qt MainWindow"""
-
+    """xglucid is just a class to call the Qt MainWindow"""
     def __init__(self):
         super(self.__class__, self).__init__()
         self.setupUi(self)
 
 
 def main():
-"""call QApplication"""
+    """call QApplication"""
     app = QApplication(sys.argv)
     form = xglucid()
     form.show()

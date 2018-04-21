@@ -45,4 +45,7 @@ setup(name='glucid',
           'Author': 'http://www.danmechanic.com/',
           'Source': 'https://github.com/danmechanic/glucid/',
       },
+      install_requires=[
+          'PyQt5>=5.9.1',
+      ]
       )

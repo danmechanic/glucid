@@ -24,9 +24,9 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 import glucid.xglucidUIWidgets
 import glucid.glucid8824 as glucid
 from PyQt5.QtGui import QPainter, QColor, QFont
-from PyQt5.QtWidgets import QWidget, QLabel, QSlider, QComboBox,
-QCheckBox, QPushButton
-
+from PyQt5.QtWidgets import (QWidget, QLabel, QSlider, QComboBox,
+                             QCheckBox, QPushButton)
+                             
 
 class xglucidWidget(QWidget):
     """xglucidWidget extends QWidget to provide custom signals
@@ -42,14 +42,19 @@ class xglucidWidget(QWidget):
         self.initUI()
 
     def initUI(self):
+        """set geometry and title, call show()"""
         self.setGeometry(0, 0, 897, 471)
         self.setWindowTitle('xglucid')
         self.show()
 
     def need_write_status(self):
+        """Deprecated: `Needs write` written to status bar"""
         self.parent().statusBar().showMessage('Need to Write to the Device')
 
     def make_sliders(self):
+        """Build lists `InputSliders` and `OutputSliders`.  This is
+        a convenience function so these sliders can be linked together
+        """
         self.InputSliders = [
             self.parent().SliderIN_1,
             self.parent().SliderIN_2,
@@ -72,21 +77,32 @@ class xglucidWidget(QWidget):
         ]
 
     def on_glucid_slider_changed(self, value):
+        """when a slider is changed, we check
+        if the linked box is checked, and if so
+        we set the values of other sliders...
+
+        this may be better in a slider class
+        as a slot routine...
+        """
+        
         changed_slider = self.sender()
         self.make_sliders()
 
-        if changed_slider in self.InputSliders and
-        self.parent().LinkInCh.isChecked():
+        if (changed_slider in self.InputSliders and
+            self.parent().LinkInCh.isChecked()):
             for sl in self.InputSliders:
                 if sl is not changed_slider:
                     sl.setValue(value)
-        if changed_slider in self.OutputSliders and
-        self.parent().LinkOutCh.isChecked():
+        if (changed_slider in self.OutputSliders and
+        self.parent().LinkOutCh.isChecked()):
             for sl in self.OutputSliders:
                 if sl is not changed_slider:
                     sl.setValue(value)
 
     def on_serial_port_changed(self, value):
+        """Declare a new Glucid8824 obect with the 
+        new serial interface
+        """
         # TODO: implement set_iface in glucid?
         self.myLucid = glucid.Glucid8824(siface=value)
 
@@ -116,6 +132,7 @@ class xglucidWidget(QWidget):
                     i.setEnabled(False)
 
     def enable_all_children(self):
+        """Deprecated: delete this"""
         for i in self.parent().centralwidget.children():
             i.setEnabled(True)
 
@@ -134,7 +151,10 @@ class xglucidWidget(QWidget):
                 self.myLucid.get_iface())
 
     def set_ui_from_lucid(self):
-        """Given we are connected to a lucid, set all UI values"""
+        """Given we are connected to a lucid, set all UI values 
+        by reading each individually from the lucid, setting the
+        widget value, and enabling the widget
+        """
 
         self.disable_all_except_comm()
 
@@ -310,7 +330,15 @@ class xglucidWidget(QWidget):
                 QSlider, "SliderIN_1").setValue(4)
 
     def write_ui_to_lucid(self):
-        """Given we are connected to a lucid, write all UI values to it"""
+        """Given we are connected to a lucid, write all UI values to it
+        
+        We write all values, and not just updated ones because
+        something may have changed on the unit since we last read them
+        and writing what the user sees would be the most predictable 
+        behavoir
+
+        however, it's slow.
+        """
         self.disable_all_except_comm()
 
         if self.myLucid.connect():
@@ -387,29 +415,6 @@ class xglucidWidget(QWidget):
         self.parent().statusBar().showMessage("Finished Writing DATA")
         self.set_ui_from_lucid()
 
-    def pro_or_consumer_clicked(self):
-        """a slot to handle when a user clicks the +4 or -10 buttons"""
-        if self.sender().objectName() == "ProOUTButton":
-            self.parent().centralwidget.findChild(
-                QCheckBox, "LinkOutCh").setCheckState(True)
-            self.parent().centralwidget.findChild(
-                QSlider, "SliderOUT_1").setValue(1)
-        elif self.sender().objectName() == "ConOUTButton":
-            self.parent().centralwidget.findChild(
-                QCheckBox, "LinkOutCh").setCheckState(True)
-            self.parent().centralwidget.findChild(
-                QSlider, "SliderOUT_1").setValue(-11)
-        elif self.sender().objectName() == "ProINButton":
-            self.parent().centralwidget.findChild(
-                QCheckBox, "LinkInCh").setCheckState(True)
-            self.parent().centralwidget.findChild(
-                QSlider, "SliderIN_1").setValue(-8)
-        elif self.sender().objectName() == "ConINButton":
-            self.parent().centralwidget.findChild(
-                QCheckBox, "LinkInCh").setCheckState(True)
-            self.parent().centralwidget.findChild(
-                QSlider, "SliderIN_1").setValue(4)
-
     def write_button_clicked(self):
         """The write button was clicked, if successful set all
         widgets to proper values, otherwise reflect the failure
@@ -427,6 +432,8 @@ class xglucidWidget(QWidget):
 
 
 class xglucidLabel(QLabel):
+    """A class to be used to label qglucid sliders"""
+    
     def __init__(self, parent=None):
         super().__init__(parent)
 
@@ -444,6 +451,9 @@ class xglucidLabel(QLabel):
 
 
 class xglucidInputSlider(QSlider):
+    """Not used;  something like this should be used for the
+    linked channel behavoir
+    """
     def __init__(self, parent=None):
         super().__init__(parent)
 
