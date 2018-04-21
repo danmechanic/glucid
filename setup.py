@@ -18,13 +18,18 @@ setup(name='glucid',
       entry_points={  # Optional
           'console_scripts': [
               'glucid=glucid.glucid8824:main',
+              'xglucid=glucid.xglucid:main'
           ],
       },
       long_description=long_desc,
       keywords='lucid 8824 audio converter',
       packages=['glucid'],
       python_requires=">=3",
-      package_dir={ 'glucidi8824' : 'glucid'},
+      package_dir={ 'glucidi8824' : 'glucid',
+                    'xglucid' : 'glucid',
+                    'Glucid8824_UI' : 'glucid',
+                    'xglucidUIWidgets' : 'glucid',
+      },
       long_description_content_type='text/x-rst',
       classifiers=[
           'Development Status :: 3 - Alpha',
