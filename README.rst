@@ -1,16 +1,22 @@
 =======
  glucid
 =======
-
-.. image::  ./docs/xglucid.png
-    :scale: 60 %
 	    
 .. image::  ./docs/lucid8824.png
 	    
 **glucid**  is a python project to provide an api, a convenient
 command-line interface and **xglucid**, a PyQt5 interface  to
 configure RS232-model Lucid 8824 Analog/Digital Audio Converters
-over a Serial Connection::
+over a Serial Connection
+
+**xglucid** GUI
+===============
+
+.. image::  ./docs/xglucid.png
+    :scale: 60 %
+
+**glucid** Command Line
+=======================::
 
   $ glucid -g
   ----------------------------------------
@@ -48,9 +54,19 @@ over a Serial Connection::
       Channel 8: IN -8 dB OUT  +1 dB
   
 
-
-
-
+glucid Python Package
+=====================::
+  >>> import glucid.glucid8824 as glucid
+  >>> my8824 = glucid.Glucid8824()
+  >>> my8824.connect()
+  True
+  >>> my8824.get_meter()
+  'Analog Out'
+  >>> my8824.get_sync_source()
+  '44.1 Internal'
+  >>> my8824.set_sync_source(1)
+  >>> my8824.get_sync_source()
+  'WordClock'
 
 Copyright (C) 2017,2018  Daniel R Mechanic (dan.mechanic@gmail.com)
 
