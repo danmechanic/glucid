@@ -1603,6 +1603,26 @@ p, li { white-space: pre-wrap; }
       <string>/dev/cuaU1</string>
      </property>
     </item>
+    <item>
+     <property name="text">
+      <string>\.\COM1</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>\.\COM2</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>\.\COM3</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>\.\COM4</string>
+     </property>
+    </item>
    </widget>
    <zorder>label_18</zorder>
    <zorder>label</zorder>

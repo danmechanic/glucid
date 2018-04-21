@@ -23,7 +23,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
-__version__ = '0.1.4a'
+__version__ = '0.1.5a'
 __author__ = 'Daniel R Mechanic (dan.mechanic@gmail.com)'
 
 import logging

@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file './Glucid8824.ui'
 #
-# Created by: PyQt5 UI code generator 5.6
+# Created by: PyQt5 UI code generator 5.10.1
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -591,6 +591,10 @@ class Ui_MainWindow(object):
         self.SerialPortCombo.addItem("")
         self.SerialPortCombo.addItem("")
         self.SerialPortCombo.addItem("")
+        self.SerialPortCombo.addItem("")
+        self.SerialPortCombo.addItem("")
+        self.SerialPortCombo.addItem("")
+        self.SerialPortCombo.addItem("")
         self.label_18.raise_()
         self.label.raise_()
         self.labelIN_1.raise_()
@@ -823,6 +827,10 @@ class Ui_MainWindow(object):
         self.SerialPortCombo.setItemText(22, _translate("MainWindow", "/dev/cuau2"))
         self.SerialPortCombo.setItemText(23, _translate("MainWindow", "/dev/cuaU0"))
         self.SerialPortCombo.setItemText(24, _translate("MainWindow", "/dev/cuaU1"))
+        self.SerialPortCombo.setItemText(25, _translate("MainWindow", "\\.\\COM1"))
+        self.SerialPortCombo.setItemText(26, _translate("MainWindow", "\\.\\COM2"))
+        self.SerialPortCombo.setItemText(27, _translate("MainWindow", "\\.\\COM3"))
+        self.SerialPortCombo.setItemText(28, _translate("MainWindow", "\\.\\COM4"))
         self.action_dev_ttyUSB0.setText(_translate("MainWindow", "/dev/ttyUSB0"))
         self.action_dev_ttyUSB1.setText(_translate("MainWindow", "/dev/ttyUSB1"))
         self.action_dev_ttyUSB2.setText(_translate("MainWindow", "/dev/ttyUSB2"))
@@ -844,5 +852,5 @@ class Ui_MainWindow(object):
         self.action_dev_ircomm0.setText(_translate("MainWindow", "/dev/ircomm0"))
         self.action_dev_cuau0.setText(_translate("MainWindow", "/dev/cuau0"))
 
-from glucid.xglucidUIWidgets import xglucidLabel, xglucidWidget
-import glucid.Glucid8824_rc
+from xglucidUIWidgets import xglucidLabel, xglucidWidget
+import Glucid8824_rc
