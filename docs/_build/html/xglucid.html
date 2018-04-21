@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Python Module Index &#8212; glucid 0.1.4a documentation</title>
+    <title>xglucid GUI Interface &#8212; glucid 0.1.4a documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -23,14 +23,12 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-
+    <link rel="prev" title="glucid Python Documentation" href="glucid_module.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
-
-
 
   </head>
   <body>
@@ -41,29 +39,45 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-
-   <h1>Python Module Index</h1>
-
-   <div class="modindex-jumpbox">
-   <a href="#cap-g"><strong>g</strong></a>
-   </div>
-
-   <table class="indextable modindextable">
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-g"><td></td><td>
-       <strong>g</strong></td><td></td></tr>
-     <tr>
-       <td><img src="_static/minus.png" class="toggler"
-              id="toggle-1" style="display: none" alt="-" /></td>
-       <td>
-       <code class="xref">glucid</code></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="glucid_module.html#module-glucid.glucid8824"><code class="xref">glucid.glucid8824</code></a></td><td>
-       <em></em></td></tr>
-   </table>
+  <div class="section" id="xglucid-gui-interface">
+<h1><strong>xglucid</strong> GUI Interface<a class="headerlink" href="#xglucid-gui-interface" title="Permalink to this headline">¶</a></h1>
+<img alt="_images/xglucid1.png" src="_images/xglucid1.png" />
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">xglucid requires PyQt5 as well as Python 3</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The user who is running glucid must be able to read
+and write to whichever serial device you are using; consult your
+operating system documentation.</p>
+</div>
+<p>First:</p>
+<ul class="simple">
+<li>Power Off your Lucid 8824</li>
+<li>Flip DIP Switch 1 on your Lucid 8824 to <strong>down</strong>  (remote)</li>
+<li>Connect a 9 pin Serial connector from the Lucid 8824 to your computer</li>
+<li>Power On your Lucid 8824</li>
+</ul>
+<div class="section" id="know-what-serial-port-you-are-using">
+<h2>Know what Serial Port you are Using<a class="headerlink" href="#know-what-serial-port-you-are-using" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="the-default-is-dev-ttyusb0">
+<h3>The default is /dev/ttyUSB0<a class="headerlink" href="#the-default-is-dev-ttyusb0" title="Permalink to this headline">¶</a></h3>
+<p>By default, <strong>glucid</strong> assumes you are using <strong>/dev/ttyUSB0</strong>   Use the pulldown
+menu to the left to select your Serial interface</p>
+</div>
+<div class="section" id="select-read">
+<h3>Select <strong>READ</strong><a class="headerlink" href="#select-read" title="Permalink to this headline">¶</a></h3>
+<p>This will read all values from your ADA8824 and enable the options with
+the values currently stored on your unit.</p>
+</div>
+<div class="section" id="write-all-values-wtih-write">
+<h3>Write all Values wtih <strong>WRITE</strong><a class="headerlink" href="#write-all-values-wtih-write" title="Permalink to this headline">¶</a></h3>
+<p>If you change any values, select <strong>WRITE</strong> to write them to your ADA8824.</p>
+<p><strong>xglucid</strong> will read the values again and set the interface accordingly.</p>
+</div>
+</div>
+</div>
 
 
           </div>
@@ -82,17 +96,21 @@
 
 <h3>Navigation</h3>
 <p class="caption"><span class="caption-text">Contents:</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">          Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="command_line_usage.html">          Command Line Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="glucid_module.html">          Python API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="xglucid.html">          xglucid GUI</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">          xglucid GUI</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#know-what-serial-port-you-are-using">Know what Serial Port you are Using</a></li>
+</ul>
+</li>
 </ul>
 
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="contents.html">Documentation overview</a><ul>
+      <li>Previous: <a href="glucid_module.html" title="previous chapter"><strong>glucid</strong> Python Documentation</a></li>
   </ul></li>
 </ul>
 </div>
@@ -117,6 +135,9 @@
       Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
+      |
+      <a href="_sources/xglucid.rst.txt"
+          rel="nofollow">Page source</a>
     </div>
 
     
