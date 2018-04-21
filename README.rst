@@ -9,7 +9,7 @@
 **glucid**  is a python project to provide an api, a convenient
 command-line interface and **xglucid**, a PyQt5 interface  to
 configure RS232-model Lucid 8824 Analog/Digital Audio Converters
-over a Serial Connection.::
+over a Serial Connection::
 
   $ glucid -g
   ----------------------------------------
