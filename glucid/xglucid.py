@@ -1,31 +1,48 @@
+"""
+xglucid is a part of the glucid package and provides 
+a qt Grpahical interface to configure a Lucid 8824 
+Analog/Digital Audio Converter RS232 interface over 
+a serial port.
+
+Copyright (C) 2017,2018  Daniel R Mechanic (dan.mechanic@gmail.com)
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, version 3 of the License ONLY.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
+"""
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QWidget, QPushButton,
                              QToolTip, QMessageBox, QGridLayout, QVBoxLayout,
                              QCheckBox, QHBoxLayout, QSlider, QLabel)
 from PyQt5.QtCore import QCoreApplication, Qt
 from PyQt5.QtGui import QIcon
+import sys
+import glucid.Glucid8824_UI
 
-import sys # We need sys so that we can pass argv to QApplication
-
-import glucid.Glucid8824_UI # This file holds our MainWindow and all design related things
-              # it also keeps events etc that we defined in Qt Designer
 
 class xglucid(QtWidgets.QMainWindow, glucid.Glucid8824_UI.Ui_MainWindow):
+"""xglucid is just a class to call the Qt MainWindow"""
+
     def __init__(self):
-        # Explaining super is out of the scope of this article
-        # So please google it if you're not familar with it
-        # Simple reason why we use it here is that it allows us to
-        # access variables, methods etc in the design.py file
         super(self.__class__, self).__init__()
-        self.setupUi(self)  # This is defined in design.py file automatically
-                            # It sets up layout and widgets that are defined
+        self.setupUi(self)
 
 
 def main():
-    app = QApplication(sys.argv)        # A new instance of QApplication
-    form = xglucid()                 # We set the form to be our ExampleApp (design)
-    form.show()                         # Show the form
-    app.exec_()                         # and execute the app
+"""call QApplication"""
+    app = QApplication(sys.argv)
+    form = xglucid()
+    form.show()
+    app.exec_()
 
-if __name__ == '__main__':              # if we're running file directly and not importing it
-    main()                              # run the main function
+# if we wish to run from CLI without package
+if __name__ == '__main__':
+    main()
