@@ -1851,7 +1851,7 @@ p, li { white-space: pre-wrap; }
   <customwidget>
    <class>xglucidWidget</class>
    <extends>QWidget</extends>
-   <header>xglucidUIWidgets.h</header>
+   <header>glucid/xglucidUIWidgets.h</header>
    <container>1</container>
    <slots>
     <slot>need_write_status()</slot>
@@ -1865,7 +1865,7 @@ p, li { white-space: pre-wrap; }
   <customwidget>
    <class>xglucidLabel</class>
    <extends>QLabel</extends>
-   <header>xglucidUIWidgets.h</header>
+   <header>glucid/xglucidUIWidgets.h</header>
    <slots>
     <slot>on_slider_value_changed()</slot>
    </slots>
