@@ -6,7 +6,7 @@
 
 from PyQt5.QtWidgets import QWidget, QLabel, QSlider, QComboBox, QCheckBox, QPushButton
 from PyQt5.QtGui import QPainter, QColor, QFont
-import xglucidUIWidgets
+import glucid.xglucidUIWidgets
 
 
 #import Lucid8824

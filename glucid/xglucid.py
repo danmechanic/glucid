@@ -7,10 +7,10 @@ from PyQt5.QtGui import QIcon
 
 import sys # We need sys so that we can pass argv to QApplication
 
-import Glucid8824_UI # This file holds our MainWindow and all design related things
+import glucid.Glucid8824_UI # This file holds our MainWindow and all design related things
               # it also keeps events etc that we defined in Qt Designer
 
-class xglucid(QtWidgets.QMainWindow, Glucid8824_UI.Ui_MainWindow):
+class xglucid(QtWidgets.QMainWindow, glucid.Glucid8824_UI.Ui_MainWindow):
     def __init__(self):
         # Explaining super is out of the scope of this article
         # So please google it if you're not familar with it
