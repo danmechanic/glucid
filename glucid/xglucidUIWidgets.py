@@ -158,7 +158,7 @@ class xglucidWidget(QWidget):
 
         self.disable_all_except_comm()
         # windows fails without disconnecting first
-        self.myLucid.disconnect():
+        self.myLucid.disconnect()
         if self.myLucid.connect():
             self.parent().statusBar().showMessage(
                 "Connected using %s and reading DATA..." %
@@ -301,7 +301,7 @@ class xglucidWidget(QWidget):
             QPushButton, "LucidWriteButton").setEnabled(True)
         self.parent().statusBar().showMessage("Finished Reading DATA")
         # windows fails without disconnecting first
-        self.myLucid.disconnect():
+        self.myLucid.disconnect()
 
         
     def pro_or_consumer_clicked(self):
@@ -345,7 +345,7 @@ class xglucidWidget(QWidget):
         """
         self.disable_all_except_comm()
         # windows fails without disconnecting first
-        self.myLucid.disconnect():
+        self.myLucid.disconnect()
 
         if self.myLucid.connect():
             self.parent().statusBar().showMessage(
@@ -420,7 +420,7 @@ class xglucidWidget(QWidget):
         self.myLucid.write_gainlist_to_lucid()
         self.parent().statusBar().showMessage("Finished Writing DATA")
         # windows fails without disconnecting first
-        self.myLucid.disconnect():
+        self.myLucid.disconnect()
 
         self.set_ui_from_lucid()
 
