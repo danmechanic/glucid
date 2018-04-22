@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="newPrefix">
+    <file>lucid8824_icon.bmp</file>
     <file>glucidLayout2-smallsig.png</file>
   </qresource>
 </RCC>

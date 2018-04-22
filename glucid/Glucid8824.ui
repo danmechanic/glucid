@@ -35,15 +35,15 @@
    <string>xglucid</string>
   </property>
   <property name="windowIcon">
-   <iconset>
-    <normaloff>../docs/lucid8824.png</normaloff>
-    <normalon>../docs/lucid8824.png</normalon>
-    <disabledoff>../docs/lucid8824.png</disabledoff>
-    <disabledon>../docs/lucid8824.png</disabledon>
-    <activeoff>../docs/lucid8824.png</activeoff>
-    <activeon>../docs/lucid8824.png</activeon>
-    <selectedoff>../docs/lucid8824.png</selectedoff>
-    <selectedon>../docs/lucid8824.png</selectedon>../docs/lucid8824.png</iconset>
+   <iconset resource="Glucid8824.qrc">
+    <normaloff>:/newPrefix/lucid8824_icon.bmp</normaloff>
+    <normalon>:/newPrefix/lucid8824_icon.bmp</normalon>
+    <disabledoff>:/newPrefix/lucid8824_icon.bmp</disabledoff>
+    <disabledon>:/newPrefix/lucid8824_icon.bmp</disabledon>
+    <activeoff>:/newPrefix/lucid8824_icon.bmp</activeoff>
+    <activeon>:/newPrefix/lucid8824_icon.bmp</activeon>
+    <selectedoff>:/newPrefix/lucid8824_icon.bmp</selectedoff>
+    <selectedon>:/newPrefix/lucid8824_icon.bmp</selectedon>:/newPrefix/lucid8824_icon.bmp</iconset>
   </property>
   <widget class="xglucidWidget" name="centralwidget">
    <widget class="QLabel" name="label">
