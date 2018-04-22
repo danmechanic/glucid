@@ -342,6 +342,9 @@
     <property name="orientation">
      <enum>Qt::Vertical</enum>
     </property>
+    <property name="invertedAppearance">
+     <bool>false</bool>
+    </property>
    </widget>
    <widget class="QSlider" name="SliderOUT_8">
     <property name="enabled">
@@ -1605,22 +1608,22 @@ p, li { white-space: pre-wrap; }
     </item>
     <item>
      <property name="text">
-      <string>.COM1</string>
+      <string>COM1</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>.COM2</string>
+      <string>COM2</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>.COM3</string>
+      <string>COM3</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>'\.\COM4'</string>
+      <string>COM4</string>
      </property>
     </item>
    </widget>
