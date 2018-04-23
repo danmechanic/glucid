@@ -5,7 +5,7 @@
 .. image::  ./xglucid.png
 
 .. note::
-   xglucid requires PyQt5 as well as Python 3
+   xglucid requires Python 3, PyQt5 and PySerial
    
 .. note::
 
@@ -13,7 +13,15 @@
    and write to whichever serial device you are using; consult your
    operating system documentation.
 
+.. note::
 
+   xglucid assumes you are using /dev/ttyUSB0 a linux computer
+   and a usb serial interface.   OSX users a recommended to try
+   **/dev/tty.usbserial** for a usb to serial interface.  Windows
+   users a recommended to try **COM1**.
+
+
+   
 First:
 
 * Power Off your Lucid 8824
@@ -21,6 +29,14 @@ First:
 * Connect a 9 pin Serial connector from the Lucid 8824 to your computer
 * Power On your Lucid 8824
 
+Launch **xglucid**
+==================
+
+
+.. ::code-block bash
+
+   xglucid
+   
 Know what Serial Port you are Using
 ===================================
 

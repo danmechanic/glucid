@@ -5,13 +5,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>glucid Command Line Usage &#8212; glucid 0.1.4a documentation</title>
+    <title>glucid Command Line Usage &#8212; glucid 0.1.5a documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.1.4a',
+        VERSION:     '0.1.5a',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -51,6 +51,10 @@
 <div class="section" id="know-what-serial-port-you-are-using">
 <h2>Know what Serial Port you are Using<a class="headerlink" href="#know-what-serial-port-you-are-using" title="Permalink to this headline">¶</a></h2>
 <p>By default, <strong>glucid</strong> assumes you are using <strong>/dev/ttyUSB0</strong>   Use the <strong>-d</strong> option if you are using a different Serial port.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">OSX users may try <strong>/dev/tty.usbserial</strong> for a usb to serial convert; you may need to install an extra driver.  Windows users may try <strong>COM1</strong></p>
+</div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">The user who is running glucid must be able to read

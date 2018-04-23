@@ -46,6 +46,7 @@ setup(name='glucid',
           'Source': 'https://github.com/danmechanic/glucid/',
       },
       install_requires=[
-          'PyQt5>=5.9.1',
+          'PyQt5>=5.9',
+	  'PySerial',
       ]
       )

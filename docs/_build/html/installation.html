@@ -5,13 +5,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Installation &#8212; glucid 0.1.4a documentation</title>
+    <title>Installation &#8212; glucid 0.1.5a documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.1.4a',
+        VERSION:     '0.1.5a',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -50,7 +50,7 @@
 </ul>
 <div class="figure" id="id1">
 <a class="reference internal image-reference" href="_images/FTDI_USB_SERIAL.jpg"><img alt="Usb - Serial 9-Pin Converter" src="_images/FTDI_USB_SERIAL.jpg" style="width: 124.75px; height: 101.75px;" /></a>
-<p class="caption"><span class="caption-text">By default, <strong>glucid</strong> assumes you are using a USB to 9-pin serial adapter on linux and defaults to <strong>/dev/ttyUSB0</strong> , to overide this default, use the <strong>-d</strong> option.</span></p>
+<p class="caption"><span class="caption-text">By default, <strong>glucid</strong> assumes you are using a USB to 9-pin serial adapter on linux and defaults to <strong>/dev/ttyUSB0</strong> , to overide this default, use the <strong>-d</strong> option.  Windows users may try <strong>COM1</strong> while OSX users may try <strong>/dev/tty.usbserial</strong></span></p>
 </div>
 </div>
 <div class="section" id="installing-glucid-via-pip">
@@ -62,7 +62,7 @@
 </div>
 <div class="section" id="installing-the-latest-version-of-glucid-via-git">
 <h2>Installing the latest version of glucid via git<a class="headerlink" href="#installing-the-latest-version-of-glucid-via-git" title="Permalink to this headline">¶</a></h2>
-<p>You can just clone the latest stable version of glucid via:</p>
+<p>You can clone the latest version of glucid via:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>git clone https://github.com/danmechanic/glucid.git
 </pre></div>
 </div>
@@ -77,8 +77,12 @@ pip install -e .
 <div class="highlight-bash"><div class="highlight"><pre><span></span>glucid --help
 </pre></div>
 </div>
+<p>You can launch the GUI interface with:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>xglucid
+</pre></div>
+</div>
 <p>In your Python distribution you may try to import the <strong>glucid8824</strong> module:</p>
-<div class="highlight-Python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">glucid</span> <span class="kn">import</span> <span class="n">glucid8824</span>
+<div class="highlight-Python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">glucid</span> <span class="kn">import</span> <span class="n">glucid8824</span> <span class="k">as</span> <span class="n">glucid</span>
 </pre></div>
 </div>
 </div>

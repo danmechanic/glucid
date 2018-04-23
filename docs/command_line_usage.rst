@@ -17,6 +17,9 @@ By default, **glucid** assumes you are using **/dev/ttyUSB0**   Use the **-d** o
 
 .. note::
 
+   OSX users may try **/dev/tty.usbserial** for a usb to serial convert; you may need to install an extra driver.  Windows users may try **COM1**
+.. note::
+
    The user who is running glucid must be able to read
    and write to whichever serial device you are using; consult your
    operating system documentation.
@@ -60,6 +63,7 @@ To use a device other than /dev/ttyUSB0 use the **-d** switch to **glucid**: ::
 
   $ glucid -d /dev/ttyS0
 
+  
 
 Get All Current Values
 ======================
