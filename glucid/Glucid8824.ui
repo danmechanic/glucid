@@ -92,6 +92,9 @@
       <height>138</height>
      </rect>
     </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
     <property name="minimum">
      <number>-95</number>
     </property>
@@ -1495,6 +1498,16 @@ p, li { white-space: pre-wrap; }
     <item>
      <property name="text">
       <string>/dev/ttyUSB0</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>/dev/tty.usbserial</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>COM1</string>
      </property>
     </item>
     <item>
