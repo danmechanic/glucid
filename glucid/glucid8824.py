@@ -675,6 +675,7 @@ class Glucid8824:
                 return False
         return myline
 
+# BEGIN FUNCTIONS FOR COMMAND LINE INTERFACE
 
 def banner():
     progname = str(sys.argv[0].split('/')[-1])
