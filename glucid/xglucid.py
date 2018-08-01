@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """
 xglucid is a part of the glucid package and provides 
 a qt Graphical interface to configure a Lucid 8824 
@@ -26,6 +27,8 @@ from PyQt5.QtCore import QCoreApplication, Qt
 from PyQt5.QtGui import QIcon
 import sys
 import glucid.Glucid8824_UI
+import glucid.glucid8824 as glucid8824
+import configparser
 
 
 class xglucid(QtWidgets.QMainWindow, glucid.Glucid8824_UI.Ui_MainWindow):
@@ -33,8 +36,12 @@ class xglucid(QtWidgets.QMainWindow, glucid.Glucid8824_UI.Ui_MainWindow):
     def __init__(self):
         super(self.__class__, self).__init__()
         self.setupUi(self)
-
-
+        # load the default device from conf file
+        currentdevice = glucid8824.Glucid8824.get_device_from_cfg()
+        self.SerialPortCombo.setCurrentText(currentdevice)
+        self.connection_label.setText(
+            glucid8824.Glucid8824.rs232_or_midi(currentdevice))
+            
 def main():
     """call QApplication"""
     app = QApplication(sys.argv)

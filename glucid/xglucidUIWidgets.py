@@ -26,7 +26,6 @@ import glucid.glucid8824 as glucid
 from PyQt5.QtGui import QPainter, QColor, QFont
 from PyQt5.QtWidgets import (QWidget, QLabel, QSlider, QComboBox,
                              QCheckBox, QPushButton)
-                             
 
 class xglucidWidget(QWidget):
     """xglucidWidget extends QWidget to provide custom signals
@@ -38,14 +37,19 @@ class xglucidWidget(QWidget):
 
         self.InputSliders = []
         self.OutputSliders = []
-        self.myLucid = glucid.Glucid8824()
-        self.initUI()
 
+        self.myLucid = glucid.Glucid8824()
+        self.myLucid.set_device_from_configfile()
+        self.initUI()
+        
     def initUI(self):
         """set geometry and title, call show()"""
         self.setGeometry(0, 0, 897, 471)
         self.setWindowTitle('xglucid')
         self.show()
+        # update device selector
+        
+
 
     def need_write_status(self):
         """Deprecated: `Needs write` written to status bar"""
@@ -100,15 +104,24 @@ class xglucidWidget(QWidget):
                     sl.setValue(value)
 
     def on_serial_port_changed(self, value):
-        """Declare a new Glucid8824 obect with the 
+        """Declare a new Glucid8824 object with the 
         new serial interface
         """
         # TODO: implement set_iface in glucid?
         self.myLucid = glucid.Glucid8824(siface=value)
+        self.parent().connection_label.setText(
+            glucid.Glucid8824.rs232_or_midi(value))
+        self.disable_all_except_comm()
 
+    def on_device_id_changed(self, value):
+        """Update device_id """
+        self.myLucid.LucidID = value
+        self.disable_all_except_comm()
+        
     def disable_all_except_comm(self):
         DontDisable = [
             "SerialPortCombo",
+            "LucidIdCombo",
             "LucidReadButton",
             "labelIN_1",
             "labelIN_2",
@@ -173,9 +186,17 @@ class xglucidWidget(QWidget):
 
         self.parent().centralwidget.findChild(
             QComboBox, "LucidSyncCombo"
-        ).setCurrentIndex(self.myLucid.get_sync_source(False)[0])
+        ).setCurrentIndex(self.myLucid.get_sync_source(False))
         self.parent().centralwidget.findChild(
             QComboBox, "LucidSyncCombo"
+        ).setEnabled(True)
+
+        # set device_id
+        self.parent().centralwidget.findChild(
+            QComboBox, "LucidIdCombo"
+        ).setCurrentIndex(int(self.myLucid.get_instanceid()))
+        self.parent().centralwidget.findChild(
+            QComboBox, "LucidIdCombo"
         ).setEnabled(True)
 
         # set Metering
@@ -197,7 +218,7 @@ class xglucidWidget(QWidget):
 
         self.parent().centralwidget.findChild(
             QComboBox, "LucidOpticalCombo"
-        ).setCurrentIndex(self.myLucid.get_opt_source(False)[0])
+        ).setCurrentIndex(self.myLucid.get_opt_source(False))
         self.parent().centralwidget.findChild(
             QComboBox, "LucidOpticalCombo"
         ).setEnabled(True)
@@ -210,7 +231,7 @@ class xglucidWidget(QWidget):
 
         self.parent().centralwidget.findChild(
             QComboBox, "LucidOpticalCombo"
-        ).setCurrentIndex(self.myLucid.get_opt_source(False)[0])
+        ).setCurrentIndex(self.myLucid.get_opt_source(False))
 
         # Leave disabled because you cannot set this BUG
         # self.parent().centralwidget.findChild(QComboBox,
@@ -222,7 +243,7 @@ class xglucidWidget(QWidget):
             self.myLucid.get_iface())
         self.parent().centralwidget.findChild(
             QComboBox, "LucidAnalogSrcCombo"
-        ).setCurrentIndex(self.myLucid.get_analog_source(False)[0])
+        ).setCurrentIndex(self.myLucid.get_analog_source(False))
         self.parent().centralwidget.findChild(
             QComboBox, "LucidAnalogSrcCombo"
         ).setEnabled(True)
@@ -248,10 +269,9 @@ class xglucidWidget(QWidget):
             QComboBox, "LucidIdCombo"
         ).setCurrentIndex(int(self.myLucid.get_instanceid()))
 
-        # Leave disabled, no way to set
-        # self.parent().centralwidget.findChild(
-        # QComboBox, "LucidIdCombo").setEnabled(True)
-        #
+        self.parent().centralwidget.findChild(
+            QComboBox, "LucidIdCombo").setEnabled(True)
+
         # set input and output sliders
         self.parent().statusBar().showMessage(
             "Connected using %s and reading Channel Levels..." %
@@ -349,11 +369,19 @@ class xglucidWidget(QWidget):
 
         if self.myLucid.connect():
             self.parent().statusBar().showMessage(
-                "Connected using %s and writing DATA..." %
-                self.myLucid.get_iface())
+                "Connected using %s id: %s and writing DATA..." %
+                (self.myLucid.get_iface(),
+                 self.myLucid.get_instanceid()) )
+            self.myLucid.glucidconf['DEFAULT']['Device']=self.myLucid.get_iface()
+            self.myLucid.glucidconf['DEFAULT']['DEVICE_ID']=self.myLucid.get_instanceid()
         else:
+            self.parent().statusBar().showMessage(
+                "ERROR: Unable to connect to %s id %s to write DATA" %
+                (self.myLucid.get_iface(),
+                 self.myLucid.get_instancid()))            
             return -1
 
+        
         # Set Clock Sync
         self.parent().statusBar().showMessage(
             "Connected using %s and writing Clock Sync..." %
@@ -362,14 +390,33 @@ class xglucidWidget(QWidget):
             self.parent().centralwidget.findChild(
                 QComboBox, "LucidSyncCombo").currentIndex())
 
-        # set Metering
+        # # set Metering
+        # self.parent().statusBar().showMessage(
+        #     "Connected using %s and writing Front Meter..." %
+        #     self.myLucid.get_iface())
+        # self.myLucid.set_meter(
+        #     self.parent().centralwidget.findChild(
+        #         QComboBox, "LucidMeterCombo").currentIndex())
+
+        # # set digital in 1,2
+        # self.parent().statusBar().showMessage(
+        #     "Connected using %s and writing Digital Ch 1,2 source..." %
+        #     self.myLucid.get_iface())
+
+        # self.myLucid.set_dig1(
+        #     self.parent().centralwidget.findChild(
+        #         QComboBox, "LucidSpdifCombo").currentIndex())
+
+        ### Updated to use set_meter_and_dig1
         self.parent().statusBar().showMessage(
-            "Connected using %s and writing Front Meter..." %
+            "Connected using %s and writing mode..." %
             self.myLucid.get_iface())
-        self.myLucid.set_meter(
+        self.myLucid.set_meter_and_dig1(
+            (4 * self.parent().centralwidget.findChild(
+                QComboBox, "LucidSpdifCombo").currentIndex()) +
             self.parent().centralwidget.findChild(
                 QComboBox, "LucidMeterCombo").currentIndex())
-
+        
         # set optical out
         self.parent().statusBar().showMessage(
             "Connected using %s and writing ADAT OUT source..." %
@@ -390,14 +437,6 @@ class xglucidWidget(QWidget):
             self.parent().centralwidget.findChild(
                 QComboBox, "LucidAnalogSrcCombo").currentIndex())
 
-        # set digital in 1,2
-        self.parent().statusBar().showMessage(
-            "Connected using %s and writing Digital Ch 1,2 source..." %
-            self.myLucid.get_iface())
-
-        self.myLucid.set_dig1(
-            self.parent().centralwidget.findChild(
-                QComboBox, "LucidSpdifCombo").currentIndex())
 
         # set deviceId
         # no
@@ -418,11 +457,14 @@ class xglucidWidget(QWidget):
             )
 
         self.myLucid.write_gainlist_to_lucid()
+        
         self.parent().statusBar().showMessage("Finished Writing DATA")
         # windows fails without disconnecting first
         self.myLucid.disconnect()
-
+        self.myLucid.write_configfile()
+        
         self.set_ui_from_lucid()
+        return 1
 
     def write_button_clicked(self):
         """The write button was clicked, if successful set all
@@ -434,7 +476,8 @@ class xglucidWidget(QWidget):
         if self.myLucid.connect():
             self.parent().statusBar().showMessage("Connected using %s" %
                                                   self.myLucid.get_iface())
-            self.write_ui_to_lucid()
+            if self.write_ui_to_lucid() < 0:
+                self.parent().statusBar().showMessage("ERROR: Failed to write")
         else:
             self.parent().statusBar().showMessage("FAILED to connect using %s" %
                                                   self.myLucid.get_iface())
