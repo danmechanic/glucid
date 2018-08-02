@@ -1323,7 +1323,7 @@ def main():
     logging.info("Wrote config to  %s" % os.path.join(os.path.expanduser('~'), CONFIGFILE))
 
 
-    lucid = Glucid8824(siface=serialif,LucidId=device_id)
+    lucid = Glucid8824(siface=serialif,LucidID=device_id)
     
     if not lucid.connect():
         sys.exit("Failed to open connection using %s \n" %
