@@ -138,6 +138,8 @@ class Glucid8824:
     MINUS10IN = '64'
     MINUS10OUT = '55'
 
+    ISMIDI = False        # used for forcing midi
+    
     # Keep a dictionary of valid
     # devices to talk over, and the format
     # they use...
@@ -202,6 +204,9 @@ class Glucid8824:
             '/dev/midi1',
             '/dev/snd/midiC1D0'
         ]
+
+
+
     }
 
     def __init__(self,
@@ -234,6 +239,9 @@ class Glucid8824:
 
         # InstanceID or LucidID 0-7
         self.INSTANCEID = LucidID
+
+        # used to force midi
+        self.ISMIDI = False
 
         # we either haven't connected
         # or had a failure
@@ -608,6 +616,8 @@ class Glucid8824:
     def is_midi(self):
         """Given a device file return if it's rs232 or midi"""
         if self.siface in Glucid8824.DEVICES['midi']:
+            return True
+        elif self.ISMIDI is True:
             return True
         else:
             return False
@@ -1238,7 +1248,7 @@ def main():
 
     try:
         opts, args = getopt.getopt(sys.argv[1:],
-                                   "hvgd:D:i:",
+                                   "hvmgd:D:i:",
                                    [
                                        "help",
                                        "verbose",
@@ -1272,7 +1282,7 @@ def main():
 
     verbose = False
     # if not default serial interface
-    serialif = False
+    serialif = '/dev/ttyUSB0'
     # first parse for verbose option
     for o, a in opts:
         if o in ("-v", "--verbose"):
@@ -1322,9 +1332,13 @@ def main():
     glucidconf.write(newconfig)
     logging.info("Wrote config to  %s" % os.path.join(os.path.expanduser('~'), CONFIGFILE))
 
-
     lucid = Glucid8824(siface=serialif,LucidID=device_id)
-    
+
+    for o, a in opts:
+        if o in ("-m"):
+            logging.warning("forcing midi device")
+            lucid.ISMIDI = True
+
     if not lucid.connect():
         sys.exit("Failed to open connection using %s \n" %
                  lucid.get_iface())
