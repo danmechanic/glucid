@@ -1525,6 +1525,11 @@ p, li { white-space: pre-wrap; }
     </item>
     <item>
      <property name="text">
+      <string>MIDIOUT2</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
       <string>/dev/ttyUSB1</string>
      </property>
     </item>
