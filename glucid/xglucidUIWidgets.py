@@ -280,10 +280,9 @@ class xglucidWidget(QWidget):
         gainlist = self.myLucid.get_gain()
         self.make_sliders()
 
-        self.parent().centralwidget.findChild(
-            QCheckBox, "LinkInCh").setCheckState(False)
-        self.parent().centralwidget.findChild(
-            QCheckBox, "LinkOutCh").setCheckState(False)
+        
+
+        
         for i in range(0, 8):
             self.parent().centralwidget.findChild(
                 QSlider, "SliderIN_%s" % str(i + 1)).setEnabled(True)
@@ -309,6 +308,14 @@ class xglucidWidget(QWidget):
             QCheckBox, "LinkInCh").setEnabled(True)
         self.parent().centralwidget.findChild(
             QCheckBox, "LinkOutCh").setEnabled(True)
+        self.parent().centralwidget.findChild(
+            QCheckBox, "LinkInCh").setCheckState(self.myLucid.is_in_linked())
+        self.parent().centralwidget.findChild(
+            QCheckBox, "LinkOutCh").setCheckState(self.myLucid.is_out_linked())
+
+
+
+
         self.parent().centralwidget.findChild(
             QPushButton, "ProINButton").setEnabled(True)
         self.parent().centralwidget.findChild(
@@ -380,7 +387,7 @@ class xglucidWidget(QWidget):
                 (self.myLucid.get_iface(),
                  self.myLucid.get_instancid()))            
             return -1
-
+        
         
         # Set Clock Sync
         self.parent().statusBar().showMessage(
@@ -438,9 +445,18 @@ class xglucidWidget(QWidget):
                 QComboBox, "LucidAnalogSrcCombo").currentIndex())
 
 
-        # set deviceId
-        # no
+        # save state of sliders, if they are linked
+        if self.parent().centralwidget.findChild(QCheckBox, "LinkInCh").isChecked():
+            self.myLucid.glucidconf['DEFAULT']['LINKINCH']='1'
+        else:
+            self.myLucid.glucidconf['DEFAULT']['LINKINCH']='0'
 
+        if self.parent().centralwidget.findChild(QCheckBox, "LinkOutCh").isChecked():
+            self.myLucid.glucidconf['DEFAULT']['LINKOUTCH']='1'
+        else:
+            self.myLucid.glucidconf['DEFAULT']['LINKOUTCH']='0'
+            
+            
         # set input and output sliders
         self.parent().statusBar().showMessage(
             "Connected using %s and writing Channel Levels..." %

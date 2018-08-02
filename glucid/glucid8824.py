@@ -216,8 +216,7 @@ class Glucid8824:
 
         # our 'config'
         self.glucidconf = configparser.ConfigParser()
-        self.glucidconf.read(CONFIGFILE)
-        
+        self.glucidconf.read(os.path.join(os.path.expanduser('~'), CONFIGFILE))
         # our serial connection
         # and default timeout
         self.conn = False
@@ -267,7 +266,21 @@ class Glucid8824:
         if 'Device' in self.glucidconf['DEFAULT']:
             self.siface = self.glucidconf['DEFAULT']['Device']
             logging.info("Read default %s from configfile" % self.siface)
-        
+
+    def is_in_linked(self):
+        if 'LINKINCH' in self.glucidconf['DEFAULT']:
+            retval = int(self.glucidconf['DEFAULT']['LINKINCH'])
+        else:
+            retval = 0
+        return retval
+
+    def is_out_linked(self):
+        if 'LINKOUTCH' in self.glucidconf['DEFAULT']:
+            retval = int(self.glucidconf['DEFAULT']['LINKOUTCH'])
+        else:
+            retval = 0
+        return retval
+
     def get_aes_source(self, RETSTRING=True):
         """Send the GetAesSrc command and
         Get the currently set source of AES
@@ -307,6 +320,7 @@ class Glucid8824:
         self.glucidconf['DEFAULT']['AES_SRC'] = str(srcval)
         self.sendCommand('SetAesSrc', [self.int_to_hex(srcval)])
 
+        
     def get_instanceid(self):
         """return the currently set instanceid without
            retrieving it first, instanceid defaults to 00
