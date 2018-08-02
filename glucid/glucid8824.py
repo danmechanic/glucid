@@ -895,7 +895,7 @@ class Glucid8824:
         logging.info("LucidConnection running connect")
 
         try:
-            if self.siface in self.DEVICES['midi']:
+            if self.is_midi()
                 logging.info("LucidConnection opening midi device %s"%self.siface)
                 logging.info(self.DEVICES['midi'])
                 self.conn = open(self.siface, 'wb')
