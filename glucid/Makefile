@@ -1,5 +1,8 @@
 .PHONY: clean all UI
 
+# you probably do not want to use this makefile
+# nothing to see here, just to rebuild UI, and test 
+
 all: UI
 
 UI:
@@ -9,5 +12,8 @@ UI:
 clean:
 	rm ./Glucid8824_rc.py Glucid8824_UI.py
 
+BUILD:
+	(cd /home/mechanic/github/glucid; python3 setup.py sdist bdist_wheel)
 
-
+INSTALL:
+	pip install --upgrade /home/mechanic/github/glucid/dist/glucid-0.1.6-py3-none-any.whl
