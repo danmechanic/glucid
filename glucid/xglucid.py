@@ -51,21 +51,21 @@ class xglucid(QtWidgets.QMainWindow, glucid.Glucid8824_UI.Ui_MainWindow):
         portlist = []
         allports = []
 
-        print("BEFORE: all devices:")
+        #print("BEFORE: all devices:")
         for i in range(self.SerialPortCombo.count()):
             allports.append(self.SerialPortCombo.itemText(i))
-        print(allports)
+        #print(allports)
                 
         for i in lsports.comports():
             portlist.append(i.device)
         # then remove the SerialPortCombo items that aren't there
-        print("On this system:")
-        print(portlist)
-        print("now stripping:")
+        #print("On this system:")
+        #print(portlist)
+        #print("now stripping:")
         for i in allports:
-            print("examining: "+i)
+            #print("examining: "+i)
             if i not in portlist:
-                print("removing: "+i)
+                #print("removing: "+i)
                 self.SerialPortCombo.removeItem(
                     self.SerialPortCombo.findText(i))
 

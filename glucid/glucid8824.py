@@ -306,6 +306,11 @@ class Glucid8824:
                 retval = DEFAULT_AES_SRC
         else:
             retval = self.sendCommand('GetAesSrc')
+
+        if not retval:
+            raise ValueError("Bad Data Received")
+            retval = 0
+        else:
             retval = retval[0]
 
         if RETSTRING:
@@ -419,7 +424,12 @@ class Glucid8824:
                 retval = DEFAULT_SYNC
         else:
             retval = self.sendCommand('GetSync')
-            retval = retval[0]
+            if isinstance(retval, list):
+                retval = retval[0]
+            else:
+                raise ValueError("Bad Data Recieved")
+                retval = 0
+
             
         if RETSTRING:
             return self.SYNC[retval]

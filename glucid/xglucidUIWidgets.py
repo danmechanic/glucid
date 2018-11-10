@@ -155,15 +155,21 @@ class xglucidWidget(QWidget):
         widgets to proper values, otherwise reflect the failure
         in the status bar
         """
-        if self.myLucid.connect():
-            self.parent().statusBar().showMessage("Connected using %s" %
-                                                  self.myLucid.get_iface())
-            self.set_ui_from_lucid()
-        else:
-            self.parent().statusBar().showMessage(
-                "FAILED to connect using %s" %
-                self.myLucid.get_iface())
-
+        try:
+            if self.myLucid.connect():
+                self.parent().statusBar().showMessage("Connected using %s" %
+                                                      self.myLucid.get_iface())
+                self.set_ui_from_lucid()
+            else:
+                self.parent().statusBar().showMessage(
+                    "FAILED to connect using %s" %
+                    self.myLucid.get_iface())
+        except:
+            self.parent().statusBar().showMessage("Connection FAILED: %s" %
+                                                      self.myLucid.get_iface())
+            self.disable_all_except_comm()
+ 
+            
     def set_ui_from_lucid(self):
         """Given we are connected to a lucid, set all UI values 
         by reading each individually from the lucid, setting the
