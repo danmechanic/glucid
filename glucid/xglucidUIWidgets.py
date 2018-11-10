@@ -23,6 +23,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 import glucid.xglucidUIWidgets
 import glucid.glucid8824 as glucid
+from PyQt5.QtCore import QCoreApplication
 from PyQt5.QtGui import QPainter, QColor, QFont
 from PyQt5.QtWidgets import (QWidget, QLabel, QSlider, QComboBox,
                              QCheckBox, QPushButton)
@@ -179,10 +180,12 @@ class xglucidWidget(QWidget):
         else:
             return -1
 
+        QCoreApplication.processEvents()
         # Set Clock Sync
         self.parent().statusBar().showMessage(
             "Connected using %s and reading Clock Sync..." %
             self.myLucid.get_iface())
+
 
         self.parent().centralwidget.findChild(
             QComboBox, "LucidSyncCombo"
@@ -210,12 +213,12 @@ class xglucidWidget(QWidget):
         self.parent().centralwidget.findChild(
             QComboBox, "LucidMeterCombo"
         ).setEnabled(True)
-
+        QCoreApplication.processEvents()
         # set optical out
         self.parent().statusBar().showMessage(
             "Connected using %s and reading ADAT OUT source..." %
             self.myLucid.get_iface())
-
+        QCoreApplication.processEvents()
         self.parent().centralwidget.findChild(
             QComboBox, "LucidOpticalCombo"
         ).setCurrentIndex(self.myLucid.get_opt_source(False))
@@ -232,7 +235,6 @@ class xglucidWidget(QWidget):
         self.parent().centralwidget.findChild(
             QComboBox, "LucidOpticalCombo"
         ).setCurrentIndex(self.myLucid.get_opt_source(False))
-
         # Leave disabled because you cannot set this BUG
         # self.parent().centralwidget.findChild(QComboBox,
         #                            "LucidOpticalCombo").setEnabled(True)
@@ -393,6 +395,8 @@ class xglucidWidget(QWidget):
         self.myLucid.set_sync_source(
             self.parent().centralwidget.findChild(
                 QComboBox, "LucidSyncCombo").currentIndex())
+
+
 
         # # set Metering
         # self.parent().statusBar().showMessage(
