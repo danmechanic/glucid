@@ -1510,6 +1510,11 @@ p, li { white-space: pre-wrap; }
     </item>
     <item>
      <property name="text">
+      <string>/dev/cu.usbserial</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
       <string>COM1</string>
      </property>
     </item>
