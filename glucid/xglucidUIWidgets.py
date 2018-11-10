@@ -277,32 +277,6 @@ class xglucidWidget(QWidget):
             "Connected using %s and reading Channel Levels..." %
             self.myLucid.get_iface())
 
-        gainlist = self.myLucid.get_gain()
-        self.make_sliders()
-
-        
-
-        
-        for i in range(0, 8):
-            self.parent().centralwidget.findChild(
-                QSlider, "SliderIN_%s" % str(i + 1)).setEnabled(True)
-            self.parent().centralwidget.findChild(
-                QSlider, "SliderOUT_%s" % str(i + 1)).setEnabled(True)
-            instr = "SliderIN_"+str(i+1)
-            outstr = "SliderOUT_"+str(i+1)
-
-            # hack to get all labels to redraw no matter previous val
-            # wont work if previous value was -95... ok... that's silent
-            self.parent().centralwidget.findChild(QSlider, instr).setValue(
-                -95)
-            self.parent().centralwidget.findChild(QSlider, outstr).setValue(
-                -95)
-            # set to gainlist values
-            self.parent().centralwidget.findChild(QSlider, instr).setValue(
-                int(gainlist[i]))
-            self.parent().centralwidget.findChild(QSlider, outstr).setValue(
-                int(gainlist[i+8]))
-
         # turn on other buttons...
         self.parent().centralwidget.findChild(
             QCheckBox, "LinkInCh").setEnabled(True)
@@ -313,6 +287,29 @@ class xglucidWidget(QWidget):
         self.parent().centralwidget.findChild(
             QCheckBox, "LinkOutCh").setCheckState(self.myLucid.is_out_linked())
 
+        self.myLucid.get_gain()
+        self.make_sliders()
+        
+        for i in range(0, 8):
+            instr = "SliderIN_"+str(i+1)
+            outstr = "SliderOUT_"+str(i+1)
+
+            self.parent().centralwidget.findChild(
+                QSlider, instr).setEnabled(True)
+            self.parent().centralwidget.findChild(
+                QSlider, outstr).setEnabled(True)
+
+            # hack to get all labels to redraw no matter previous val
+            # wont work if previous value was -95... ok... that's silent
+            self.parent().centralwidget.findChild(QSlider, instr).setValue(
+                -95)
+            self.parent().centralwidget.findChild(QSlider, outstr).setValue(
+                -95)
+            # set to gainlist values
+            self.parent().centralwidget.findChild(QSlider, instr).setValue(
+                int(self.myLucid.gainlist[i]-96))
+            self.parent().centralwidget.findChild(QSlider, outstr).setValue(
+                int(self.myLucid.gainlist[i+8]-96))
 
 
 
