@@ -26,10 +26,13 @@ from PyQt5.QtWidgets import (QApplication, QMainWindow, QWidget, QPushButton,
 from PyQt5.QtCore import QCoreApplication, Qt
 from PyQt5.QtGui import QIcon
 import sys
+import os
 import glucid.Glucid8824_UI
 import glucid.glucid8824 as glucid8824
 import configparser
+import serial.tools.list_ports as lsports
 
+CLEAN_NONEX_DEVICES=True
 
 class xglucid(QtWidgets.QMainWindow, glucid.Glucid8824_UI.Ui_MainWindow):
     """xglucid is just a class to call the Qt MainWindow"""
@@ -41,7 +44,33 @@ class xglucid(QtWidgets.QMainWindow, glucid.Glucid8824_UI.Ui_MainWindow):
         self.SerialPortCombo.setCurrentText(currentdevice)
         self.connection_label.setText(
             glucid8824.Glucid8824.rs232_or_midi(currentdevice))
-            
+
+        # cleanup non-valid serial ports
+        # from interface...
+        # first build a list of the ports
+        portlist = []
+        allports = []
+
+        print("BEFORE: all devices:")
+        for i in range(self.SerialPortCombo.count()):
+            allports.append(self.SerialPortCombo.itemText(i))
+        print(allports)
+                
+        for i in lsports.comports():
+            portlist.append(i.device)
+        # then remove the SerialPortCombo items that aren't there
+        print("On this system:")
+        print(portlist)
+        print("now stripping:")
+        for i in allports:
+            print("examining: "+i)
+            if i not in portlist:
+                print("removing: "+i)
+                self.SerialPortCombo.removeItem(
+                    self.SerialPortCombo.findText(i))
+
+                
+        
 def main():
     """call QApplication"""
     app = QApplication(sys.argv)
