@@ -186,7 +186,7 @@ class xglucidWidget(QWidget):
             "Connected using %s and reading Clock Sync..." %
             self.myLucid.get_iface())
 
-
+        QCoreApplication.processEvents()
         self.parent().centralwidget.findChild(
             QComboBox, "LucidSyncCombo"
         ).setCurrentIndex(self.myLucid.get_sync_source(False))
@@ -206,7 +206,7 @@ class xglucidWidget(QWidget):
         self.parent().statusBar().showMessage(
             "Connected using %s and reading Front Meter..." %
             self.myLucid.get_iface())
-
+        QCoreApplication.processEvents()
         self.parent().centralwidget.findChild(
             QComboBox, "LucidMeterCombo"
         ).setCurrentIndex(self.myLucid.get_meter(False))
@@ -231,7 +231,7 @@ class xglucidWidget(QWidget):
         self.parent().statusBar().showMessage(
             "%s : reading AES OUT source... WARNING: READ-ONLY Value" %
             self.myLucid.get_iface())
-
+        QCoreApplication.processEvents()
         self.parent().centralwidget.findChild(
             QComboBox, "LucidOpticalCombo"
         ).setCurrentIndex(self.myLucid.get_opt_source(False))
@@ -243,6 +243,7 @@ class xglucidWidget(QWidget):
         self.parent().statusBar().showMessage(
             "Connected using %s and reading Analog OUT source..." %
             self.myLucid.get_iface())
+        QCoreApplication.processEvents()
         self.parent().centralwidget.findChild(
             QComboBox, "LucidAnalogSrcCombo"
         ).setCurrentIndex(self.myLucid.get_analog_source(False))
@@ -254,7 +255,7 @@ class xglucidWidget(QWidget):
         self.parent().statusBar().showMessage(
             "Connected using %s and reading Digital Ch 1,2 source..." %
             self.myLucid.get_iface())
-
+        QCoreApplication.processEvents()
         self.parent().centralwidget.findChild(
             QComboBox, "LucidSpdifCombo"
         ).setCurrentIndex(self.myLucid.get_dig1(False))
@@ -266,7 +267,7 @@ class xglucidWidget(QWidget):
         self.parent().statusBar().showMessage(
             "Connected using %s and reading DEVICE ID..." %
             self.myLucid.get_iface())
-
+        QCoreApplication.processEvents()
         self.parent().centralwidget.findChild(
             QComboBox, "LucidIdCombo"
         ).setCurrentIndex(int(self.myLucid.get_instanceid()))
@@ -278,7 +279,8 @@ class xglucidWidget(QWidget):
         self.parent().statusBar().showMessage(
             "Connected using %s and reading Channel Levels..." %
             self.myLucid.get_iface())
-
+        QCoreApplication.processEvents()
+        
         # turn on other buttons...
         self.parent().centralwidget.findChild(
             QCheckBox, "LinkInCh").setEnabled(True)
@@ -326,6 +328,7 @@ class xglucidWidget(QWidget):
         self.parent().centralwidget.findChild(
             QPushButton, "LucidWriteButton").setEnabled(True)
         self.parent().statusBar().showMessage("Finished Reading DATA")
+        QCoreApplication.processEvents()
         # windows fails without disconnecting first
         self.myLucid.disconnect()
 
@@ -378,6 +381,7 @@ class xglucidWidget(QWidget):
                 "Connected using %s id: %s and writing DATA..." %
                 (self.myLucid.get_iface(),
                  self.myLucid.get_instanceid()) )
+            QCoreApplication.processEvents()
             self.myLucid.glucidconf['DEFAULT']['Device']=self.myLucid.get_iface()
             self.myLucid.glucidconf['DEFAULT']['DEVICE_ID']=self.myLucid.get_instanceid()
         else:
@@ -392,6 +396,7 @@ class xglucidWidget(QWidget):
         self.parent().statusBar().showMessage(
             "Connected using %s and writing Clock Sync..." %
             self.myLucid.get_iface())
+        QCoreApplication.processEvents()
         self.myLucid.set_sync_source(
             self.parent().centralwidget.findChild(
                 QComboBox, "LucidSyncCombo").currentIndex())
@@ -419,6 +424,7 @@ class xglucidWidget(QWidget):
         self.parent().statusBar().showMessage(
             "Connected using %s and writing mode..." %
             self.myLucid.get_iface())
+        QCoreApplication.processEvents()
         self.myLucid.set_meter_and_dig1(
             (4 * self.parent().centralwidget.findChild(
                 QComboBox, "LucidSpdifCombo").currentIndex()) +
@@ -429,6 +435,7 @@ class xglucidWidget(QWidget):
         self.parent().statusBar().showMessage(
             "Connected using %s and writing ADAT OUT source..." %
             self.myLucid.get_iface())
+        QCoreApplication.processEvents()
         self.myLucid.set_opt_src(
             self.parent().centralwidget.findChild(
                 QComboBox, "LucidOpticalCombo").currentIndex())
@@ -441,6 +448,7 @@ class xglucidWidget(QWidget):
         self.parent().statusBar().showMessage(
             "Connected using %s and writing Analog OUT source..." %
             self.myLucid.get_iface())
+        QCoreApplication.processEvents()
         self.myLucid.set_analog_src(
             self.parent().centralwidget.findChild(
                 QComboBox, "LucidAnalogSrcCombo").currentIndex())
@@ -462,7 +470,7 @@ class xglucidWidget(QWidget):
         self.parent().statusBar().showMessage(
             "Connected using %s and writing Channel Levels..." %
             self.myLucid.get_iface())
-
+        QCoreApplication.processEvents()
         for i in range(1, 9):
             self.myLucid.update_channel_in_gainlist(
                 self.parent().centralwidget.findChild(
@@ -476,6 +484,7 @@ class xglucidWidget(QWidget):
         self.myLucid.write_gainlist_to_lucid()
         
         self.parent().statusBar().showMessage("Finished Writing DATA")
+        QCoreApplication.processEvents()
         # windows fails without disconnecting first
         self.myLucid.disconnect()
         self.myLucid.write_configfile()
@@ -517,6 +526,7 @@ class xglucidLabel(QLabel):
             self.setText(retstring)
         else:
             self.setText(str(self.sender().value())+"dB")
+        QCoreApplication.processEvents()
 
 
 class xglucidInputSlider(QSlider):
