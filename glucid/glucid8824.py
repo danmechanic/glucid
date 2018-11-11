@@ -1357,7 +1357,7 @@ def main():
           (lucid.get_iface(), lucid.get_instanceid()))
 
     for o, a in opts:
-        if o in ("-h", "--help", "-v", "--verbose", "-d"):
+        if o in ("-h", "--help", "-v", "--verbose", "-d", "-m"):
             continue
         elif o in ("-g", "--get_all"):
             logging.info("get all")
