@@ -10,7 +10,7 @@ UI:
 	pyuic5 --import-from=glucid -o ./Glucid8824_UI.py ./Glucid8824.ui
 
 macbinary:
-	pyinstaller -y --clean --onefile --windowed --noconsole --icon=lucid8824_icon.bmp xglucid.py
+	pyinstaller -y --clean --onefile --windowed --noconsole --icon=glucid/lucid8824_icon.icns glucid/xglucid.py
 
 clean:
 	rm ./Glucid8824_rc.py Glucid8824_UI.py
