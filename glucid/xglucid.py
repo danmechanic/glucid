@@ -58,6 +58,11 @@ class xglucid(QtWidgets.QMainWindow, glucid.Glucid8824_UI.Ui_MainWindow):
                 
         for i in lsports.comports():
             portlist.append(i.device)
+
+        # pyserial doesn't recognize these
+        # and we need them...
+        portlist.append("/dev/tty.usbserial")
+
         # then remove the SerialPortCombo items that aren't there
         #print("On this system:")
         #print(portlist)
