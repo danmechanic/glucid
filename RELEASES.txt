@@ -1,3 +1,4 @@
+0.3.1 - Bugfixes, splashpage, building binaries
 0.3.0 - improved graphical interface and port selection
 0.2.0 - Support for midi hw version (linux only)
 0.1.6 - OSX and Windows appear to work, begin packaging xglucid 

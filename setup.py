@@ -7,7 +7,7 @@ with open('README.rst') as f:
     long_desc = f.read()
 
 setup(name='glucid',
-      version='0.1.6',
+      version='0.3.1',
       description='Configure the Lucid 8824 AD/DA Audio Interface via \
              a Serial Connection',
       url='http://github.com/danmechanic/glucid',
