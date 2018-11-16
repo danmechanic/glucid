@@ -22,11 +22,13 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QWidget, QPushButton,
                              QToolTip, QMessageBox, QGridLayout, QVBoxLayout,
-                             QCheckBox, QHBoxLayout, QSlider, QLabel)
+                             QCheckBox, QHBoxLayout, QSlider, QLabel,
+                             QSplashScreen)
 from PyQt5.QtCore import QCoreApplication, Qt
-from PyQt5.QtGui import QIcon
+from PyQt5.QtGui import QIcon, QPixmap
 import sys
 import os
+from time import sleep
 import glucid.Glucid8824_UI
 import glucid.glucid8824 as glucid8824
 import configparser
@@ -79,8 +81,22 @@ class xglucid(QtWidgets.QMainWindow, glucid.Glucid8824_UI.Ui_MainWindow):
 def main():
     """call QApplication"""
     app = QApplication(sys.argv)
+    splashmap = QPixmap(":/newPrefix/glucidSplash.png")
+    splash = QSplashScreen(splashmap, QtCore.Qt.WindowStaysOnTopHint)
+    splash.show()
+    splash.showMessage("<h1>Make sure dip switch 1 is down on your lucid</h1>")
+    app.processEvents()
+    timer = QtCore.QElapsedTimer()
+    timer.start()
+
+    while timer.elapsed() < 4000 :
+        app.processEvents()
+
+
     form = xglucid()
     form.show()
+
+    splash.finish(form)
     app.exec_()
 
 # if we wish to run from CLI without package
