@@ -12,6 +12,9 @@ UI:
 macbinary:
 	pyinstaller -y --clean --onefile --windowed --noconsole --icon=glucid/lucid8824_icon.icns glucid/xglucid.py
 
+winbinary:
+	pyinstaller -y --clean --onefile --windowed --noconsole --icon=glucid/lucid8824_icon.ico glucid/xglucid.py
+
 clean:
 	rm ./Glucid8824_rc.py Glucid8824_UI.py
 
