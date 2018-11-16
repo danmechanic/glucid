@@ -4,20 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Installation &#8212; glucid 0.1.5a documentation</title>
+    <title>Installation &#8212; glucid 0.1.6a documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '0.1.5a',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
@@ -31,8 +23,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
-  </head>
-  <body>
+  </head><body>
   
 
     <div class="document">
@@ -44,7 +35,7 @@
 <h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="requirements">
 <h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
-<p><strong>glucid</strong> requires python &gt;= 3 and:</p>
+<p><strong>glucid</strong> requires python &gt;= 3, PySerial and:</p>
 <ul class="simple">
 <li>a serial port connected to a Lucid ADA8824 rs232 interface</li>
 </ul>
@@ -56,33 +47,33 @@
 <div class="section" id="installing-glucid-via-pip">
 <h2>Installing glucid via pip<a class="headerlink" href="#installing-glucid-via-pip" title="Permalink to this headline">¶</a></h2>
 <p>glucid can installed via pip</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>pip install glucid
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install glucid
 </pre></div>
 </div>
 </div>
 <div class="section" id="installing-the-latest-version-of-glucid-via-git">
 <h2>Installing the latest version of glucid via git<a class="headerlink" href="#installing-the-latest-version-of-glucid-via-git" title="Permalink to this headline">¶</a></h2>
 <p>You can clone the latest version of glucid via:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>git clone https://github.com/danmechanic/glucid.git
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/danmechanic/glucid.git
 </pre></div>
 </div>
 <p>And then install from the cloned source via:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">cd</span> glucid/
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> glucid/
 pip install -e .
 </pre></div>
 </div>
 <div class="section" id="verifying-correct-installation">
 <h3>Verifying correct installation<a class="headerlink" href="#verifying-correct-installation" title="Permalink to this headline">¶</a></h3>
 <p>Within a terminal, you can first verify basic installation with:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>glucid --help
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>glucid --help
 </pre></div>
 </div>
 <p>You can launch the GUI interface with:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>xglucid
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xglucid
 </pre></div>
 </div>
 <p>In your Python distribution you may try to import the <strong>glucid8824</strong> module:</p>
-<div class="highlight-Python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">glucid</span> <span class="kn">import</span> <span class="n">glucid8824</span> <span class="k">as</span> <span class="n">glucid</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">glucid</span> <span class="kn">import</span> <span class="n">glucid8824</span> <span class="k">as</span> <span class="n">glucid</span>
 </pre></div>
 </div>
 </div>
@@ -129,12 +120,14 @@ pip install -e .
 </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -145,7 +138,7 @@ pip install -e .
       &copy;2018, Daniel R Mechanic.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.4</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |

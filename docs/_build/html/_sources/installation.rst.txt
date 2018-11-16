@@ -4,7 +4,7 @@ Installation
 
 Requirements
 ============
-**glucid** requires python >= 3 and:
+**glucid** requires python >= 3, PySerial and:
 
 * a serial port connected to a Lucid ADA8824 rs232 interface
 

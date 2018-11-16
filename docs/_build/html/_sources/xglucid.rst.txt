@@ -5,7 +5,7 @@
 .. image::  ./xglucid.png
 
 .. note::
-   xglucid requires PyQt5 as well as Python 3
+   xglucid requires Python 3, PyQt5 and PySerial
    
 .. note::
 

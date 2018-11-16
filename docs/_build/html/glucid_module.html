@@ -4,20 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>glucid Python Documentation &#8212; glucid 0.1.5a documentation</title>
+    <title>glucid Python Documentation &#8212; glucid 0.1.6a documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '0.1.5a',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
@@ -31,8 +23,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
-  </head>
-  <body>
+  </head><body>
   
 
     <div class="document">
@@ -46,31 +37,31 @@
 <div class="section" id="confirm-the-glucid8824-module-can-be-imported">
 <h2>Confirm the <strong>glucid8824</strong> module can be imported<a class="headerlink" href="#confirm-the-glucid8824-module-can-be-imported" title="Permalink to this headline">¶</a></h2>
 <p>Within a Python3 interpreter, you may import he <strong>glucid8824</strong> module:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">glucid</span> <span class="k">import</span> <span class="n">glucid8824</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">glucid</span> <span class="k">import</span> <span class="n">glucid8824</span>
 </pre></div>
 </div>
 <div class="section" id="simple-example-setting-clock-sync-using-python">
 <h3>Simple Example Setting Clock Sync Using Python<a class="headerlink" href="#simple-example-setting-clock-sync-using-python" title="Permalink to this headline">¶</a></h3>
 <p>First, import glucid</p>
-<div class="highlight-Python"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">glucid.glucid8824</span> <span class="kn">as</span> <span class="nn">glucid</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">glucid.glucid8824</span> <span class="kn">as</span> <span class="nn">glucid</span>
 </pre></div>
 </div>
 <p>Create a new Glucid8824 object, by default this uses /dev/ttyUSB0</p>
-<div class="highlight-Python"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">mylucid</span> <span class="o">=</span> <span class="n">glucid</span><span class="o">.</span><span class="n">Glucid8824</span><span class="p">()</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">mylucid</span> <span class="o">=</span> <span class="n">glucid</span><span class="o">.</span><span class="n">Glucid8824</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>We connect to our ADA8824</p>
-<div class="highlight-Python"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">mylucid</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">mylucid</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
 <span class="bp">True</span>
 </pre></div>
 </div>
 <p>Check the current clock sync source</p>
-<div class="highlight-Python"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">mylucid</span><span class="o">.</span><span class="n">get_sync_source</span><span class="p">()</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">mylucid</span><span class="o">.</span><span class="n">get_sync_source</span><span class="p">()</span>
 <span class="s1">&#39;ADAT&#39;</span>
 </pre></div>
 </div>
 <p>Set the clock sync to WordClock</p>
-<div class="highlight-Python"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">mylucid</span><span class="o">.</span><span class="n">set_sync_source</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">mylucid</span><span class="o">.</span><span class="n">set_sync_source</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">mylucid</span><span class="o">.</span><span class="n">get_sync_source</span><span class="p">()</span>
 <span class="s1">&#39;WordClock&#39;</span>
 </pre></div>
@@ -258,6 +249,12 @@ String representation of result.</p>
 <p>If RETSTRING is FALSE return the raw value</p>
 </dd></dl>
 
+<dl class="staticmethod">
+<dt id="glucid.glucid8824.Glucid8824.get_device_from_cfg">
+<em class="property">static </em><code class="descname">get_device_from_cfg</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#glucid.glucid8824.Glucid8824.get_device_from_cfg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read the default device stored in our config file</p>
+</dd></dl>
+
 <dl class="method">
 <dt id="glucid.glucid8824.Glucid8824.get_dig1">
 <code class="descname">get_dig1</code><span class="sig-paren">(</span><em>RETSTRING=True</em><span class="sig-paren">)</span><a class="headerlink" href="#glucid.glucid8824.Glucid8824.get_dig1" title="Permalink to this definition">¶</a></dt>
@@ -320,9 +317,23 @@ a String representation</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="glucid.glucid8824.Glucid8824.is_midi">
+<code class="descname">is_midi</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#glucid.glucid8824.Glucid8824.is_midi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a device file return if it’s rs232 or midi</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="glucid.glucid8824.Glucid8824.log_gain_list">
 <code class="descname">log_gain_list</code><span class="sig-paren">(</span><em>gainlist=False</em><span class="sig-paren">)</span><a class="headerlink" href="#glucid.glucid8824.Glucid8824.log_gain_list" title="Permalink to this definition">¶</a></dt>
 <dd><p>Log the current gainlist, for testing purposes</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="glucid.glucid8824.Glucid8824.rs232_or_midi">
+<em class="property">static </em><code class="descname">rs232_or_midi</code><span class="sig-paren">(</span><em>devicefile='/dev/ttyUSB0'</em><span class="sig-paren">)</span><a class="headerlink" href="#glucid.glucid8824.Glucid8824.rs232_or_midi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a device file return if it’s rs232 or midi.
+This is a static method so we can decide to instantiate
+the correct connection</p>
 </dd></dl>
 
 <dl class="method">
@@ -380,6 +391,34 @@ OUTPUT.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="glucid.glucid8824.Glucid8824.set_meter_and_dig1">
+<code class="descname">set_meter_and_dig1</code><span class="sig-paren">(</span><em>metersrc=False</em><span class="sig-paren">)</span><a class="headerlink" href="#glucid.glucid8824.Glucid8824.set_meter_and_dig1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the source for front meters of the 8824
+AND to route S/SPIF</p>
+<dl class="docutils">
+<dt>metersrc - 0 <span class="classifier-delimiter">:</span> <span class="classifier">Meter Analog IN</span></dt>
+<dd><blockquote class="first">
+<div>AES DIG IN 1,2</div></blockquote>
+<dl class="docutils">
+<dt>1 <span class="classifier-delimiter">:</span> <span class="classifier">Digital IN</span></dt>
+<dd>AES DIG IN 1,2</dd>
+<dt>2 <span class="classifier-delimiter">:</span> <span class="classifier">Analog OUT</span></dt>
+<dd>AES DIG IN 1,2</dd>
+<dt>3 <span class="classifier-delimiter">:</span> <span class="classifier">Digital OUT</span></dt>
+<dd>AES DIG IN 1,2</dd>
+<dt>4 <span class="classifier-delimiter">:</span> <span class="classifier">Analog IN</span></dt>
+<dd>S/PDIF DIG IN 1,2</dd>
+<dt>5 <span class="classifier-delimiter">:</span> <span class="classifier">Digital IN</span></dt>
+<dd>S/PDIF DIG IN 1,2</dd>
+<dt>6 <span class="classifier-delimiter">:</span> <span class="classifier">Analog OUT</span></dt>
+<dd>S/PDIF DIG IN 1,2</dd>
+</dl>
+<p class="last">7 : Digital OUT</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
 <dt id="glucid.glucid8824.Glucid8824.set_opt_src">
 <code class="descname">set_opt_src</code><span class="sig-paren">(</span><em>srcval=False</em><span class="sig-paren">)</span><a class="headerlink" href="#glucid.glucid8824.Glucid8824.set_opt_src" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the source of the ADAT Digital
@@ -413,6 +452,12 @@ OUTPUT.</p>
 called get_gain to get the list from the 8824 first.</p>
 <p>gain    - value to set gain to -95 to +32
 channel - channel to set</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="glucid.glucid8824.Glucid8824.write_configfile">
+<code class="descname">write_configfile</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#glucid.glucid8824.Glucid8824.write_configfile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write the glucidconf to config file</p>
 </dd></dl>
 
 <dl class="method">
@@ -466,12 +511,14 @@ to write the values to the 8824</p>
 </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -482,7 +529,7 @@ to write the values to the 8824</p>
       &copy;2018, Daniel R Mechanic.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.4</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |

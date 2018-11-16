@@ -4,20 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Welcome to glucid’s documentation! &#8212; glucid 0.1.5a documentation</title>
+    <title>Welcome to glucid’s documentation! &#8212; glucid 0.1.6a documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '0.1.5a',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
@@ -30,8 +22,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
-  </head>
-  <body>
+  </head><body>
   
 
     <div class="document">
@@ -50,6 +41,17 @@ command-line and Graphical interfaces to configure a RS232
 version Lucid ADA8824 Analog/Digital Audio Converter over a serial
 interface.</p>
 <p><strong>glucid</strong> on <a class="reference external" href="http://github.com/danmechanic/glucid">github</a></p>
+<p><strong>Donate</strong></p>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_donations" />
+<input type="hidden" name="business" value="87JS82WK8LBZ8" />
+<input type="hidden" name="item_name" value="Software to keep old but good hardware alive." />
+<input type="hidden" name="currency_code" value="USD" />
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+</form>
+
+
 </div>
 <div class="section" id="xglucid-gui">
 <h1><strong>xglucid</strong> GUI<a class="headerlink" href="#xglucid-gui" title="Permalink to this headline">¶</a></h1>
@@ -57,7 +59,7 @@ interface.</p>
 </div>
 <div class="section" id="glucid-command-line">
 <h1><strong>glucid</strong> Command Line<a class="headerlink" href="#glucid-command-line" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ glucid -g
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ glucid -g
 ----------------------------------------
 
 glucid and glucid8824.py:
@@ -96,7 +98,7 @@ Recommended: +4dBu: IN -8 dB OUT  +1 dB
 </div>
 <div class="section" id="glucid-python-package">
 <h1>glucid Python Package<a class="headerlink" href="#glucid-python-package" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-Python"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">glucid.glucid8824</span> <span class="kn">as</span> <span class="nn">glucid</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">glucid.glucid8824</span> <span class="kn">as</span> <span class="nn">glucid</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">my8824</span> <span class="o">=</span> <span class="n">glucid</span><span class="o">.</span><span class="n">Glucid8824</span><span class="p">()</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">my8824</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
 <span class="bp">True</span>
@@ -186,12 +188,14 @@ Recommended: +4dBu: IN -8 dB OUT  +1 dB
 </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -202,7 +206,7 @@ Recommended: +4dBu: IN -8 dB OUT  +1 dB
       &copy;2018, Daniel R Mechanic.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.4</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |

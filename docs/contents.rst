@@ -21,6 +21,8 @@ interface.
 
 .. _github: http://github.com/danmechanic/glucid
 
+.. raw:: html
+   :file: donate.html
 
 **xglucid** GUI
 ===============
