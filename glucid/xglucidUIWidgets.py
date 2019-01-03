@@ -40,7 +40,7 @@ class xglucidWidget(QWidget):
         self.OutputSliders = []
 
         self.myLucid = glucid.Glucid8824()
-        self.myLucid.set_device_from_configfile()
+        #self.myLucid.set_device_from_configfile()
         self.initUI()
         
     def initUI(self):
@@ -493,7 +493,7 @@ class xglucidWidget(QWidget):
         QCoreApplication.processEvents()
         # windows fails without disconnecting first
         self.myLucid.disconnect()
-        self.myLucid.write_configfile()
+        #self.myLucid.write_configfile()
         
         self.set_ui_from_lucid()
         return 1
