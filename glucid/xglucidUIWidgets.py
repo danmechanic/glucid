@@ -156,9 +156,11 @@ class xglucidWidget(QWidget):
         in the status bar
         """
         try:
+            # we only connect to check connectivity, then close
             if self.myLucid.connect():
                 self.parent().statusBar().showMessage("Connected using %s" %
                                                       self.myLucid.get_iface())
+                self.myLucid.disconnect()
                 self.set_ui_from_lucid()
             else:
                 self.parent().statusBar().showMessage(
@@ -177,7 +179,7 @@ class xglucidWidget(QWidget):
         """
 
         self.disable_all_except_comm()
-        # windows fails without disconnecting first
+        # make sure disconnecting first
         self.myLucid.disconnect()
         if self.myLucid.connect():
             self.parent().statusBar().showMessage(
@@ -298,6 +300,10 @@ class xglucidWidget(QWidget):
             QCheckBox, "LinkOutCh").setCheckState(self.myLucid.is_out_linked())
 
         self.myLucid.get_gain()
+
+        # we can disconnect here:
+        self.myLucid.disconnect()
+        
         self.make_sliders()
         
         for i in range(0, 8):
@@ -335,8 +341,8 @@ class xglucidWidget(QWidget):
             QPushButton, "LucidWriteButton").setEnabled(True)
         self.parent().statusBar().showMessage("Finished Reading DATA")
         QCoreApplication.processEvents()
-        # windows fails without disconnecting first
-        self.myLucid.disconnect()
+        # make sure to disconnect
+
 
         
     def pro_or_consumer_clicked(self):
@@ -379,7 +385,7 @@ class xglucidWidget(QWidget):
         however, it's slow.
         """
         self.disable_all_except_comm()
-        # windows fails without disconnecting first
+        # make sure diconnected first...
         self.myLucid.disconnect()
 
         if self.myLucid.connect():
@@ -494,8 +500,13 @@ class xglucidWidget(QWidget):
         # windows fails without disconnecting first
         self.myLucid.disconnect()
         #self.myLucid.write_configfile()
-        
-        self.set_ui_from_lucid()
+
+        # instead of setting the ui from the lucid,
+        # which takes awhile...  let's leave the UI
+        # alone but disabled, causing the user to click
+        # 'read' again.
+        self.disable_all_except_comm()
+        #self.set_ui_from_lucid()
         return 1
 
     def write_button_clicked(self):
