@@ -1,4 +1,5 @@
-0.3.2 - Bugfixes, sign OSX code
+0.4.0 - Major Channel Order Bugfix. Remove MIDI code.  Remove configfile code associated with MIDI model 8824
+0.3.2 - Bugfixes
 0.3.1 - Bugfixes, splashpage, building binaries
 0.3.0 - improved graphical interface and port selection
 0.2.0 - Support for midi hw version (linux only)

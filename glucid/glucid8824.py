@@ -23,7 +23,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
-__version__ = '0.3.2a'
+__version__ = '0.4.0a'
 __author__ = 'Daniel R Mechanic (dan.mechanic@gmail.com)'
 CONFIGFILE='.glucid.cfg'
 
@@ -138,8 +138,6 @@ class Glucid8824:
     MINUS10IN = '64'
     MINUS10OUT = '55'
 
-    ISMIDI = False        # used for forcing midi
-    
     # Keep a dictionary of valid
     # devices to talk over, and the format
     # they use...
@@ -232,16 +230,9 @@ class Glucid8824:
 
         # our baud rate
         self.baud=9600
-        #if [ self.siface in self.DEVICES['midi'] ]:
-        #    self.baud=31250
-        #logging.info("baud rate is %s" % self.baud )
-        
 
         # InstanceID or LucidID 0-7
         self.INSTANCEID = LucidID
-
-        # used to force midi
-        self.ISMIDI = False
 
         # we either haven't connected
         # or had a failure
@@ -298,14 +289,7 @@ class Glucid8824:
         If RETSTRING is FALSE return the raw value
         """
         DEFAULT_AES_SRC = 0 # Analog In
-
-        if self.is_midi():
-            if 'AES_SRC' in self.glucidconf['DEFAULT']:
-                retval = int(self.glucidconf['DEFAULT']['AES_SRC'])
-            else:
-                retval = DEFAULT_AES_SRC
-        else:
-            retval = self.sendCommand('GetAesSrc')
+        retval = self.sendCommand('GetAesSrc')
 
         if not retval:
             raise ValueError("Bad Data Received")
@@ -346,15 +330,8 @@ class Glucid8824:
         """
         DEFAULT_OPTICAL_SRC = 0 # Analog In
 
-        if self.is_midi():
-            if 'OPTICAL_SRC' in self.glucidconf['DEFAULT']:
-                retval = int(self.glucidconf['DEFAULT']['OPTICAL_SRC'])
-            else:
-                retval = DEFAULT_OPTICAL_SRC
-                
-        else:
-            retval = self.sendCommand('GetOptSrc')
-            retval = retval[0]
+        retval = self.sendCommand('GetOptSrc')
+        retval = retval[0]
             
         if RETSTRING:
             return self.OPTICAL_SRC[retval]
@@ -380,14 +357,8 @@ class Glucid8824:
     def get_analog_source(self, RETSTRING=True):
         DEFAULT_ANALOG_SRC = 0 # ADAT In
 
-        if self.is_midi():
-            if 'ANALOG_SRC' in self.glucidconf['DEFAULT']:
-                retval = int(self.glucidconf['DEFAULT']['ANALOG_SRC'])
-            else:
-                retval = DEFAULT_ANALOG_SRC
-        else:
-            retval = self.sendCommand('GetAnalogSrc')
-            retval = retval[0]
+        retval = self.sendCommand('GetAnalogSrc')
+        retval = retval[0]
             
         if RETSTRING:
             return self.ANALOG_SRC[retval]
@@ -417,18 +388,12 @@ class Glucid8824:
         """
         DEFAULT_SYNC = 1 # Wordclock
         
-        if self.is_midi():
-            if 'SYNC' in self.glucidconf['DEFAULT']:
-                retval = int(self.glucidconf['DEFAULT']['SYNC'])
-            else:
-                retval = DEFAULT_SYNC
+        retval = self.sendCommand('GetSync')
+        if isinstance(retval, list):
+            retval = retval[0]
         else:
-            retval = self.sendCommand('GetSync')
-            if isinstance(retval, list):
-                retval = retval[0]
-            else:
-                raise ValueError("Bad Data Recieved")
-                retval = 0
+            raise ValueError("Bad Data Recieved")
+        retval = 0
 
             
         if RETSTRING:
@@ -463,14 +428,8 @@ class Glucid8824:
         """
         DEFAULT_METER = 2 # Analog Out
         
-        if self.is_midi():
-            if 'METER' in self.glucidconf['DEFAULT']:
-                retval = int(self.glucidconf['DEFAULT']['METER'])
-            else:
-                retval = DEFAULT_METER
-        else:
-            retval = self.sendCommand('GetMode')
-            retval = int("{0:02b}".format(retval[0])[-2:], 2)
+        retval = self.sendCommand('GetMode')
+        retval = int("{0:02b}".format(retval[0])[-2:], 2)
             
         if RETSTRING:
             return self.METER[retval]
@@ -528,12 +487,7 @@ class Glucid8824:
             return False
         logging.info("set_meter: setting to %s" % self.METER[metersrc])
 
-        if self.siface in self.DEVICES['rs232']:
-            curr_dig1 = self.get_dig1(False)
-        else:
-            logging.warning("Setting digital 1,2 to spdif")
-            logging.warning("Use set_meter_and_dig1 for midi 8824")
-            curr_dig1 = 1 # S/PDIF
+        curr_dig1 = self.get_dig1(False)
             
         logging.info("set_meter: Dig1 is %s" % curr_dig1)
 
@@ -549,19 +503,8 @@ class Glucid8824:
         """
         DEFAULT_DIG1 = 1 # SPDIF
         
-        if self.is_midi():
-            if 'METER' in self.glucidconf['DEFAULT']:
-                retval = int(self.glucidconf['DEFAULT']['DIG1'])
-            else:
-                retval = DEFAULT_DIG1
-        else:
-            retval = self.sendCommand('GetMode')
-            retval = int("{0:04b}".format(retval[0])[-3], 2)            
-
-        if RETSTRING:
-            return self.METER[retval]
-        else:
-            return retval
+        retval = self.sendCommand('GetMode')
+        retval = int("{0:04b}".format(retval[0])[-3], 2)            
 
         if RETSTRING:
             return self.DIG1[retval]
@@ -613,24 +556,6 @@ class Glucid8824:
         else:
             return '/dev/ttyUSB0'
 
-    @staticmethod
-    def rs232_or_midi(devicefile='/dev/ttyUSB0'):
-        """Given a device file return if it's rs232 or midi.
-        This is a static method so we can decide to instantiate
-        the correct connection"""
-        if devicefile in Glucid8824.DEVICES['midi']:
-            return 'midi'
-        else:
-            return 'rs232'
-
-    def is_midi(self):
-        """Given a device file return if it's rs232 or midi"""
-        if self.siface in Glucid8824.DEVICES['midi']:
-            return True
-        elif self.ISMIDI is True:
-            return True
-        else:
-            return False
 
     def get_gain(self):
         """Populates the internal datastructure `gainlist` by
@@ -646,21 +571,12 @@ class Glucid8824:
         retlist = []
         self.gainlist = []
         
-        if self.is_midi():
-            if 'GAINLIST' in self.glucidconf['DEFAULT']:
-                lgainlist = self.glucidconf['DEFAULT']['GAINLIST']
-            else:
-                lgainlist = DEFAULT_GAINLIST
-            lgainlist = lgainlist.split(',')
-            lgainlist =  [ int(i) for i in lgainlist ]
-            self.gainlist = lgainlist
-        else:
-            lgainlist = self.sendCommand('GetAnalogGain')
-            self.gainlist = []
-            self.log_gain_list(lgainlist)
-            for i in range(0, len(lgainlist)):
-                # update our gainlist
-                self.gainlist.append(lgainlist[i])
+        lgainlist = self.sendCommand('GetAnalogGain')
+        self.gainlist = []
+        self.log_gain_list(lgainlist)
+        for i in range(0, len(lgainlist)):
+            # update our gainlist
+            self.gainlist.append(lgainlist[i])
 
         for i in range(0, len(lgainlist)):
             retlist.append(
@@ -905,13 +821,8 @@ class Glucid8824:
         logging.info("LucidConnection running connect")
 
         try:
-            if self.is_midi():
-                logging.info("LucidConnection opening midi device %s"%self.siface)
-                logging.info(self.DEVICES['midi'])
-                self.conn = open(self.siface, 'wb')
-            else:
-                logging.info("LucidConnection opening rs232 device %s"%self.siface)
-                self.conn = serial.Serial(self.siface, baudrate=self.baud, timeout=self.tout)
+            logging.info("LucidConnection opening rs232 device %s"%self.siface)
+            self.conn = serial.Serial(self.siface, baudrate=self.baud, timeout=self.tout)
         except serial.SerialException as se:
             logging.error("Could not open connection %s", self.siface)
             self.error_flag = True
@@ -1027,7 +938,6 @@ def usage():
     print("         \t1 -'AES In'")
     print("")
     print("  --set_meter_and_dig1=VALUE\tset meters and dig 1/2")
-    print("\t***Recommended for midi version 8824s")
     print("        \tVALUE is a number 0-7:")
     print("         \t0 -'Meter Analog In, use aes for 1,2'")
     print("         \t1 -'Meter Digital In, use aes for 1,2'")
@@ -1039,8 +949,6 @@ def usage():
     print("         \t7 -'Digital Out, use aes s/pdif 1,2'")
     print("")
     print("  --set_meter=METER\tset meters to METER")
-    print("\t***NOT Recommended for midi version 8824s")
-    print("\t***WILL source DIG IN 1,2 from S,PDIF on midi 8824s")
     print("        \tMETER is a number 0-3:")
     print("         \t0 -'Analog In'")
     print("         \t1 -'Digital In'")
@@ -1090,57 +998,40 @@ def error_exit(errormsg="Fatal Error"):
 
 def get_aes_src(lucid):
     """Call lucid8824.get_aes_source, exit on failure"""
-    if lucid.siface in lucid.DEVICES['midi']:
-        error_exit("option not valid for midi devices")
     print("AES Source:\t%s" % (lucid.get_aes_source() or
                                sys.exit("failed talking to Lucid")))
 
 
 def get_analog_src(lucid):
     """Call lucid8824.get_analog_source, exit on failure"""
-    if lucid.siface in lucid.DEVICES['midi']:
-        error_exit("option not valid for midi devices")
     print("Analog Source:\t%s" % (lucid.get_analog_source() or
                                   sys.exit("failed talking to 8824")))
 
 
 def get_opt_src(lucid):
     """Call lucid8824.get_opt_source, exit on failure"""
-    if lucid.siface in lucid.DEVICES['midi']:
-        error_exit("option not valid for midi devices")
     print("Optical Source:\t%s" % (lucid.get_opt_source() or
                                    sys.exit("failed talking to 8824")))
 
 
 def get_meter(lucid):
     """Call lucid8824.get_meter, exit on failure"""
-    if lucid.siface in lucid.DEVICES['midi']:
-        error_exit("option not valid for midi devices")
     print("Meter:\t\t%s" % (lucid.get_meter() or
                             sys.exit("failed talking to 8824")))
 
 
 def get_sync(lucid):
     """Call lucid8824.get_sync, exit on failure"""
-    if lucid.siface in lucid.DEVICES['midi']:
-        error_exit("option not valid for midi devices")
     print("Sync:\t\t%s" % (lucid.get_sync_source()))
-#    print("Sync:\t\t%s" % (lucid.get_sync_source() or
-#                           sys.exit("failed talking to 8824")))
-
 
 def get_dig1(lucid):
     """Call lucid8824.get_dig1, exit on failure"""
-    if lucid.siface in lucid.DEVICES['midi']:
-        error_exit("option not valid for midi devices")
     print("Dig Input 1,2:\t%s" % (lucid.get_dig1() or
                                   sys.exit("failed talking to 8824")))
 
 
 def get_gain(lucid):
     """Call lucid8824.get_get, exit on failure"""
-    if lucid.siface in lucid.DEVICES['midi']:
-        error_exit("option not valid for midi devices")
     gainlist = lucid.get_gain() or sys.exit("failed talking to Lucid")
     print("Analog Gain:")
     print(' '*40)
@@ -1191,8 +1082,6 @@ def get_all(lucid):
     """Get all possible values from the 8824 by calling each
     function sequentially
     """
-    if lucid.siface in lucid.DEVICES['midi']:
-        error_exit("option not valid for midi devices")
     get_sync(lucid)
     get_meter(lucid)
     get_analog_src(lucid)
@@ -1217,8 +1106,6 @@ def set_meter_and_dig1(lucid, meterval):
 
 def set_meter(lucid, meterval):
     """Call lucid8824.set_meter"""
-    if lucid.siface in lucid.DEVICES['midi']:
-        error_exit("option not valid for midi devices")
     if lucid.siface in lucid.DEVICES['rs232']:
         lucid.set_meter(meterval)
         get_meter(lucid)
@@ -1344,11 +1231,6 @@ def main():
 
     lucid = Glucid8824(siface=serialif,LucidID=device_id)
 
-    for o, a in opts:
-        if o in ("-m"):
-            logging.warning("forcing midi device")
-            lucid.ISMIDI = True
-
     if not lucid.connect():
         sys.exit("Failed to open connection using %s \n" %
                  lucid.get_iface())
@@ -1357,7 +1239,7 @@ def main():
           (lucid.get_iface(), lucid.get_instanceid()))
 
     for o, a in opts:
-        if o in ("-h", "--help", "-v", "--verbose", "-d", "-m"):
+        if o in ("-h", "--help", "-v", "--verbose", "-d"):
             continue
         elif o in ("-g", "--get_all"):
             logging.info("get all")
@@ -1453,7 +1335,6 @@ def main():
             elif int(a) == -10:
                 set_gain_channels(lucid, 4, [0, 1, 2, 3, 4, 5, 6, 7])
                 set_gain_channels(lucid, -11, [8, 9, 10, 11, 12, 13, 14, 15])
-            if self.siface in self.DEVICES['rs232']:
                 get_gain(lucid)
         elif o in ('--sci', '--set_channel_input_gain',
                    '--sco', '--set_channel_output_gain'):
