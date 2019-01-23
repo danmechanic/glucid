@@ -574,13 +574,15 @@ class Glucid8824:
         lgainlist = self.sendCommand('GetAnalogGain')
         self.gainlist = []
         self.log_gain_list(lgainlist)
-        for i in range(0, len(lgainlist)):
-            # update our gainlist
-            self.gainlist.append(lgainlist[i])
 
-        for i in range(0, len(lgainlist)):
+        # the lucid reverses this 8..1 8..1
+        # which we didn't know until too late
+        # so we fix this here:
+        self.gainlist = lgainlist[7::-1] + lgainlist[15:7:-1]
+        
+        for i in range(0, len(self.gainlist)):
             retlist.append(
-                Glucid8824.gain_int_to_db_string(int(lgainlist[i])))
+                Glucid8824.gain_int_to_db_string(int(self.gainlist[i])))
 
         logging.info("Returning Gainlist")
         logging.info(retlist)
@@ -675,15 +677,21 @@ class Glucid8824:
         """
         # we have to convert our local gainlist to hex
         # and use sendCommand to write it.
+        # first we need to put the channels
+        # in the ordering the lucid likes:
+        # 8..1 8..1
+        lucidgainlist = [];
+        lucidgainlist = self.gainlist[7::-1] + self.gainlist[15:7:-1]
+
         cmdArg = []
-        for chgain in self.gainlist:
+        for chgain in lucidgainlist:
             chgain = hex(int(chgain))[2:]
             cmdArg.append(chgain)
             logging.info("write_gainlist_to_lucid: add %s to cmdArg" %
                          (chgain))
 
         logging.info("write_gainlist_to_lucid: calling sendCommand")
-        self.glucidconf['DEFAULT']['GAINLIST']=','.join(str(i) for i in self.gainlist)
+        
         self.sendCommand('SetAnalogGain', cmdArg)
 
     ###########################
