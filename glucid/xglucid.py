@@ -44,8 +44,8 @@ class xglucid(QtWidgets.QMainWindow, glucid.Glucid8824_UI.Ui_MainWindow):
         # load the default device from conf file
         currentdevice = glucid8824.Glucid8824.get_device_from_cfg()
         self.SerialPortCombo.setCurrentText(currentdevice)
-        self.connection_label.setText(
-            glucid8824.Glucid8824.rs232_or_midi(currentdevice))
+        self.connection_label.setText("rs232")
+
 
         # cleanup non-valid serial ports
         # from interface...
