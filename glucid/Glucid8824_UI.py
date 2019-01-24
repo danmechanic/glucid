@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file './Glucid8824.ui'
 #
-# Created by: PyQt5 UI code generator 5.10.1
+# Created by: PyQt5 UI code generator 5.11.2
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -21,14 +21,14 @@ class Ui_MainWindow(object):
         MainWindow.setMinimumSize(QtCore.QSize(901, 470))
         MainWindow.setMaximumSize(QtCore.QSize(901, 516))
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(":/newPrefix/lucid8824_icon.bmp"), QtGui.QIcon.Normal, QtGui.QIcon.On)
-        icon.addPixmap(QtGui.QPixmap(":/newPrefix/lucid8824_icon.bmp"), QtGui.QIcon.Active, QtGui.QIcon.Off)
-        icon.addPixmap(QtGui.QPixmap(":/newPrefix/lucid8824_icon.bmp"), QtGui.QIcon.Selected, QtGui.QIcon.Off)
         icon.addPixmap(QtGui.QPixmap(":/newPrefix/lucid8824_icon.bmp"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        icon.addPixmap(QtGui.QPixmap(":/newPrefix/lucid8824_icon.bmp"), QtGui.QIcon.Disabled, QtGui.QIcon.On)
+        icon.addPixmap(QtGui.QPixmap(":/newPrefix/lucid8824_icon.bmp"), QtGui.QIcon.Normal, QtGui.QIcon.On)
         icon.addPixmap(QtGui.QPixmap(":/newPrefix/lucid8824_icon.bmp"), QtGui.QIcon.Disabled, QtGui.QIcon.Off)
-        icon.addPixmap(QtGui.QPixmap(":/newPrefix/lucid8824_icon.bmp"), QtGui.QIcon.Selected, QtGui.QIcon.On)
+        icon.addPixmap(QtGui.QPixmap(":/newPrefix/lucid8824_icon.bmp"), QtGui.QIcon.Disabled, QtGui.QIcon.On)
+        icon.addPixmap(QtGui.QPixmap(":/newPrefix/lucid8824_icon.bmp"), QtGui.QIcon.Active, QtGui.QIcon.Off)
         icon.addPixmap(QtGui.QPixmap(":/newPrefix/lucid8824_icon.bmp"), QtGui.QIcon.Active, QtGui.QIcon.On)
+        icon.addPixmap(QtGui.QPixmap(":/newPrefix/lucid8824_icon.bmp"), QtGui.QIcon.Selected, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap(":/newPrefix/lucid8824_icon.bmp"), QtGui.QIcon.Selected, QtGui.QIcon.On)
         MainWindow.setWindowIcon(icon)
         self.centralwidget = xglucidWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -882,5 +882,5 @@ class Ui_MainWindow(object):
         self.action_dev_ircomm0.setText(_translate("MainWindow", "/dev/ircomm0"))
         self.action_dev_cuau0.setText(_translate("MainWindow", "/dev/cuau0"))
 
-from glucid.xglucidUIWidgets import xglucidLabel, xglucidWidget
-from glucid import Glucid8824_rc
+from xglucidUIWidgets import xglucidLabel, xglucidWidget
+import Glucid8824_rc

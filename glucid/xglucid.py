@@ -29,20 +29,22 @@ from PyQt5.QtGui import QIcon, QPixmap
 import sys
 import os
 from time import sleep
-import glucid.Glucid8824_UI
-import glucid.glucid8824 as glucid8824
+#import glucid.Glucid8824_UI
+import Glucid8824_UI
+from glucid import glucid8824
+#import glucid8824
 import configparser
 import serial.tools.list_ports as lsports
 
 CLEAN_NONEX_DEVICES=True
 
-class xglucid(QtWidgets.QMainWindow, glucid.Glucid8824_UI.Ui_MainWindow):
+class xglucid(QtWidgets.QMainWindow, Glucid8824_UI.Ui_MainWindow):
     """xglucid is just a class to call the Qt MainWindow"""
     def __init__(self):
         super(self.__class__, self).__init__()
         self.setupUi(self)
         # load the default device from conf file
-        currentdevice = glucid8824.Glucid8824.get_device_from_cfg()
+        currentdevice = glucid8824.get_device_from_cfg()
         self.SerialPortCombo.setCurrentText(currentdevice)
         self.connection_label.setText("rs232")
 

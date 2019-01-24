@@ -36,7 +36,7 @@ import serial
 from distutils.util import strtobool
 from _ast import Or
 
-class Glucid8824:
+class glucid8824:
     """The Glucid8824 class represents a single Lucid
     ADA8824 unit and provides methods to communicate with
     a Lucid ADA8824 via its RS232 Serial port over the Serial
@@ -582,7 +582,7 @@ class Glucid8824:
         
         for i in range(0, len(self.gainlist)):
             retlist.append(
-                Glucid8824.gain_int_to_db_string(int(self.gainlist[i])))
+                glucid8824.gain_int_to_db_string(int(self.gainlist[i])))
 
         logging.info("Returning Gainlist")
         logging.info(retlist)
@@ -595,7 +595,7 @@ class Glucid8824:
             return False
 
         for g in self.gainlist:
-            logging.info("%s" % Glucid8824.gain_int_to_db_string(int(g)))
+            logging.info("%s" % glucid8824.gain_int_to_db_string(int(g)))
 
     def update_channel_in_gainlist(self, gain=False, channel=False):
         """Update a single channel in the gain list, must have
@@ -669,7 +669,7 @@ class Glucid8824:
         # set back the new gain
         logging.info("set_gainlist_all_stage: New gainlist:")
         for g in self.gainlist:
-            logging.info("%s" % Glucid8824.gain_int_to_db_string(g))
+            logging.info("%s" % glucid8824.gain_int_to_db_string(g))
 
     def write_gainlist_to_lucid(self):
         """Convert `gainlist` to hex and call `SetAnalogGain`
@@ -1237,7 +1237,7 @@ def main():
     glucidconf.write(newconfig)
     logging.info("Wrote config to  %s" % os.path.join(os.path.expanduser('~'), CONFIGFILE))
 
-    lucid = Glucid8824(siface=serialif,LucidID=device_id)
+    lucid = glucid8824(siface=serialif,LucidID=device_id)
 
     if not lucid.connect():
         sys.exit("Failed to open connection using %s \n" %
