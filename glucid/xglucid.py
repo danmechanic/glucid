@@ -29,10 +29,8 @@ from PyQt5.QtGui import QIcon, QPixmap
 import sys
 import os
 from time import sleep
-#import glucid.Glucid8824_UI
-import Glucid8824_UI
-from glucid import glucid8824
-#import glucid8824
+from glucid import Glucid8824_UI
+from glucid.glucid8824 import Glucid8824
 import configparser
 import serial.tools.list_ports as lsports
 
@@ -44,7 +42,7 @@ class xglucid(QtWidgets.QMainWindow, Glucid8824_UI.Ui_MainWindow):
         super(self.__class__, self).__init__()
         self.setupUi(self)
         # load the default device from conf file
-        currentdevice = glucid8824.get_device_from_cfg()
+        currentdevice = Glucid8824.get_device_from_cfg()
         self.SerialPortCombo.setCurrentText(currentdevice)
         self.connection_label.setText("rs232")
 

@@ -21,8 +21,8 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 """
-import xglucidUIWidgets
-from glucid import glucid8824
+from glucid import xglucidUIWidgets
+from glucid.glucid8824 import Glucid8824
 from PyQt5.QtCore import QCoreApplication
 from PyQt5.QtGui import QPainter, QColor, QFont
 from PyQt5.QtWidgets import (QWidget, QLabel, QSlider, QComboBox,
@@ -39,7 +39,7 @@ class xglucidWidget(QWidget):
         self.InputSliders = []
         self.OutputSliders = []
 
-        self.myLucid = glucid8824()
+        self.myLucid = Glucid8824()
         #self.myLucid.set_device_from_configfile()
         self.initUI()
         
@@ -109,7 +109,7 @@ class xglucidWidget(QWidget):
         new serial interface
         """
         # TODO: implement set_iface in glucid?
-        self.myLucid = glucid8824(siface=value)
+        self.myLucid = Glucid8824(siface=value)
         self.disable_all_except_comm()
 
     def on_device_id_changed(self, value):

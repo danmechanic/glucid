@@ -7,7 +7,7 @@ with open('README.rst') as f:
     long_desc = f.read()
 
 setup(name='glucid',
-      version='0.4.0',
+      version='0.5.0',
       description='Configure the Lucid 8824 AD/DA Audio Interface via \
              a Serial Connection',
       url='http://github.com/danmechanic/glucid',
@@ -15,19 +15,22 @@ setup(name='glucid',
       author_email='dan.mechanic@gmail.com',
       license='GPL V3',
       zip_safe=False,
+#      scripts=['bin/glucid','bin/xglucid'],
       entry_points={  # Optional
           'console_scripts': [
-              'glucid=glucid.glucid8824:main',
+              'glucid=glucid.glucid_cli:main',
               'xglucid=glucid.xglucid:main'
           ],
       },
       long_description=long_desc,
       keywords='lucid 8824 audio converter',
       packages=['glucid'],
+#      py_modules=['glucid.glucid'],
       python_requires=">=3",
-      package_dir={ 'glucidi8824' : 'glucid',
+      package_dir={ 'glucid8824' : 'glucid',
                     'xglucid' : 'glucid',
                     'Glucid8824_UI' : 'glucid',
+                    'Glucid8824' : 'glucid',
                     'xglucidUIWidgets' : 'glucid',
       },
       long_description_content_type='text/x-rst',
