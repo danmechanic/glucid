@@ -20,12 +20,14 @@
    **/dev/tty.usbserial** for a usb to serial interface.  Windows
    users a recommended to try **COM1**.
 
+.. note::
 
+   Be sure to connect your serial interface **before starting xglucid**
    
 First:
 
 * Power Off your Lucid 8824
-* Flip DIP Switch 1 on your Lucid 8824 to **down**  (remote)
+* Flip DIP Switch 1 on your Lucid 8824 to **down**  (remote)  **We recommend setting ALL DIP switches down and leaving them down for as long as you wish to keep your unit configured via software**
 * Connect a 9 pin Serial connector from the Lucid 8824 to your computer
 * Power On your Lucid 8824
 
@@ -57,4 +59,4 @@ Write all Values wtih **WRITE**
 
 If you change any values, select **WRITE** to write them to your ADA8824.
 
-**xglucid** will read the values again and set the interface accordingly.
+Select **READ** to confirm your settings were written successfully.
