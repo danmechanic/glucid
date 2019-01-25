@@ -1,3 +1,4 @@
+0.5.0 - Code re-factoring, doc updates, bugfixes
 0.4.0 - Major Channel Order Bugfix. Remove MIDI code.  Remove configfile code associated with MIDI model 8824
 0.3.2 - Bugfixes
 0.3.1 - Bugfixes, splashpage, building binaries
