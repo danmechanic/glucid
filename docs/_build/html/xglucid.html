@@ -9,7 +9,7 @@
     <title>xglucid GUI Interface &#8212; glucid 0.1.6a documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
@@ -50,10 +50,14 @@ and a usb serial interface.   OSX users a recommended to try
 <strong>/dev/tty.usbserial</strong> for a usb to serial interface.  Windows
 users a recommended to try <strong>COM1</strong>.</p>
 </div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Be sure to connect your serial interface <strong>before starting xglucid</strong></p>
+</div>
 <p>First:</p>
 <ul class="simple">
 <li>Power Off your Lucid 8824</li>
-<li>Flip DIP Switch 1 on your Lucid 8824 to <strong>down</strong>  (remote)</li>
+<li>Flip DIP Switch 1 on your Lucid 8824 to <strong>down</strong>  (remote)  <strong>We recommend setting ALL DIP switches down and leaving them down for as long as you wish to keep your unit configured via software</strong></li>
 <li>Connect a 9 pin Serial connector from the Lucid 8824 to your computer</li>
 <li>Power On your Lucid 8824</li>
 </ul>
@@ -75,7 +79,7 @@ the values currently stored on your unit.</p>
 <div class="section" id="write-all-values-wtih-write">
 <h3>Write all Values wtih <strong>WRITE</strong><a class="headerlink" href="#write-all-values-wtih-write" title="Permalink to this headline">¶</a></h3>
 <p>If you change any values, select <strong>WRITE</strong> to write them to your ADA8824.</p>
-<p><strong>xglucid</strong> will read the values again and set the interface accordingly.</p>
+<p>Select <strong>READ</strong> to confirm your settings were written successfully.</p>
 </div>
 </div>
 </div>
@@ -136,7 +140,7 @@ the values currently stored on your unit.</p>
       &copy;2018, Daniel R Mechanic.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.4</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |

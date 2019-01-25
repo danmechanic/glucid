@@ -15,6 +15,11 @@ Requirements
 
    By default, **glucid** assumes you are using a USB to 9-pin serial adapter on linux and defaults to **/dev/ttyUSB0** , to overide this default, use the **-d** option.  Windows users may try **COM1** while OSX users may try **/dev/tty.usbserial**
 
+Pre-Compiled Binaries
+=====================
+
+Check github for pre-built binaries for OSX and Windows at https://github.com/danmechanic/glucid/releases/latest
+
 
 Installing glucid via pip
 =========================

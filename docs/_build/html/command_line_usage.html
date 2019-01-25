@@ -9,7 +9,7 @@
     <title>glucid Command Line Usage &#8212; glucid 0.1.6a documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
@@ -35,17 +35,16 @@
 <h1><strong>glucid</strong> Command Line Usage<a class="headerlink" href="#glucid-command-line-usage" title="Permalink to this headline">¶</a></h1>
 <p>Confirm you have a working installing of <strong>glucid</strong> by typing</p>
 <p><code class="docutils literal notranslate"><span class="pre">glucid</span></code></p>
+<div class="section" id="set-all-dip-switches-down">
+<h2>Set All Dip Switches Down<a class="headerlink" href="#set-all-dip-switches-down" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">To configure the Lucid 8824, you must have the unit in remote mode by setting DIP switch 1 to down.  See your owners manual for more information.</p>
+<p class="last">To configure the Lucid 8824, you must have the unit in remote mode by setting DIP switch 1 to down.  We suggest setting 2, 3 and 4 also down to set the Lucid ID to 0.  For ease you may set all dip switches down.  See your owners manual for more information.</p>
+</div>
 </div>
 <div class="section" id="know-what-serial-port-you-are-using">
 <h2>Know what Serial Port you are Using<a class="headerlink" href="#know-what-serial-port-you-are-using" title="Permalink to this headline">¶</a></h2>
 <p>By default, <strong>glucid</strong> assumes you are using <strong>/dev/ttyUSB0</strong>   Use the <strong>-d</strong> option if you are using a different Serial port.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">OSX users may try <strong>/dev/tty.usbserial</strong> for a usb to serial convert; you may need to install an extra driver.  Windows users may try <strong>COM1</strong></p>
-</div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">The user who is running glucid must be able to read
@@ -53,12 +52,28 @@ and write to whichever serial device you are using; consult your
 operating system documentation.</p>
 </div>
 </div>
+<div class="section" id="mac-serial-port">
+<h2>Mac Serial Port<a class="headerlink" href="#mac-serial-port" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">OSX users may try <strong>/dev/tty.usbserial</strong> for a usb to serial convert; you may need to install an extra driver.</p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">glucid</span> <span class="pre">-d</span> <span class="pre">tty.usbserial</span></code></p>
+</div>
+<div class="section" id="windows-serial-port">
+<h2>Windows Serial Port<a class="headerlink" href="#windows-serial-port" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Windows users may try <strong>COM1</strong></p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">glucid</span> <span class="pre">-d</span> <span class="pre">COM1</span></code></p>
+</div>
 <div class="section" id="confirm-connection-to-your-audio-converter">
 <h2>Confirm Connection to Your Audio Converter<a class="headerlink" href="#confirm-connection-to-your-audio-converter" title="Permalink to this headline">¶</a></h2>
 <p>First:</p>
 <ul class="simple">
 <li>Power Off your Lucid 8824</li>
-<li>Flip DIP Switch 1 on your Lucid 8824 to <strong>down</strong>  (remote)</li>
+<li>Flip all DIP Switches on your Lucid 8824 to <strong>down</strong>  (remote mode)  As long as you wish to use software to configure your Lucid, leave the unit in Remote mode.</li>
 <li>Connect a 9 pin Serial connector from the Lucid 8824 to your computer</li>
 <li>Power On your Lucid 8824</li>
 </ul>
@@ -450,7 +465,10 @@ Dig Input 1,2:        S/PDIF
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">          Installation</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">          Command Line Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#set-all-dip-switches-down">Set All Dip Switches Down</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#know-what-serial-port-you-are-using">Know what Serial Port you are Using</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mac-serial-port">Mac Serial Port</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#windows-serial-port">Windows Serial Port</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#confirm-connection-to-your-audio-converter">Confirm Connection to Your Audio Converter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#get-all-current-values">Get All Current Values</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#setting-audio-levels">Setting Audio Levels</a></li>
@@ -494,7 +512,7 @@ Dig Input 1,2:        S/PDIF
       &copy;2018, Daniel R Mechanic.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.4</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |

@@ -55,7 +55,7 @@ Set the clock sync to WordClock
 ===================================
 
 
-.. automodule:: glucid.glucid8824
+.. automodule:: glucid.glucid_cli
    :members: get_all, get_aes_src, get_analog_src, set_analog_src, get_opt_src, set_opt_src, get_meter, set_meter, get_sync, set_sync, get_dig1, set_dig1, get_gain, set_gain_channels, main
 
 **Glucid8824** Class Documentation

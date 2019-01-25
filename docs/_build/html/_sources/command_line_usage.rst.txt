@@ -6,9 +6,12 @@ Confirm you have a working installing of **glucid** by typing
 
 ``glucid``
 
+Set All Dip Switches Down
+=========================
+
 .. note::
 
-   To configure the Lucid 8824, you must have the unit in remote mode by setting DIP switch 1 to down.  See your owners manual for more information.
+   To configure the Lucid 8824, you must have the unit in remote mode by setting DIP switch 1 to down.  We suggest setting 2, 3 and 4 also down to set the Lucid ID to 0.  For ease you may set all dip switches down.  See your owners manual for more information.
 
 Know what Serial Port you are Using
 ===================================
@@ -17,12 +20,32 @@ By default, **glucid** assumes you are using **/dev/ttyUSB0**   Use the **-d** o
 
 .. note::
 
-   OSX users may try **/dev/tty.usbserial** for a usb to serial convert; you may need to install an extra driver.  Windows users may try **COM1**
-.. note::
-
    The user who is running glucid must be able to read
    and write to whichever serial device you are using; consult your
    operating system documentation.
+
+
+
+Mac Serial Port
+===============
+
+.. note::
+
+   OSX users may try **/dev/tty.usbserial** for a usb to serial convert; you may need to install an extra driver. 
+
+``glucid -d tty.usbserial``
+
+
+Windows Serial Port
+===================
+
+.. note::
+
+   Windows users may try **COM1**
+
+``glucid -d COM1``
+
+
 
 Confirm Connection to Your Audio Converter
 ==========================================
@@ -30,7 +53,7 @@ Confirm Connection to Your Audio Converter
 First:
 
 * Power Off your Lucid 8824
-* Flip DIP Switch 1 on your Lucid 8824 to **down**  (remote)
+* Flip all DIP Switches on your Lucid 8824 to **down**  (remote mode)  As long as you wish to use software to configure your Lucid, leave the unit in Remote mode.
 * Connect a 9 pin Serial connector from the Lucid 8824 to your computer
 * Power On your Lucid 8824
   

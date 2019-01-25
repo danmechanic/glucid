@@ -9,7 +9,7 @@
     <title>glucid Python Documentation &#8212; glucid 0.1.6a documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
@@ -67,13 +67,13 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="module-glucid.glucid8824">
-<span id="glucid8824-module-documentation"></span><h3><strong>glucid8824</strong> Module Documentation<a class="headerlink" href="#module-glucid.glucid8824" title="Permalink to this headline">¶</a></h3>
-<p>glucid8824.py defines a class <cite>Glucid8824</cite> which
+<div class="section" id="module-glucid.glucid_cli">
+<span id="glucid8824-module-documentation"></span><h3><strong>glucid8824</strong> Module Documentation<a class="headerlink" href="#module-glucid.glucid_cli" title="Permalink to this headline">¶</a></h3>
+<p>glucid8824.py defines a class <cite>glucid8824</cite> which
 implements an api to a Lucid 8824 Analog/Digital Audio Converter
 RS232 interface over a serial port.</p>
 <p>A <cite>main</cite> and associated functions provide a useful
-command line tool <cite>glucid</cite> to configure the Lucid 8824/.</p>
+command line tool <cite>glucid</cite> in glucid.py to configure the Lucid 8824/.</p>
 <p>Copyright (C) 2017,2018  Daniel R Mechanic (<a class="reference external" href="mailto:dan&#46;mechanic&#37;&#52;&#48;gmail&#46;com">dan<span>&#46;</span>mechanic<span>&#64;</span>gmail<span>&#46;</span>com</a>)</p>
 <p>This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -85,94 +85,94 @@ GNU General Public License for more details.</p>
 <p>You should have received a copy of the GNU General Public License
 along with this program.  If not, see &lt;<a class="reference external" href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>&gt;.</p>
 <dl class="function">
-<dt id="glucid.glucid8824.get_all">
-<code class="descclassname">glucid.glucid8824.</code><code class="descname">get_all</code><span class="sig-paren">(</span><em>lucid</em><span class="sig-paren">)</span><a class="headerlink" href="#glucid.glucid8824.get_all" title="Permalink to this definition">¶</a></dt>
+<dt id="glucid.glucid_cli.get_all">
+<code class="descclassname">glucid.glucid_cli.</code><code class="descname">get_all</code><span class="sig-paren">(</span><em>lucid</em><span class="sig-paren">)</span><a class="headerlink" href="#glucid.glucid_cli.get_all" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get all possible values from the 8824 by calling each
 function sequentially</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="glucid.glucid8824.get_aes_src">
-<code class="descclassname">glucid.glucid8824.</code><code class="descname">get_aes_src</code><span class="sig-paren">(</span><em>lucid</em><span class="sig-paren">)</span><a class="headerlink" href="#glucid.glucid8824.get_aes_src" title="Permalink to this definition">¶</a></dt>
+<dt id="glucid.glucid_cli.get_aes_src">
+<code class="descclassname">glucid.glucid_cli.</code><code class="descname">get_aes_src</code><span class="sig-paren">(</span><em>lucid</em><span class="sig-paren">)</span><a class="headerlink" href="#glucid.glucid_cli.get_aes_src" title="Permalink to this definition">¶</a></dt>
 <dd><p>Call lucid8824.get_aes_source, exit on failure</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="glucid.glucid8824.get_analog_src">
-<code class="descclassname">glucid.glucid8824.</code><code class="descname">get_analog_src</code><span class="sig-paren">(</span><em>lucid</em><span class="sig-paren">)</span><a class="headerlink" href="#glucid.glucid8824.get_analog_src" title="Permalink to this definition">¶</a></dt>
+<dt id="glucid.glucid_cli.get_analog_src">
+<code class="descclassname">glucid.glucid_cli.</code><code class="descname">get_analog_src</code><span class="sig-paren">(</span><em>lucid</em><span class="sig-paren">)</span><a class="headerlink" href="#glucid.glucid_cli.get_analog_src" title="Permalink to this definition">¶</a></dt>
 <dd><p>Call lucid8824.get_analog_source, exit on failure</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="glucid.glucid8824.set_analog_src">
-<code class="descclassname">glucid.glucid8824.</code><code class="descname">set_analog_src</code><span class="sig-paren">(</span><em>lucid</em>, <em>srcval</em><span class="sig-paren">)</span><a class="headerlink" href="#glucid.glucid8824.set_analog_src" title="Permalink to this definition">¶</a></dt>
+<dt id="glucid.glucid_cli.set_analog_src">
+<code class="descclassname">glucid.glucid_cli.</code><code class="descname">set_analog_src</code><span class="sig-paren">(</span><em>lucid</em>, <em>srcval</em><span class="sig-paren">)</span><a class="headerlink" href="#glucid.glucid_cli.set_analog_src" title="Permalink to this definition">¶</a></dt>
 <dd><p>Call lucid8824.set_analog_src</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="glucid.glucid8824.get_opt_src">
-<code class="descclassname">glucid.glucid8824.</code><code class="descname">get_opt_src</code><span class="sig-paren">(</span><em>lucid</em><span class="sig-paren">)</span><a class="headerlink" href="#glucid.glucid8824.get_opt_src" title="Permalink to this definition">¶</a></dt>
+<dt id="glucid.glucid_cli.get_opt_src">
+<code class="descclassname">glucid.glucid_cli.</code><code class="descname">get_opt_src</code><span class="sig-paren">(</span><em>lucid</em><span class="sig-paren">)</span><a class="headerlink" href="#glucid.glucid_cli.get_opt_src" title="Permalink to this definition">¶</a></dt>
 <dd><p>Call lucid8824.get_opt_source, exit on failure</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="glucid.glucid8824.set_opt_src">
-<code class="descclassname">glucid.glucid8824.</code><code class="descname">set_opt_src</code><span class="sig-paren">(</span><em>lucid</em>, <em>srcval</em><span class="sig-paren">)</span><a class="headerlink" href="#glucid.glucid8824.set_opt_src" title="Permalink to this definition">¶</a></dt>
+<dt id="glucid.glucid_cli.set_opt_src">
+<code class="descclassname">glucid.glucid_cli.</code><code class="descname">set_opt_src</code><span class="sig-paren">(</span><em>lucid</em>, <em>srcval</em><span class="sig-paren">)</span><a class="headerlink" href="#glucid.glucid_cli.set_opt_src" title="Permalink to this definition">¶</a></dt>
 <dd><p>Call lucid8824.set_opt_src</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="glucid.glucid8824.get_meter">
-<code class="descclassname">glucid.glucid8824.</code><code class="descname">get_meter</code><span class="sig-paren">(</span><em>lucid</em><span class="sig-paren">)</span><a class="headerlink" href="#glucid.glucid8824.get_meter" title="Permalink to this definition">¶</a></dt>
+<dt id="glucid.glucid_cli.get_meter">
+<code class="descclassname">glucid.glucid_cli.</code><code class="descname">get_meter</code><span class="sig-paren">(</span><em>lucid</em><span class="sig-paren">)</span><a class="headerlink" href="#glucid.glucid_cli.get_meter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Call lucid8824.get_meter, exit on failure</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="glucid.glucid8824.set_meter">
-<code class="descclassname">glucid.glucid8824.</code><code class="descname">set_meter</code><span class="sig-paren">(</span><em>lucid</em>, <em>meterval</em><span class="sig-paren">)</span><a class="headerlink" href="#glucid.glucid8824.set_meter" title="Permalink to this definition">¶</a></dt>
+<dt id="glucid.glucid_cli.set_meter">
+<code class="descclassname">glucid.glucid_cli.</code><code class="descname">set_meter</code><span class="sig-paren">(</span><em>lucid</em>, <em>meterval</em><span class="sig-paren">)</span><a class="headerlink" href="#glucid.glucid_cli.set_meter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Call lucid8824.set_meter</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="glucid.glucid8824.get_sync">
-<code class="descclassname">glucid.glucid8824.</code><code class="descname">get_sync</code><span class="sig-paren">(</span><em>lucid</em><span class="sig-paren">)</span><a class="headerlink" href="#glucid.glucid8824.get_sync" title="Permalink to this definition">¶</a></dt>
+<dt id="glucid.glucid_cli.get_sync">
+<code class="descclassname">glucid.glucid_cli.</code><code class="descname">get_sync</code><span class="sig-paren">(</span><em>lucid</em><span class="sig-paren">)</span><a class="headerlink" href="#glucid.glucid_cli.get_sync" title="Permalink to this definition">¶</a></dt>
 <dd><p>Call lucid8824.get_sync, exit on failure</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="glucid.glucid8824.set_sync">
-<code class="descclassname">glucid.glucid8824.</code><code class="descname">set_sync</code><span class="sig-paren">(</span><em>lucid</em>, <em>syncval</em><span class="sig-paren">)</span><a class="headerlink" href="#glucid.glucid8824.set_sync" title="Permalink to this definition">¶</a></dt>
+<dt id="glucid.glucid_cli.set_sync">
+<code class="descclassname">glucid.glucid_cli.</code><code class="descname">set_sync</code><span class="sig-paren">(</span><em>lucid</em>, <em>syncval</em><span class="sig-paren">)</span><a class="headerlink" href="#glucid.glucid_cli.set_sync" title="Permalink to this definition">¶</a></dt>
 <dd><p>Call lucid8824.set_sync_source</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="glucid.glucid8824.get_dig1">
-<code class="descclassname">glucid.glucid8824.</code><code class="descname">get_dig1</code><span class="sig-paren">(</span><em>lucid</em><span class="sig-paren">)</span><a class="headerlink" href="#glucid.glucid8824.get_dig1" title="Permalink to this definition">¶</a></dt>
+<dt id="glucid.glucid_cli.get_dig1">
+<code class="descclassname">glucid.glucid_cli.</code><code class="descname">get_dig1</code><span class="sig-paren">(</span><em>lucid</em><span class="sig-paren">)</span><a class="headerlink" href="#glucid.glucid_cli.get_dig1" title="Permalink to this definition">¶</a></dt>
 <dd><p>Call lucid8824.get_dig1, exit on failure</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="glucid.glucid8824.set_dig1">
-<code class="descclassname">glucid.glucid8824.</code><code class="descname">set_dig1</code><span class="sig-paren">(</span><em>lucid</em>, <em>srcval</em><span class="sig-paren">)</span><a class="headerlink" href="#glucid.glucid8824.set_dig1" title="Permalink to this definition">¶</a></dt>
+<dt id="glucid.glucid_cli.set_dig1">
+<code class="descclassname">glucid.glucid_cli.</code><code class="descname">set_dig1</code><span class="sig-paren">(</span><em>lucid</em>, <em>srcval</em><span class="sig-paren">)</span><a class="headerlink" href="#glucid.glucid_cli.set_dig1" title="Permalink to this definition">¶</a></dt>
 <dd><p>Call lucid8824.set_dig1</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="glucid.glucid8824.get_gain">
-<code class="descclassname">glucid.glucid8824.</code><code class="descname">get_gain</code><span class="sig-paren">(</span><em>lucid</em><span class="sig-paren">)</span><a class="headerlink" href="#glucid.glucid8824.get_gain" title="Permalink to this definition">¶</a></dt>
+<dt id="glucid.glucid_cli.get_gain">
+<code class="descclassname">glucid.glucid_cli.</code><code class="descname">get_gain</code><span class="sig-paren">(</span><em>lucid</em><span class="sig-paren">)</span><a class="headerlink" href="#glucid.glucid_cli.get_gain" title="Permalink to this definition">¶</a></dt>
 <dd><p>Call lucid8824.get_get, exit on failure</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="glucid.glucid8824.set_gain_channels">
-<code class="descclassname">glucid.glucid8824.</code><code class="descname">set_gain_channels</code><span class="sig-paren">(</span><em>lucid</em>, <em>gain=-99</em>, <em>channel_list=[]</em><span class="sig-paren">)</span><a class="headerlink" href="#glucid.glucid8824.set_gain_channels" title="Permalink to this definition">¶</a></dt>
+<dt id="glucid.glucid_cli.set_gain_channels">
+<code class="descclassname">glucid.glucid_cli.</code><code class="descname">set_gain_channels</code><span class="sig-paren">(</span><em>lucid</em>, <em>gain=-99</em>, <em>channel_list=[]</em><span class="sig-paren">)</span><a class="headerlink" href="#glucid.glucid_cli.set_gain_channels" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the channels in <cite>channel_list</cite> to <cite>gain</cite>
 Write these values to the 8824</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="glucid.glucid8824.main">
-<code class="descclassname">glucid.glucid8824.</code><code class="descname">main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#glucid.glucid8824.main" title="Permalink to this definition">¶</a></dt>
+<dt id="glucid.glucid_cli.main">
+<code class="descclassname">glucid.glucid_cli.</code><code class="descname">main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#glucid.glucid_cli.main" title="Permalink to this definition">¶</a></dt>
 <dd><p>Run the glucid8824 Command Line Interface</p>
 </dd></dl>
 
@@ -183,7 +183,7 @@ Write these values to the 8824</p>
 <dl class="class">
 <dt id="glucid.glucid8824.Glucid8824">
 <em class="property">class </em><code class="descclassname">glucid.glucid8824.</code><code class="descname">Glucid8824</code><span class="sig-paren">(</span><em>LucidID='00'</em>, <em>siface='/dev/ttyUSB0'</em>, <em>tout=1</em><span class="sig-paren">)</span><a class="headerlink" href="#glucid.glucid8824.Glucid8824" title="Permalink to this definition">¶</a></dt>
-<dd><p>The Glucid8824 class represents a single Lucid
+<dd><p>The glucid8824 class represents a single Lucid
 ADA8824 unit and provides methods to communicate with
 a Lucid ADA8824 via its RS232 Serial port over the Serial
 Port of a Computer.</p>
@@ -317,23 +317,9 @@ a String representation</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="glucid.glucid8824.Glucid8824.is_midi">
-<code class="descname">is_midi</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#glucid.glucid8824.Glucid8824.is_midi" title="Permalink to this definition">¶</a></dt>
-<dd><p>Given a device file return if it’s rs232 or midi</p>
-</dd></dl>
-
-<dl class="method">
 <dt id="glucid.glucid8824.Glucid8824.log_gain_list">
 <code class="descname">log_gain_list</code><span class="sig-paren">(</span><em>gainlist=False</em><span class="sig-paren">)</span><a class="headerlink" href="#glucid.glucid8824.Glucid8824.log_gain_list" title="Permalink to this definition">¶</a></dt>
 <dd><p>Log the current gainlist, for testing purposes</p>
-</dd></dl>
-
-<dl class="staticmethod">
-<dt id="glucid.glucid8824.Glucid8824.rs232_or_midi">
-<em class="property">static </em><code class="descname">rs232_or_midi</code><span class="sig-paren">(</span><em>devicefile='/dev/ttyUSB0'</em><span class="sig-paren">)</span><a class="headerlink" href="#glucid.glucid8824.Glucid8824.rs232_or_midi" title="Permalink to this definition">¶</a></dt>
-<dd><p>Given a device file return if it’s rs232 or midi.
-This is a static method so we can decide to instantiate
-the correct connection</p>
 </dd></dl>
 
 <dl class="method">
@@ -529,7 +515,7 @@ to write the values to the 8824</p>
       &copy;2018, Daniel R Mechanic.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.4</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |
