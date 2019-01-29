@@ -32,7 +32,7 @@ import getopt
 import logging
 import os
 import sys
-from glucid.glucid8824 import Glucid8824
+from glucid8824 import Glucid8824
 
 # BEGIN FUNCTIONS FOR COMMAND LINE INTERFACE
 

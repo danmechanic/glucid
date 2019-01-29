@@ -29,8 +29,8 @@ from PyQt5.QtGui import QIcon, QPixmap
 import sys
 import os
 from time import sleep
-from glucid import Glucid8824_UI
-from glucid.glucid8824 import Glucid8824
+import Glucid8824_UI
+from glucid8824 import Glucid8824
 import configparser
 import serial.tools.list_ports as lsports
 
@@ -84,7 +84,7 @@ def main():
     splashmap = QPixmap(":/newPrefix/glucidSplash.png")
     splash = QSplashScreen(splashmap, QtCore.Qt.WindowStaysOnTopHint)
     splash.show()
-    splash.showMessage("<h1>Make sure dip switch 1 is down on your lucid</h1>")
+    splash.showMessage("<center><h1>Recommended: ALL DIP switches down on Lucid</h1></center>")
     app.processEvents()
     timer = QtCore.QElapsedTimer()
     timer.start()

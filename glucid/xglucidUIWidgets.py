@@ -21,8 +21,8 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 """
-from glucid import xglucidUIWidgets
-from glucid.glucid8824 import Glucid8824
+import xglucidUIWidgets
+from glucid8824 import Glucid8824
 from PyQt5.QtCore import QCoreApplication
 from PyQt5.QtGui import QPainter, QColor, QFont
 from PyQt5.QtWidgets import (QWidget, QLabel, QSlider, QComboBox,

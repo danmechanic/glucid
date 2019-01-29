@@ -882,5 +882,5 @@ class Ui_MainWindow(object):
         self.action_dev_ircomm0.setText(_translate("MainWindow", "/dev/ircomm0"))
         self.action_dev_cuau0.setText(_translate("MainWindow", "/dev/cuau0"))
 
-from glucid.xglucidUIWidgets import xglucidLabel, xglucidWidget
-from glucid import Glucid8824_rc
+from xglucidUIWidgets import xglucidLabel, xglucidWidget
+import Glucid8824_rc
