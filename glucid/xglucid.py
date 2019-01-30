@@ -84,7 +84,7 @@ def main():
     splashmap = QPixmap(":/newPrefix/glucidSplash.png")
     splash = QSplashScreen(splashmap, QtCore.Qt.WindowStaysOnTopHint)
     splash.show()
-    splash.showMessage("<center><h1>Recommended: ALL DIP switches down on Lucid</h1></center>")
+    splash.showMessage("<center><h1>Recommended: ALL DIP switches down and Power Cycle your Lucid!</h1></center>")
     app.processEvents()
     timer = QtCore.QElapsedTimer()
     timer.start()

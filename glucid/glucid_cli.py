@@ -50,6 +50,9 @@ def banner():
     print("This is free software, and you are welcome to")
     print("change and redistribute it under certain circumstances;")
     print("For details see LICENSE")
+    print("Your Lucid MUST be in REMOTE MODE")
+    print("DIP SWITCH 1 on your Lucid MUST be DOWN on POWER UP")
+    print("All Switches should be left down for ID 00 in Remote Mode")
     print('-'*40)
 
 
