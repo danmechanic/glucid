@@ -27,7 +27,7 @@
 First:
 
 * Power Off your Lucid 8824
-* Flip DIP Switch 1 on your Lucid 8824 to **down**  (remote)  **We recommend setting ALL DIP switches down and leaving them down for as long as you wish to keep your unit configured via software**
+* Flip DIP Switch 1 on your Lucid 8824 to **down** and **power cycle your lucid** (remote)  **We recommend setting ALL DIP switches down and leaving them down for as long as you wish to keep your unit configured via software** 
 * Connect a 9 pin Serial connector from the Lucid 8824 to your computer
 * Power On your Lucid 8824
 

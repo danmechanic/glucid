@@ -6,12 +6,12 @@ Confirm you have a working installing of **glucid** by typing
 
 ``glucid``
 
-Set All Dip Switches Down
-=========================
+Set All Dip Switches Down And Power Cycle Your Lucid
+====================================================
 
 .. note::
 
-   To configure the Lucid 8824, you must have the unit in remote mode by setting DIP switch 1 to down.  We suggest setting 2, 3 and 4 also down to set the Lucid ID to 0.  For ease you may set all dip switches down.  See your owners manual for more information.
+   To configure the Lucid 8824, you must have the unit in remote mode by setting DIP switch 1 to down and powering cycling the unit.  We suggest setting 2, 3 and 4 also down to set the Lucid ID to 0.  For ease you may set all dip switches down.  See your owners manual for more information.
 
 Know what Serial Port you are Using
 ===================================
