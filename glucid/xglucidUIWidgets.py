@@ -40,7 +40,7 @@ class xglucidWidget(QWidget):
         self.OutputSliders = []
 
         self.myLucid = Glucid8824()
-        #self.myLucid.set_device_from_configfile()
+        self.myLucid.set_device_from_configfile()
         self.initUI()
         
     def initUI(self):
@@ -293,9 +293,11 @@ class xglucidWidget(QWidget):
         self.parent().centralwidget.findChild(
             QCheckBox, "LinkOutCh").setEnabled(True)
         self.parent().centralwidget.findChild(
-            QCheckBox, "LinkInCh").setCheckState(self.myLucid.is_in_linked())
+            QCheckBox, "LinkInCh").setCheckState(False)
+            #QCheckBox, "LinkInCh").setCheckState(self.myLucid.is_in_linked())
         self.parent().centralwidget.findChild(
-            QCheckBox, "LinkOutCh").setCheckState(self.myLucid.is_out_linked())
+            QCheckBox, "LinkOutCh").setCheckState(False)
+            #QCheckBox, "LinkOutCh").setCheckState(self.myLucid.is_out_linked())
 
         self.myLucid.get_gain()
 
@@ -497,7 +499,7 @@ class xglucidWidget(QWidget):
         QCoreApplication.processEvents()
         # windows fails without disconnecting first
         self.myLucid.disconnect()
-        #self.myLucid.write_configfile()
+        self.myLucid.write_configfile()
 
         # instead of setting the ui from the lucid,
         # which takes awhile...  let's leave the UI
