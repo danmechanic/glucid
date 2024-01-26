@@ -24,7 +24,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
-__version__ = '0.5.0a'
+__version__ = '0.5.1'
 __author__ = 'Daniel R Mechanic (dan.mechanic@gmail.com)'
 CONFIGFILE='.glucid.cfg'
 
@@ -178,6 +178,8 @@ class Glucid8824:
             'COM2',
             'COM3',
             'COM4',
+            '/dev/tty.usbserial-A50285BI',  # FTDI based dongle
+            '/dev/tty-usbserial-1430',  # Prolific based dongle
             '/dev/ttyUSB0',
             '/dev/ttyUSB1',
             '/dev/ttyUSB2',
