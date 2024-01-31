@@ -1793,11 +1793,6 @@ p, li { white-space: pre-wrap; }
     <string>/dev/ttyUSB4</string>
    </property>
   </action>
-  <action name="action_dev_ttyUSB4_2">
-   <property name="text">
-    <string>/dev/ttyUSB4</string>
-   </property>
-  </action>
   <action name="action_dev_ttyUSB5">
    <property name="checkable">
     <bool>true</bool>
@@ -1908,6 +1903,28 @@ p, li { white-space: pre-wrap; }
    </property>
    <property name="text">
     <string>/dev/cuau0</string>
+   </property>
+  </action>
+  <action name="action_dev_tty_usbserial_A50285BI">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>/dev/tty.usbserial-A50285BI</string>
+   </property>
+   <property name="toolTip">
+    <string>/dev/tty.usbserial-A50285BI</string>
+   </property>
+  </action>
+  <action name="action_dev_tty_usbserial_1430">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>/dev/tty-usbserial-1430</string>
+   </property>
+   <property name="toolTip">
+    <string>/dev/tty-usbserial-1430</string>
    </property>
   </action>
  </widget>
